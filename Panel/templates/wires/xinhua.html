@@ -1,0 +1,24 @@
+<script id="wires-xinhua-template" type="text/x-handlebars-template">
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-hover" id="items">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each []}}
+                <tr data-id="{{this.WireID}}">
+                    <td class="item-id">{{this.WireID}}</td>
+                    <td class="item-title"><a href="#wires/item/{{this.WireID}}" class="show-item">{{this.Title}}</a></td>
+                    <td class="item-crated"></td>
+                </tr>
+                {{else}}
+                No Content
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</script>

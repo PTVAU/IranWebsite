@@ -1,0 +1,82 @@
+<script id="user-manage-template" type="text/x-handlebars-template">
+    <div class="pull-right in-breadcrumbs">
+        <a data-toggle="modal" href="#user-modal" class="btn green pull-right"><i class="fa fa-plus"></i> Add User</a>
+    </div>
+    <div class="row no-min-height">
+        <div class="col-xs-12">
+            <div id="messages" style="display: none;">
+                <div class="note note-success hide"><h4 class="block">Success!</h4><p>The password has been reset to "123456". Please note that the user should change their password as soon as possible.</p></div>
+                <div class="note note-info hide"><h4 class="block">Success!</h4><p>User access changed.</p></div>
+            </div>
+        </div>
+    </div>
+    <div id="users" class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-hover" id="items">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="col-xs-2">Username</th>
+                    <th class="col-xs-3">Full Name</th>
+                    <th class="col-xs-1">State</th>
+                    <th class="col-xs-3">Groups</th>
+                    <th class="col-xs-2">Last Login</th>
+                    <th class="col-xs-1">Reset Pass</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each []}}
+                <tr data-userid="{{this.Id}}" data-siteusergroupid="">
+                    <td class="user-id">{{this.Id}}</td>
+                    <td class="user-user">{{this.UserName}}</td>
+                    <td class="user-name"><span class="x-editable" data-type="text" data-title="Edit Fullname" data-name="{{this.Name}}">{{this.Name}}</span></td>
+                    <td class="user-state" data-state="{{this.ActiveState}}">                    
+                        {{#ifCond this.ActiveState 1}}<a href="#" data-do="change-state" data-change-state-to="0" class="btn default green-stripe btn-xs"><i class="fa fa-check font-green"></i> Active</a>{{/ifCond}}
+                        {{#ifCond this.ActiveState 0}}<a href="#" data-do="change-state" data-change-state-to="1" class="btn default red-stripe btn-xs"><i class="fa fa-times font-red"></i> Deactive</a>{{/ifCond}}
+                    </td>
+                    <td class="user-groups">
+                        <div class="inner">
+                            {{{this.SiteGroupUsersHtml}}}
+                            <a href="#" class="save-groups"><i class="fa fa-save"></i></a>
+                        </div>
+                    </td>
+                    <td class="user-lastlogin">{{{this.LastLogin}}}</td>
+                    <td class="user-reset"><a href="#" data-do="reset-pass" class="btn default blue-stripe btn-xs"><i class="fa fa-key font-blue"></i> Reset</a></td>
+                {{else}}
+                No Content
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <!-- /.modal -->
+    <div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="user-form" class="form-horizontal" role="form">
+                        <h3>Add User</h3>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Name </label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" required="" placeholder="Enter User Full Name" name="Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Username </label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" required="" placeholder="Enter Desired Username" name="UserName"">
+                            </div>
+                        </div>
+                        <div id="user-results"><br /></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" data-task="submit" data-forms="#user-form" data-method="post" data-action="user" data-results="#user-results" data-identifier="do-add" class="btn btn-success pull-right"><i class="fa fa-check"></i> Save User</a>
+                    <a href="#" data-dismiss="modal" class="btn btn-default pull-left">Cancel</a>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</script>

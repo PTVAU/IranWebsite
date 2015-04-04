@@ -1,0 +1,43 @@
+<script id="dashboard-items-template" type="text/x-handlebars-template">
+    <div class="pull-right in-breadcrumbs has-space-between">
+        <select class="form-control" id="change-category"></select>
+        <select class="form-control" id="change-state">
+            <option value="-1">All Items</option>
+            <option value="1">Published</option>
+            <option value="0">Unpublished</option>
+        </select>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-hover" id="items">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="col-xs-8">Title</th>
+                    <th class="col-xs-1">State</th>
+                    <th class="col-xs-1">Categories</th>
+                    <th class="col-xs-1">Owner</th>
+                    <th class="col-xs-1">Hits</th>
+                    <th class="col-xs-1">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each []}}
+                <tr data-id="{{this.Id}}" class="priority-{{this.ItemPriority}}">
+                    <td class="item-id">{{this.Id}}</td>
+                    <td class="item-title" title="{{this.Title}}"><a href="#dashboard/item/{{this.Id}}" class="show-item">{{this.ShortTitle}}</a></td>
+                    <td class="item-state">
+                        {{#ifCond this.IsPublished 1}}<span class="btn default green-stripe btn-xs"><i class="fa fa-check"></i> Published</span>{{/ifCond}}
+                        {{#ifCond this.IsPublished 0}}<span class="btn default red-stripe btn-xs"><i class="fa fa-times"></i> Unpublished</span>{{/ifCond}}
+                    </td>
+                    <td class="item-sections">{{{this.SectionsHtml}}}</td>
+                    <td class="item-sections">{{{this.OwnerName}}}</td>
+                    <td class="item-sections">{{this.Viewcount}}</td>
+                    <td class="item-crated">{{{this.Created}}}</td>
+                </tr>
+                {{else}}
+                No Content
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</script>

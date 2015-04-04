@@ -1,0 +1,62 @@
+// Defining header variables
+@mastfoot-height: 60px;
+// Rules
+#footer { 
+    color: #6e6e6e; font-family: 'Hispan', Arial;
+    a { transition:  0.3s all; }
+    .panel {
+        background: none transparent;
+        .panel-heading { padding: 0; border: 0 none; font-size: 22px; color: #fff; font-weight: bold; text-transform: uppercase; margin-bottom: 18px; }
+        .panel-body { padding: 0; }
+    }
+}
+#mastfoot { background: #222; height: @mastfoot-height; border-bottom: 2px solid #a61b21; }
+#sharings-footer {
+    margin-top: 14px;
+    li {
+        a {
+            display: block; color: #222; background: #b4b4b4; width: 32px; height: 32px; line-height: 32px; text-align: center; border-radius: 18px; font-size: 20px;
+            &:hover { background: #fff; text-decoration: none; }
+        }
+    }
+}
+#weather {
+    .inner { position: relative; }
+    .type-image {
+        float: left; position: absolute; top: 0; left: 0; width: 58px; height: 58px; color: #b2b2b2;
+        i { display: block; width: 58px; height: 58px; font-size: 48px; line-height: 58px; }
+    }
+    .temperature { font-family: Arial; width: 130px; height: 32px; position: absolute; top: 0; left: 70px; font-size: 28px; line-height: 44px; font-weight: bold; color: #b2b2b2; }
+    .location { font-family: Arial; width: 130px; height: 20px; position: absolute; top: 32px; left: 70px; font-size: 12px; line-height: 20px; color: #6e6e6e; text-transform: uppercase; }
+    .choose-location { position: absolute; left: 200px; top: 16px; }
+}
+#nav-footer { 
+    background: #303030; padding-top: 30px;
+    form {
+        .label { font-size: 12px; font-family: Arial; font-weight: normal; color: #d4d4d4; line-height: 26px; }
+        .form-group { position: relative; }
+        input { background: #000; border: 0 none; width: 148px; height: 28px; border-radius: 0; }
+    }
+}
+#sitemap {
+    .sitemap-titles {
+        padding-bottom: 16px;
+        .header { color: #fff; text-transform: uppercase; font-size: 14px; font-weight: bold; }
+    }
+    .sitemap-items { 
+        font-size: 14px;
+        a {
+            color: #828282;
+            &:hover { color: #fff; text-decoration: none; }
+        }
+    }
+}
+#copyright { 
+    background: #fff; color: #333; font-size: 12px; font-family: Arial;
+    .inner { margin: 10px 0 }
+}
+#newsletter {
+    .btn {
+        &:hover { background: #a61b21; }
+    }
+}

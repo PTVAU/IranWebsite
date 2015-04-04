@@ -1,0 +1,33 @@
+<script id="comment-search-template" type="text/x-handlebars-template">
+    <div id="comments" class="table-responsive">
+        <form class="form-horizontal" role="form">
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-3" for="comments-search">Search Comments</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="comments-search" />
+                    <span class="fa fa-spinner fa-spin form-control-feedback hide"></span>
+                </div>
+            </div>
+        </form>
+        <div id="comment-results">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <th>#</th>
+                    <th class="nosort col-xs-1">Item</th>
+                    <th class="col-xs-2">Name</th>
+                    <th class="nosort col-xs-10">Comment</th>
+                    <th class="nosort col-xs-1">IP</th>
+                    <th class="">Date</th>
+                    <th class="nosort">Reply</th>
+                    <th class="nosort"></th>
+                    <th class="nosort"></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="100%">No items...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>

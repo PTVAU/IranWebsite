@@ -1,0 +1,514 @@
+{
+  "name": "hispan-icons",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "6301dc4418434379ba77cf66f71e0355",
+      "css": "tv",
+      "code": 59392,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M0 916.7C0 962.7 37.3 1000 83.3 1000H916.7C962.7 1000 1000 962.7 1000 916.7L1000 333.3C1000 287.3 962.7 250 916.7 250H551.5L714.2 87.3C734.2 67.3 734.2 35 714.2 15 694.2-5 661.9-5 641.9 15L406.7 250H405.6L233.1 77.5C213.1 57.5 180.8 57.5 160.8 77.5S140.8 129.8 160.8 149.8L260.8 250H83.3C37.3 250 0 287.3 0 333.3V916.7ZM150 354.2H662.5C687.9 354.2 708.3 374.6 708.3 400V850C708.3 875.4 687.9 895.8 662.5 895.8H150C124.6 895.8 104.2 875.4 104.2 850V400C104.2 374.6 124.6 354.2 150 354.2ZM791.7 406.3C791.7 377.5 815 354.2 843.8 354.2S895.8 377.5 895.8 406.3 872.5 458.3 843.8 458.3 791.7 435 791.7 406.3ZM791.7 572.9C791.7 544.2 815 520.8 843.8 520.8S895.8 544.2 895.8 572.9 872.5 625 843.8 625 791.7 601.7 791.7 572.9Z",
+        "width": 1000
+      },
+      "search": [
+        "tv"
+      ]
+    },
+    {
+      "uid": "ce51ba2483f4da5360807f1db8816d55",
+      "css": "chat",
+      "code": 59408,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M270.8 375C305.3 375 333.3 403 333.3 437.5S305.3 500 270.8 500 208.3 472 208.3 437.5 236.3 375 270.8 375ZM479.2 375C513.7 375 541.7 403 541.7 437.5S513.7 500 479.2 500 416.7 472 416.7 437.5 444.7 375 479.2 375ZM687.5 375C722 375 750 403 750 437.5S722 500 687.5 500 625 472 625 437.5 653 375 687.5 375ZM833.3 41.7H125C56.1 41.7 0 97.8 0 166.7V666.7C0 735.6 83.3 750 125 750V1000L500 750H833.3C902.2 750 958.3 693.9 958.3 625V166.7C958.3 97.8 902.2 41.7 833.3 41.7ZM875 625C875 648 856.3 666.7 833.3 666.7H458.3L208.3 875V666.7H125C102 666.7 83.3 648 83.3 625V166.7C83.3 143.7 102 125 125 125H833.3C856.3 125 875 143.7 875 166.7V625Z",
+        "width": 1000
+      },
+      "search": [
+        "chat"
+      ]
+    },
+    {
+      "uid": "6be7c7e90794ac4e9e8334559414e4a3",
+      "css": "frame",
+      "code": 59409,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M60.5 664.8C60.5 695.1 85.2 719.7 115.5 719.7V779.7C83.6 791.1 60.5 821.2 60.5 857.1 60.5 902.5 97.5 939.5 142.9 939.5 178.8 939.5 208.9 916.4 220.3 884.5H280.3C280.3 914.8 304.9 939.5 335.2 939.5S390.1 914.8 390.1 884.5H445.1C445.1 914.8 469.7 939.5 500 939.5S554.9 914.8 554.9 884.5H609.9C609.9 914.8 634.5 939.5 664.8 939.5S719.7 914.8 719.7 884.5H779.7C791.1 916.4 821.2 939.5 857.1 939.5 902.6 939.5 939.5 902.5 939.5 857.1 939.5 821.2 916.5 791.1 884.5 779.7V719.7C914.8 719.7 939.5 695.1 939.5 664.8S914.8 609.9 884.5 609.9V554.9C914.8 554.9 939.5 530.3 939.5 500S914.8 445.1 884.5 445.1V390.1C914.8 390.1 939.5 365.5 939.5 335.2S914.8 280.3 884.5 280.3V220.3C916.5 208.9 939.5 178.8 939.5 142.9 939.5 97.4 902.6 60.5 857.1 60.5 821.2 60.5 791.1 83.5 779.7 115.5H719.7C719.7 85.2 695.1 60.5 664.8 60.5S609.9 85.2 609.9 115.5H554.9C554.9 85.2 530.3 60.5 500 60.5S445.1 85.2 445.1 115.5H390.1C390.1 85.2 365.5 60.5 335.2 60.5S280.3 85.2 280.3 115.5H220.3C208.9 83.5 178.8 60.5 142.9 60.5 97.5 60.5 60.5 97.4 60.5 142.9 60.5 178.8 83.6 208.9 115.5 220.3V280.3C85.2 280.3 60.5 304.9 60.5 335.2S85.2 390.1 115.5 390.1V445.1C85.2 445.1 60.5 469.7 60.5 500S85.2 554.9 115.5 554.9V609.9C85.2 609.9 60.5 634.5 60.5 664.8ZM225.3 252.8C225.3 237.6 237.6 225.3 252.8 225.3H747.2C762.4 225.3 774.7 237.6 774.7 252.8V747.2C774.7 762.4 762.4 774.7 747.2 774.7H252.8C237.6 774.7 225.3 762.4 225.3 747.2V252.8Z",
+        "width": 1000
+      },
+      "search": [
+        "frame"
+      ]
+    },
+    {
+      "uid": "381da2c2f7fd51f8de877c044d7f439d",
+      "css": "picture",
+      "code": 59460,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7034e4d22866af82bef811f52fb1ba46",
+      "css": "code",
+      "code": 59459,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "b035c28eba2b35c6ffe92aee8b0df507",
+      "css": "attention",
+      "code": 59469,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "72b1277834cba5b7944b0a6cac7ddb0d",
+      "css": "rss",
+      "code": 59407,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "6975c4c656d41a0283d9c52516bf38ed",
+      "css": "delicious",
+      "code": 59468,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ef0e69c3275e8c845aca69a79900092d",
+      "css": "digg",
+      "code": 59467,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "8e04c98c8f5ca0a035776e3001ad2638",
+      "css": "facebook",
+      "code": 59403,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "b8d0c7d76e87b94882329a88e8e43d3d",
+      "css": "gplus",
+      "code": 59406,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4c1ef492f1d2c39a2250ae457cee2a6e",
+      "css": "instagram",
+      "code": 59464,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "1145676a91138011729fa2909997af66",
+      "css": "linkedin",
+      "code": 59466,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "a9862b9d5197886c1ad693ecd7120b31",
+      "css": "youtube",
+      "code": 59404,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7ad4d2306ebda8452e5e3eff3cd8241c",
+      "css": "thumbs-up",
+      "code": 59461,
+      "src": "entypo"
+    },
+    {
+      "uid": "429fba993b729174468a9493613ad1ba",
+      "css": "thumbs-down",
+      "code": 59462,
+      "src": "entypo"
+    },
+    {
+      "uid": "b08cfe8039de2ce815686aced2caef06",
+      "css": "download-1",
+      "code": 59456,
+      "src": "entypo"
+    },
+    {
+      "uid": "91426c82d94428a33353e495418435e3",
+      "css": "share",
+      "code": 59465,
+      "src": "entypo"
+    },
+    {
+      "uid": "689febe699d74bc8862965555503e445",
+      "css": "pinterest",
+      "code": 59463,
+      "src": "entypo"
+    },
+    {
+      "uid": "jh3jpcb1t1bcm80gidkadilh080aq79h",
+      "css": "menu",
+      "code": 59471,
+      "src": "typicons"
+    },
+    {
+      "uid": "59ba4f90d2ca2a843f4f930b03270362",
+      "css": "plus-circle",
+      "code": 59470,
+      "src": "iconic"
+    },
+    {
+      "uid": "7ssl5z5jrhu13tb13cd3gb4bdfkzbfzw",
+      "css": "print",
+      "code": 59457,
+      "src": "modernpics"
+    },
+    {
+      "uid": "uor1aru5x0tewrwsl36amx6hogjv61cs",
+      "css": "twitter",
+      "code": 59405,
+      "src": "modernpics"
+    },
+    {
+      "uid": "b69ac48f8ad98e786047ff3d33101045",
+      "css": "windy-rain-inv",
+      "code": 59410,
+      "src": "meteocons"
+    },
+    {
+      "uid": "87cf185e0420ff98e04406c0fbb873eb",
+      "css": "snow-inv",
+      "code": 59411,
+      "src": "meteocons"
+    },
+    {
+      "uid": "f1315f7ea135cbea7966cce0e7c10ce0",
+      "css": "snow-heavy-inv",
+      "code": 59412,
+      "src": "meteocons"
+    },
+    {
+      "uid": "ab5c31256cdd1f6b2d6de7202936f5a1",
+      "css": "hail-inv",
+      "code": 59413,
+      "src": "meteocons"
+    },
+    {
+      "uid": "8f1bbb4667a8372dc4bb7de767f22f11",
+      "css": "clouds-inv",
+      "code": 59414,
+      "src": "meteocons"
+    },
+    {
+      "uid": "b2b73369982f91cddf8ec5f2a692e5ea",
+      "css": "clouds-flash-inv",
+      "code": 59415,
+      "src": "meteocons"
+    },
+    {
+      "uid": "906a8ebb0faf8db0411028a0364bb16d",
+      "css": "temperature",
+      "code": 59416,
+      "src": "meteocons"
+    },
+    {
+      "uid": "a6a5b2ea227f86157ba54ae543785161",
+      "css": "compass",
+      "code": 59417,
+      "src": "meteocons"
+    },
+    {
+      "uid": "053a1eaf96184e74876f45bd0f4970eb",
+      "css": "na",
+      "code": 59418,
+      "src": "meteocons"
+    },
+    {
+      "uid": "d05dd160c24e53afc4addd30b5655b74",
+      "css": "clouds-flash-alt",
+      "code": 59419,
+      "src": "meteocons"
+    },
+    {
+      "uid": "c1306ee779029bed4f5a2b9b4f5c79e8",
+      "css": "sun-inv",
+      "code": 59420,
+      "src": "meteocons"
+    },
+    {
+      "uid": "2adfda136b09532bd8174b025b67fe87",
+      "css": "moon-inv",
+      "code": 59421,
+      "src": "meteocons"
+    },
+    {
+      "uid": "2c304ff49075ec9647f498504651abf5",
+      "css": "cloud-sun-inv",
+      "code": 59422,
+      "src": "meteocons"
+    },
+    {
+      "uid": "c823149b79158a2bd56d802a6a6f1d1c",
+      "css": "cloud-moon-inv",
+      "code": 59423,
+      "src": "meteocons"
+    },
+    {
+      "uid": "7162ef3c04c51e39b8670cfedb15bcc3",
+      "css": "cloud-inv",
+      "code": 59424,
+      "src": "meteocons"
+    },
+    {
+      "uid": "4bc859f73783486400fc769a90d0a8e0",
+      "css": "cloud-flash-inv",
+      "code": 59425,
+      "src": "meteocons"
+    },
+    {
+      "uid": "92234661a134ed625a779c534b242b3d",
+      "css": "drizzle-inv",
+      "code": 59426,
+      "src": "meteocons"
+    },
+    {
+      "uid": "8d8a2d9bcc41c7ac794e83ffbb919c3c",
+      "css": "rain-inv",
+      "code": 59427,
+      "src": "meteocons"
+    },
+    {
+      "uid": "be6c21cbc48e60a39e80f8b2c33e360e",
+      "css": "windy-inv",
+      "code": 59447,
+      "src": "meteocons"
+    },
+    {
+      "uid": "1c2a34e8bd2f8a53e3b059447a8e544f",
+      "css": "sunrise",
+      "code": 59446,
+      "src": "meteocons"
+    },
+    {
+      "uid": "95fb2e5fdd1ea7e4a420b6ed330e6b08",
+      "css": "sun",
+      "code": 59445,
+      "src": "meteocons"
+    },
+    {
+      "uid": "34e68aa8fbf61f02a748043ccf448a3b",
+      "css": "moon",
+      "code": 59444,
+      "src": "meteocons"
+    },
+    {
+      "uid": "48ab39ab0ba664052cfbf0e52563246a",
+      "css": "eclipse",
+      "code": 59443,
+      "src": "meteocons"
+    },
+    {
+      "uid": "a555120b3743d482efcc3058733d3fd9",
+      "css": "mist",
+      "code": 59442,
+      "src": "meteocons"
+    },
+    {
+      "uid": "2efb5347832a09ae69de043f897ec4b9",
+      "css": "wind",
+      "code": 59441,
+      "src": "meteocons"
+    },
+    {
+      "uid": "d0c325468a74095e565664bec2623aa3",
+      "css": "snowflake",
+      "code": 59440,
+      "src": "meteocons"
+    },
+    {
+      "uid": "9cd3e294ca3ad3dda66bc5a804021c46",
+      "css": "cloud-sun",
+      "code": 59439,
+      "src": "meteocons"
+    },
+    {
+      "uid": "2440f961b415837c6bf30424a6711708",
+      "css": "cloud-moon",
+      "code": 59438,
+      "src": "meteocons"
+    },
+    {
+      "uid": "957fd72e52a0e9eb585a0361114c4c83",
+      "css": "fog-sun",
+      "code": 59437,
+      "src": "meteocons"
+    },
+    {
+      "uid": "dbf0f9c3d15e5e8046bb5f5fb5898b49",
+      "css": "fog-moon",
+      "code": 59436,
+      "src": "meteocons"
+    },
+    {
+      "uid": "aba39b610b88a73d81f0fa683649b92d",
+      "css": "fog-cloud",
+      "code": 59435,
+      "src": "meteocons"
+    },
+    {
+      "uid": "2ca5a006e414e0827f7fc5b187689c04",
+      "css": "fog",
+      "code": 59434,
+      "src": "meteocons"
+    },
+    {
+      "uid": "17463471d0f132cee16835507ea51ecf",
+      "css": "cloud",
+      "code": 59433,
+      "src": "meteocons"
+    },
+    {
+      "uid": "cc1179bd34dcbe7bf80785075af60d37",
+      "css": "cloud-flash",
+      "code": 59432,
+      "src": "meteocons"
+    },
+    {
+      "uid": "9af2b75a89bd99b83457f041df26da8b",
+      "css": "cloud-flash-alt",
+      "code": 59431,
+      "src": "meteocons"
+    },
+    {
+      "uid": "f59875f40cbc5ad1b04775cd96feabf1",
+      "css": "drizzle",
+      "code": 59430,
+      "src": "meteocons"
+    },
+    {
+      "uid": "d577552bb94bdeb53e6517873481aeea",
+      "css": "rain",
+      "code": 59429,
+      "src": "meteocons"
+    },
+    {
+      "uid": "5fad7d41511701337ddd5ad9896edc4b",
+      "css": "windy",
+      "code": 59428,
+      "src": "meteocons"
+    },
+    {
+      "uid": "86351391d6cbc7a85730414294139661",
+      "css": "windy-rain",
+      "code": 59448,
+      "src": "meteocons"
+    },
+    {
+      "uid": "127ed05f3c024a9c73487f18cf3d530d",
+      "css": "snow",
+      "code": 59449,
+      "src": "meteocons"
+    },
+    {
+      "uid": "02bb2eaa1515b8fc954abbaf80212739",
+      "css": "snow-alt",
+      "code": 59450,
+      "src": "meteocons"
+    },
+    {
+      "uid": "0f6059e468716a93329821bcbf11220d",
+      "css": "snow-heavy",
+      "code": 59451,
+      "src": "meteocons"
+    },
+    {
+      "uid": "b500010a53f4807828ac252725dc6fd1",
+      "css": "hail",
+      "code": 59452,
+      "src": "meteocons"
+    },
+    {
+      "uid": "b215adc51ca2aa37e7bbe244d1fa52cc",
+      "css": "clouds",
+      "code": 59453,
+      "src": "meteocons"
+    },
+    {
+      "uid": "f4c428e42b86673278e98e6f2e0a8cd2",
+      "css": "clouds-flash",
+      "code": 59454,
+      "src": "meteocons"
+    },
+    {
+      "uid": "348b04ea17f646fbc6a46e20ebe4fe12",
+      "css": "download",
+      "code": 59455,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "d9be617b7f2fe7843118ca2d3a1b8cca",
+      "css": "down",
+      "code": 59394,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "b714be5a812a474811604f700dfc87ce",
+      "css": "left",
+      "code": 59395,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "37910a1398001a5ccb541cb2a253a2c7",
+      "css": "right",
+      "code": 59396,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "440e148d0e21100118eae7036bcd2067",
+      "css": "up",
+      "code": 59397,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "a58032f4aafd0eec54803075f5b320d4",
+      "css": "envelope",
+      "code": 59458,
+      "src": "zocial"
+    },
+    {
+      "uid": "909f99f11c6b6551bf757b6e809f98f3",
+      "css": "play",
+      "code": 59402,
+      "src": "zocial"
+    },
+    {
+      "uid": "616b755d0f4c7d2dc7a1dcc2e5427039",
+      "css": "down-bold",
+      "code": 59398,
+      "src": "elusive"
+    },
+    {
+      "uid": "c0a07aca383ff2a164a4d691fa46e35c",
+      "css": "left-bold",
+      "code": 59399,
+      "src": "elusive"
+    },
+    {
+      "uid": "dc4a03854ef986d64565143bea4241aa",
+      "css": "right-bold",
+      "code": 59400,
+      "src": "elusive"
+    },
+    {
+      "uid": "b91c0e6aaab5e3146732b69dd418e120",
+      "css": "up-bold",
+      "code": 59401,
+      "src": "elusive"
+    },
+    {
+      "uid": "221947bea81f49a11b863c686a7bd235",
+      "css": "search",
+      "code": 59393,
+      "src": "websymbols"
+    }
+  ]
+}

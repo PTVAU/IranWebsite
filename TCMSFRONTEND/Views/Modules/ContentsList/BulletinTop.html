@@ -1,0 +1,25 @@
+﻿<div id="bulletin" class="row hidden-xs hidden-sm">
+    <div class="col-xs-12">
+        <div class="panel media sidebar_margin-top">
+            <div class="panel-body">
+                {{#each Data}}
+                <div class="item">
+                    <div class="inner">
+                        <div class="titles">
+                            <span class="time">{{Introtext}}</span>
+                            <span class="title">boletÍn de noticias</span>
+                        </div>
+                        <!--<div class="img{{#if hasVideo}} video{{/if}}">-->
+                        <a href="{{url}}">
+                            <span class="img{{#if hasVideo}} video{{/if}}">
+                                <img src="{{image}}" alt="{{Title}}" />
+                            </span>
+                        </a>
+                        <!--</div>-->
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

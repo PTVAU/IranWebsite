@@ -1,0 +1,18 @@
+<script id="comment-search-results-template" type="text/x-handlebars-template">
+    {{#each []}}
+    <tr data-id="{{this.SiteCommentID}}">
+        <td class="item-id">{{this.SiteCommentID}}</td>
+        <td class="item-itemid"><a href="#dashboard/item/{{this.SiteItemID}}">{{this.SiteItemID}}</a></td>
+        <td class="item-name"><span class="x-editable" data-type="text" data-title="Edit Name" data-name="name">{{this.Name}}</span></td>
+        <td class="item-comment"><span class="x-editable" data-type="textarea" data-title="Edit Comment" data-name="comment">{{this.Comment}}</span></td>
+        <td class="item-ip">{{this.IP}}</td>
+        <td class="item-comment">{{this.ReplyID}}</td>
+        <td class="item-state" data-state="{{this.State}}">
+            {{#ifCond this.State 3}}<a href="#" data-do="change-state" data-change-state-to="0" class="btn default green-stripe btn-xs"><i class="fa fa-times"></i> Unpublish</a>{{/ifCond}}
+            {{#ifCond this.State 4}}<a href="#" data-do="change-state" data-change-state-to="3" class="btn default red-stripe btn-xs"><i class="fa fa-check"></i> Publish</a>{{/ifCond}}
+            {{#ifCond this.State 0}}<a href="#" data-do="change-state" data-change-state-to="3" class="btn default red-stripe btn-xs"><i class="fa fa-check"></i> Publish</a>{{/ifCond}}
+        </td>
+        <td class="item-trash" data-state="{{this.State}}"><a href="#" data-do="change-state" data-change-state-to="4" class="btn default red-stripe btn-xs"><i class="fa fa-trash-o"></i> Trash</a></td>
+    </tr>
+    {{/each}}
+</script>

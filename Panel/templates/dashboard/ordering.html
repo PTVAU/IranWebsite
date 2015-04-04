@@ -1,0 +1,26 @@
+<script id="dashboard-ordering-template" type="text/x-handlebars-template">
+    <div class="pull-right in-breadcrumbs">
+        <a href="#" data-task="submit" data-forms="#sort-headlines" data-method="put" data-action="headlines" class="btn green pull-right"><i class="fa fa-check"></i> Save Ordering</a>
+        <select class="form-control pull-right" id="change-ordering-category"></select>
+    </div>
+    {{#ifHasId}}
+    <div class="row no-min-height">
+        <div class="col-xs-12">
+            <div id="messages" style="display: none;">
+                <div class="note note-success"><h4 class="block">Success!</h4><p>Ordering Saved</p></div>
+            </div>
+        </div>
+    </div>
+    <div id="sort-headlines" class="col-xs-12 sortable">
+        {{#each []}}
+        <div class="row item" data-id="{{this.Id}}" data-section-order="{{this.SectionOrder}}">
+            <div class="col-xs-1"><span class="item-id">{{this.Id}}</span></div>
+            <div class="col-xs-8"><span class="item-title"><a href="#dashboard/item/{{this.Id}}" class="show-item">{{this.Title}}</a></span></div>
+            <div class="col-xs-3"><span class="item-crated">{{{this.Published}}}</span></div>
+        </div>
+        {{else}}
+        No Content
+        {{/each}}
+    </div>
+    {{/ifHasId}}
+</script>

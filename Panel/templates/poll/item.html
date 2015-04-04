@@ -1,0 +1,50 @@
+<script id="poll-item-template" type="text/x-handlebars-template">
+    <div class="row">
+        {{#if Id}}
+        <div class="col-md-7">
+            <div id="item">
+                <div class="pull-right"><a href="#poll/edit/{{Id}}" class="btn green">Edit</a></div>
+                <small class="item-id sr-only">&#35;{{Id}}</small>
+                <h3>{{Title}}</h3>
+                <p>{{Description}}</p>
+                {{#each Polls_Options}}
+                <dl class="dl-horizontal poll-dl">
+                    <dt class="poll-item" title="{{Title}} ({{SelectedCount}})">{{Title}}&nbsp;<small>({{SelectedCount}})</small></dt>
+                    <dd>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-info" style="width: {{Percent}}%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="{{Percent}}" role="progressbar">
+                                <span class="sr-only">{{Percent}}%</span>{{Percent}}%
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div id="params">
+                <dl class="dl-horizontal">
+                    <dt>Creat Date</dt>
+                    <dd>{{Created}}</dd>
+                    <dt>Expire Date</dt>
+                    <dd>{{Expired}}</dd>
+                    <dt>Published</dt>
+                    <dd>{{#Num2Label IsPublished}}{{/Num2Label}}</dd>
+                    <dt>Publish Date</dt>
+                    <dd>{{Published}}</dd>
+                    <dt>Show Results</dt>
+                    <dd>{{#Bool2Label ShowResult}}{{/Bool2Label}}</dd>
+                    <dt>Show Total</dt>
+                    <dd>{{#Bool2Label ShowTotal}}{{/Bool2Label}}</dd>
+                    <dt>Show Values</dt>
+                    <dd>{{#Bool2Label ShowValues}}{{/Bool2Label}}</dd>
+                    <dt>Allow New</dt>
+                    <dd>{{#Bool2Label AllowNew}}{{/Bool2Label}}</dd>
+                </dl>
+            </div>
+        </div>
+        {{else}}
+        No Content
+        {{/if}}
+    </div>
+</script>

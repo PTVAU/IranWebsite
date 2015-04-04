@@ -1,0 +1,90 @@
+<script id="videos-item-template" type="text/x-handlebars-template">
+    {{#if Id}}
+    <div class="pull-right in-breadcrumbs has-space-between">
+        <div class="btn-group pull-right">
+            <a href="#videos/edit/{{Id}}" class="btn yellow-gold"><i class="fa fa-pencil"></i> Edit item</a>
+            <a href="#videos/addEpisode/{{Id}}" class="btn green"><i class="fa fa-plus"></i> Add Episode</a>
+        </div>
+    </div>
+    <div id="item">
+        <h3>{{Title}}</h3>
+        <div class="row">
+            <div class="col-xs-12 col-md-5">
+                <dl class="dl-horizontal">
+                    <dt>Creation Date</dt>
+                    <dd>{{{Created}}}</dd>
+                    <dt>Publish Date</dt>
+                    <dd>{{{Published}}}</dd>
+                    <dt>Produced Date</dt>
+                    <dd>{{{Produced}}}</dd>
+                    <dt>Episodes</dt>
+                    <dd>{{{EpisodesCount}}}</dd>
+                    <dt>Director</dt>
+                    <dd>{{Director}}</dd>
+                    <dt>Genre</dt>
+                    <dd>{{Genre}}</dd>
+                    <dt>Kind</dt>
+                    <dd>{{Kind}}</dd>
+                </dl>
+                <div class="item-text">{{{FullText}}}</div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-xs-12 col-md-7">
+                <div class="row">
+                    <div class="col-xs-4 img">
+                        <img src="{{Image}}" alt="{{Title}}" />
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row margin-top">
+                    <div class="col-xs-12 img">
+                        <div class="item-video">
+                            <video src="{{{Video}}}" width="70%" controls />
+                        </div>
+                    </img>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="episodes" class="margin-top">
+        <h3>Episodes</h3>
+        <table class="table table-condensed table-border table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="">#</th>
+                    <th class="">Episode</th>
+                    <th class="col-xs-2">Image</th>
+                    <th class="col-xs-6">Title</th>
+                    <th class="col-xs-2">Publish Date</th>
+                    <th class="col-xs-1">Hits</th>
+                    <th class="col-xs-1">State</th>
+                    <th class="col-xs-1">Edit</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {{#each EpisodesList}}
+                <tr>
+                    <td>{{Id}}</td>
+                    <td>{{Number}}</td>
+                    <td><div class="img"><img src="{{Image}}" alt="{{Title}}" /></div></td>
+                    <td><a href="#videos/episode/{{this.Id}}">{{Title}}</a></td>
+                    <td>{{Published}}</td>
+                    <td>{{ViewCount}}</td>
+                    <td class="item-state">
+                        {{#ifCond this.IsPublished 1}}<span class="btn default green-stripe btn-xs"><i class="fa fa-check"></i> Published</span>{{/ifCond}}
+                        {{#ifCond this.IsPublished 0}}<span class="btn default red-stripe btn-xs"><i class="fa fa-times"></i> Unpublished</span>{{/ifCond}}
+                    </td>
+                    <td><a href="#videos/editEpisode/{{this.Id}}" class="btn default blue-stripe btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a></td>
+                    <td><a href="#message-modal" data-toggle="modal" data-title="{{Title}}" data-episode-number="{{Number}}" class="btn default green-stripe btn-xs send-episode"><i class="fa fa-envelope"></i>&nbsp;Send Message</a></td>
+                </tr>
+            {{else}}
+                <tr><td colspan="100%">No episodes found!</td></tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{else}}
+    No Content
+    {{/if}}
+</script>

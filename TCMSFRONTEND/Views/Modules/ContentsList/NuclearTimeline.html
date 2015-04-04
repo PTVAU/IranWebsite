@@ -1,0 +1,58 @@
+﻿<div class="panel timeline">
+    {{#if Config.Site_Modules_Title}}
+        <div class="panel-title"><span>{{Config.Site_Modules_Title}}</span></div>
+    {{/if}}
+    <div class="panel-body">
+        <div class="inner">
+            <div class="form-group">
+                <select class="form-control" id="drp-timeline">
+                    {{#each Data}}
+                    <option value="{{Id}}">{{Title}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div id="timeline-content" class="timeline-container">
+                <div class="nano has-scrollbar">
+                    <div class="overthrow nano-content">
+                        <div class="content" id="timeline-inner-content">
+                            {{#each Data}}
+                            <div class="item-{{Id}}"{{#if first}}{{#else}} style="display: none;"{{/if}}>{{Fulltext}}</div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel subscription">
+    <div class="panel-title"><span>PETICIÓN</span></div>
+    <div class="panel-body">
+        <form role="form" action="#" method="post">
+            <p>Si usted cree que el mundo seria mejor sin armas nucleares, por favor, denos unos pocos segundos de su tiempo para firmar la petición del Mundo sin Armas Nucleares.</p>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="NOMBRE" name="name" />
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="CORREO ELECTRÓNICO" name="email" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-block btn-warning" type="submit">FIRMAR</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="panel">
+    <div class="panel-body">
+        <div>
+            <a href="#" class="enlarge-map">
+                <img src="/Views/Assets/img/map_small.jpg" data-src="/Views/Assets/img/map.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+<div class="backdrop"></div>
+<div style="" class="map">
+    <a class="close close-map" href="#">×</a>
+    <img alt="" src="/Views/Assets/img/map.jpg">
+</div>

@@ -1,0 +1,21 @@
+<div class="panel itemlist bullets">
+    {{#if Config.Site_Modules_Title}}<div class="panel-title">
+    <a href="{{Config.Site_Modules_Url}}">
+        <span>{{Config.Site_Modules_Title}}</span>
+    </a>
+    </div>{{/if}}
+    <div class="panel-body">
+        <ul class="list-unstyled">
+            {{#each Data}}
+            <li class="{{#if first}} featured item{{#if hasVideo}} video medium{{/if}}{{/if}}">
+                <div class="inner">
+                    <a href="{{url}}">
+                        {{#if image}}<span class="img {{#if hasVideo}} video{{/if}}"><img src="{{image}}"  alt="{{Title}}" /></span>{{/if}}
+                        <span class="title">{{ShortTitle}}</span>
+                    </a>
+                </div>
+            </li>
+            {{/each}}
+        </ul>      
+    </div>
+</div>

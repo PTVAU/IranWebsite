@@ -1,0 +1,48 @@
+<script id="videos-episode-template" type="text/x-handlebars-template">
+    {{#if Id}}
+    <div class="pull-right in-breadcrumbs has-space-between">
+        <div class="btn-group">
+            <a href="#videos/editEpisode/{{Id}}" class="btn yellow-gold"><i class="fa fa-pencil"></i> Edit episode</a>
+        </div>
+    </div>
+    <div id="item">
+        <h3>{{Title}}</h3>
+        <div class="row">
+            <div class="col-xs-12 col-md-5">
+                <dl class="dl-horizontal">
+                    <dt>Eipsode #</dt>
+                    <dd>{{Number}}</dd>
+                    <dt>Creation Date</dt>
+                    <dd>{{{Created}}}</dd>
+                    <dt>Publish Date</dt>
+                    <dd>{{{Published}}}</dd>
+                    <dt>Produced Date</dt>
+                    <dd>{{{Produced}}}</dd>
+                    <dt>Summary</dt>
+                    <dd>{{{Introtext}}}</dd>
+                </dl>
+                <div class="item-text">{{{Fulltext}}}</div>
+                <div class="margin-top"></div>
+                <div class="row">
+                    <div class="col-xs-6 img">
+                        <img src="{{Image}}" alt="{{Title}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-7">
+                
+                <div class="clearfix"></div>
+                <div class="row margin-top">
+                    <div class="col-xs-12 img">
+                        <div class="item-video">
+                            <video src="{{{Video}}}" width="70%" controls />
+                        </div>
+                    </img>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    No Content
+    {{/if}}
+</script>

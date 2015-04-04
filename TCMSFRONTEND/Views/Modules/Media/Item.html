@@ -1,0 +1,151 @@
+﻿<div id="item" class="item">
+    <div class="page-header">
+        <h2 class="item-title">{{Data.Title}}</h2>
+    </div>
+    <div class="item-media">
+        <div class="row" id="slideshow">
+            <div class="col-xs-12">
+                <div class="panel slideshow">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                            <li class="item player">
+                                <div class="inner">
+                                    <div class="img">
+                                        <div id="mediaplayer">
+                                            <img id="imgPlayback" src="{{Data.Image}}" alt="{{Data.Title}}" />
+                                        </div>
+                                        <input type="hidden" id="inpPlayback" value="{{Data.Video}}">
+                                        <script src="/Views/Assets/player/player.js"></script>
+                                        <script src="/Views/Assets/js/playback.js"></script>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="item-text">
+                    <p class="introtext">{{Data.IntroText}}</p>
+                    {{Data.FullText}}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 item-sidebar">
+                <div class="item-date" title="{{Data.ViewCount}}">{{Data.Published}}</div>
+                <div class="item-tools">
+                    <div class="row font-resizer">
+                        <div class="hidden-xs hidden-sm col-md-12">
+                            <div class="items-filter">
+                                <ul class="list-unstyled list-inline">
+                                    <li><a href="#" class="smaller">a</a></li>
+                                    <li class="active"><a href="#" class="reset">•</a></li>
+                                    <li><a href="#" class="larger">A</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{#if Data.Youtube}}
+                    <div class="row download-media">
+                        <div class="col-xs-12">
+                            <a href="{{Data.Youtube}}" class="btn btn-default" target="_blank">Ver en <i class="icon-youtube"></i></a>
+                        </div>
+                    </div>
+                    {{/if}}
+                    <div class="row download-media">
+                        <div class="col-xs-12">
+                            <a href="http://85.17.24.134:82/hispantv/{{Data.Video}}" class="btn btn-default" target="_blank">Descargar<i class="icon-download"></i></a>
+                        </div>
+                    </div>
+                    <div class="row print">
+                        <div class="col-xs-12">
+                            <ul class="list-inline list-unstyled">
+                                <li><a href="#"><i class="icon-print"></i> Print</a></li>
+                                <li><a href="#"><i class="icon-envelope"></i> Email</a></li>
+                                <li><a href="#"><i class="icon-code"></i> Embed</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row shares">
+                        <div class="col-xs-12">
+                            <div class="panel share">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled list-inline">
+                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://hispantv.com/showprogram/{{Data.Title}}/{{Data.Id}}" target="_blank"><i class="icon-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/home?status=http://hispantv.com/showprogram/{{Data.Title}}/{{Data.Id}}" target="_blank"><i class="icon-twitter"></i></a></li>
+                                        <li><a href="https://plus.google.com/share?url=http://hispantv.com/showprogram/{{Data.Title}}/{{Data.Id}}" target="_blank"><i class="icon-gplus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                {{#if Data.EpisodesList}}
+                <div class="item-related">
+                    <div class="panel title-border tiles">
+                        <div class="panel-title">
+                            <span>Episodios</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <ul class="list-unstyled">
+                                    {{#each Data.EpisodesList}}
+                                    <li class="tile col-xs-12 col-sm-4">
+                                        <a href="{{Url}}">
+                                            <div class="inner">
+                                                <div class="img video">
+                                                    <img src="{{Image}}" alt="{{Title}}" />
+                                                </div>
+                                                <div class="desc">
+                                                    <h4>{{Title}}</h4>
+                                                    <!--<div class="episode">Episode 0</div>-->
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="item-comments">
+                    <div class="panel title-border comments">
+                        <div class="panel-title">
+                            <span>Comentarios</span>
+                        </div>
+                        <div class="panel-body">
+                            <div role="tabpanel">
+                                <div id="hypercomments_widget"></div>
+                                <script type="text/javascript">
+                                    _hcwp = window._hcwp || [];
+                                    _hcwp.push({ widget: "Stream", widget_id: 26167,xid: "prog" + {{Data.Id}} ,hc_disable:1,quote_disable:1,social:"google, facebook, twitter, openid",comments_level:2});
+                                    (function () {
+                                        if ("HC_LOAD_INIT" in window) return;
+                                        HC_LOAD_INIT = true;
+                                        var lang = "es";
+                                        var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+                                        hcc.src = ("https:" == document.location.protocol ? "https" : "http") + "://w.hypercomments.com/widget/hc/26167/" + lang + "/widget.js";
+                                        var s = document.getElementsByTagName("script")[0];
+                                        s.parentNode.insertBefore(hcc, s.nextSibling);
+                                    })();
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<img src="/callback.asmx/PrgramsViewCount?id={{Data.Id}}" style="width:1px;height:1px;visibility:hidden" />

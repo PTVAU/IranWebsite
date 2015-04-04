@@ -1,0 +1,29 @@
+<script id="dashboard-index-template" type="text/x-handlebars-template">
+    <a data-toggle="modal" href="#tag-modal" class="btn green pull-right in-breadcrumbs"><i class="fa fa-plus"></i> Add Tag</a>
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-hover" id="items">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="col-xs-8">Title</th>
+                    <th class="col-xs-1">State</th>
+                    <th class="col-xs-2">Sections</th>
+                    <th class="col-xs-1">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each []}}
+                <tr data-id="{{this.Id}}" class="{{this.Priority}}">
+                    <td class="item-id">{{this.Id}}</td>
+                    <td class="item-title"><a href="#dashboard/item/{{this.Id}}" class="show-item">{{this.Title}}</a></td>
+                    <td class="item-state">{{this.StateHTML}}</td>
+                    <td class="item-sections">{{{this.SectionsHtml}}}</td>
+                    <td class="item-crated">{{{this.CreateDate}}}</td>
+                </tr>
+                {{else}}
+                No Content
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</script>

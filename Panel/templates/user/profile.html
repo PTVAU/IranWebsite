@@ -1,0 +1,29 @@
+<script id="user-profile-template" type="text/x-handlebars-template">
+    <div class="row no-min-height">
+        <div class="col-xs-12">
+            <div id="messages" style="display: none;">
+                <div class="note note-danger"><h4 class="block">Error!</h4><p id="error"></p></div>
+            </div>
+        </div>
+    </div>
+    <div id="profile">
+        <h3>{{Name}}</h3>
+        <h4>{{UserName}} <small><i>[Last Login: {{{LastLogin}}}]</i></small></h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Change Pass</dt>
+            <dd>
+                <form role="form" id="change-pass">
+                    <input type="hidden" name="id" value="{{Id}}" />
+                    <div class="form-group  col-xs-3">
+                        <input type="password" name="newPass" class="form-control" placeholder="New Password" />
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group  col-xs-3">
+                        <a href="#" data-task="submit" data-forms="#change-pass" data-method="put" data-action="change-pass" class="btn green"><i class="fa fa-save"></i> Change</a>
+                    </div>
+                </form>
+            </dd>
+        </dl>
+    </div>
+</script>

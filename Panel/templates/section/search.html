@@ -1,0 +1,31 @@
+<script id="section-search-template" type="text/x-handlebars-template">
+    <div id="section-items" class="table-responsive">
+        <form class="form-horizontal" role="form">
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-3" for="item-search">Search Items</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="item-search" />
+                    <span class="fa fa-spinner fa-spin form-control-feedback hide"></span>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-hover table-striped table-bordered table-hover" id="serachitems">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th class="col-xs-8">Title</th>
+                        <th class="col-xs-1">State</th>
+                        <th class="col-xs-2">Sections</th>
+                        <th class="col-xs-1">Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="100%">No items...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>

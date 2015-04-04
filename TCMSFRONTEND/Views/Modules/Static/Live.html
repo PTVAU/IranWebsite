@@ -1,0 +1,83 @@
+﻿<div class="page-header">
+    <h2>{{Config.Site_Modules_Title}}</h2>
+</div>
+<div id="player" class="row">
+    <!--<div id="live-page" class="col-xs-12" data-hls-url="http://ptv-hls.streaming.overon.es/channel04/livehigh.m3u8">
+        <div id="mediaplayer">
+            <img id="imgPlayback" src="/Views/Assets/img/placeholder1.jpg" alt="HispanTV" />
+        </div>
+        <input type="hidden" id="inpPlayback" value="stream3" data-placeholder="/Views/Assets/img/placeholder1.jpg">
+    </div>-->
+    <script id="overon_main_script" type="text/javascript" src="http://overonocc.cdn.customers.overon.es/hispantvpresstv/environment.js"></script>
+    <div id="live-page" class="col-xs-12">
+        <div id="video_player"></div>
+    </div>
+    <script>
+    jwplayer.key = '8FoI1Fp+Lp+bpR8zCx7OxVKedIqtgmKW5fLQS1b8X6s=';
+    $(document).ready(function () {
+        OVERON_Player.init({
+            code: 'L1Wg51U)',
+            width: '100%',
+            height: 496,
+            container: 'video_player'
+        });
+    });
+    </script>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-9">
+        <div class="panel live-links">
+            <div class="panel-body">
+                <div class="items-filter">
+                    <ul class="list-inline list-unstyled">
+                        <!--<li class="active"><a href="#" data-type="flash">Flash Stream</a></li>
+                        <li><a href="#" data-type="html5">Mobile Stream</a></li>-->
+                        <li><a href="https://www.youtube.com/watch?v=dpwV6NvIarg" targer="_blank">Youtube Live Stream</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+        <div class="panel share">
+            <div class="panel-body pull-right">
+                <ul class="list-unstyled list-inline">
+                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li><a href="#"><i class="icon-gplus"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div class="item-comments">
+            <div class="panel title-border comments">
+                <div class="panel-title">
+                    <span>Comentarios</span>
+                </div>
+                <div class="panel-body">
+                    <div role="tabpanel">
+                        <div id="hypercomments_widget"></div>
+                        <script type="text/javascript">
+                            _hcwp = window._hcwp || [];
+                            _hcwp.push({ widget: "Stream", widget_id: 26167, xid: "staticlive", hc_disable: 1, quote_disable: 1, social: "google, facebook, twitter, openid", comments_level: 2 });
+                            (function () {
+                                if ("HC_LOAD_INIT" in window) return;
+                                HC_LOAD_INIT = true;
+                                var lang = "es";
+                                var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+                                hcc.src = ("https:" == document.location.protocol ? "https" : "http") + "://w.hypercomments.com/widget/hc/26167/" + lang + "/widget.js";
+                                var s = document.getElementsByTagName("script")[0];
+                                s.parentNode.insertBefore(hcc, s.nextSibling);
+                            })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/Views/Assets/player/player.js"></script>

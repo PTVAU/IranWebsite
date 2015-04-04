@@ -1,0 +1,21 @@
+<div class="panel itemlist slider">
+    {{#if Config.Site_Modules_Title}}<a href="{{Config.Site_Modules_Url}}"><div class="panel-title"><span>{{Config.Site_Modules_Title}}</span></div></a>{{/if}}
+    <div class="panel-body">
+        <div class="carousel-control">
+            <a href="#" class="prev"><i class="icon-left"></i></a>
+            <a href="#" class="next"><i class="icon-right"></i></a>
+        </div>
+        <ul class="list-unstyled">
+            {{#each Data}}
+            <li class="item">
+                <div class="inner">
+                    <a href="{{url}}">
+                        {{#if image}}<span class="img"><img src="{{image}}" alt="{{Title}}" /></span>{{/if}}
+                        <span class="title">{{ShortTitle}}</span>
+                    </a>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

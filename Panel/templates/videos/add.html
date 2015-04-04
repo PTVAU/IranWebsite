@@ -1,0 +1,324 @@
+<script id="videos-add-template" type="text/x-handlebars-template">
+    <div class="row no-min-height">
+        <div class="col-xs-12">
+            <div id="messages" style="display: none;"></div>
+        </div>
+    </div>
+    <div id="video-edit" class="row">
+        <div class="col-md-9">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">Add Program</div>
+                </div>
+                <div class="portlet-body form">
+                    <form id="video-form" class="form-horizontal" role="form" action="#">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Title </label>
+                                <div class="col-md-10">
+                                    <input type="text" name="Title" class="form-control" placeholder="Enter title" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Summary</label>
+                                <div class="col-md-10">
+                                    <textarea name="IntroText" class="form-control" placeholder="Enter Summary" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Description</label>
+                                <div class="col-md-10">
+                                    <textarea name="FullText" class="form-control has-editor" placeholder="Enter description" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Production Date</label>
+                                <div class="col-md-4">
+                                    <div id="datetimepicker" class="input-group" style="padding: 0;">
+                                        <input type="text" name="Produced" value="" data-picker="datepicker" class="form-control" required />
+                                        <span class="input-group-addon"><i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                                <label class="col-md-2 control-label">Director</label>
+                                <div class="col-md-4">
+                                    <input type="text" name="Director" value="" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions fluid">
+                            <div class="col-md-12">
+                                <a href="#submit" data-task="submit" data-forms="#video-form,#video-params,#item-video,#item-image" data-method="post" data-action="program" data-next="videos/index" class="btn green pull-right"><i class="fa fa-check"></i> Save</a>
+                                <a href="#history/back" class="btn default pull-left">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="portlet box blue-hoki">
+                <div class="portlet-title">
+                    <div class="caption">Parameters</div>
+                </div>
+                <div class="portlet-body form">
+                    <form id="video-params" class="form-horizontal" role="form" action="#">
+                        <div class="form-body">
+							<label class="control-label">Youtube Link</label>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="url" name="Youtube" class="form-control" placeholder="Enter Youtube URL">
+                                </div>
+                            </div>
+                            <label class="control-label">
+                                <span>Episodes</span>
+                            </label>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" name="EpisodesCount" value="0" class="form-control" />
+                                </div>
+                            </div>
+                            <label class="control-label">
+                                <span>Priority</span>
+                            </label>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" name="Priority" value="0" class="form-control" />
+                                </div>
+                            </div>
+                            <label class="control-label">
+                                <span>State</span>
+                            </label>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <select class="form-control" name="IsPublished">
+                                        <option value="0">Unpublished</option>
+                                        <option value="1">Published</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label class="control-label">
+                                <span>Status</span>
+                            </label>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <select class="form-control" name="Status">
+                                        <option value="0">Upcoming</option>
+                                        <option value="1">Current</option>
+                                        <option value="2">Archived</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label class="control-label">
+                                <span>Kind</span>
+                            </label>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <select class="form-control" name="Kind">
+                                        <option value="1">Peliculas</option>
+                                        <option value="2">Series</option>
+                                        <option value="3">Documentales</option>
+                                        <!--<option value="4">Reportajes</option>-->
+                                        <option value="5">Programas</option>
+                                        <!--<option value="6">Entrevista</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                            <label class="control-label">
+                                <span>Genre</span>
+                            </label>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <select class="form-control" name="Genre">
+                                        <option value="1">Action</option>
+                                        <option value="2">Drama</option>
+                                        <option value="3">Romance</option>
+                                        <option value="4">Thriller</option>
+                                        <option value="5">Mystery</option>
+                                        <option value="6">Sci-Fi</option>
+                                        <option value="7">Animation</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="portlet box purple">
+                <div class="portlet-title">
+                    <div class="caption">Image</div>
+                </div>
+                <div class="portlet-body form">
+                    <form id="item-image" class="form-horizontal" role="form" action="#">
+                        <div class="form-body">
+                            <div class="list">
+                                <ul class="list-unstyled"></ul>
+                            </div>
+                            <div class="items"></div>
+                            <div class="clearfix"></div>
+                            <a class="btn purple" data-toggle="modal" href="#image-modal"><i class="fa fa-plus"></i>&nbsp;Add Image</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="portlet box purple">
+                <div class="portlet-title">
+                    <div class="caption">Video</div>
+                </div>
+                <div class="portlet-body form">
+                    <form id="item-video" class="form-horizontal" role="form" action="#">
+                        <div class="form-body">
+                            <div class="list">
+                                <ul class="list-unstyled"></ul>
+                            </div>
+                            <div class="items"></div>
+                            <div class="clearfix"></div>
+                            <a class="btn purple" data-toggle="modal" href="#video-modal"><i class="fa fa-plus"></i>&nbsp;Add Video</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal -->
+    <div class="modal bs-modal-lg fade" id="image-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="tabbable tabbable-custom tabbable-full-width">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#search-images" role="tab" data-toggle="tab">Images</a></li>
+                            <li><a href="#upload-media" role="tab" data-toggle="tab">Upload</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="search-images">
+                                <form id="images-form" class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search Images..." name="query" style="" />
+                                        <a href="#" data-task="submit" data-forms="#images-form" data-identifier="do-search" data-method="get" data-action="images" data-results="#images-results" class="btn btn-default">Search</a>
+                                    </div>
+                                </form>
+                                <div id="images-results"></div>
+                            </div>
+                            <div class="tab-pane" id="upload-media">
+                                <div id="media-temp-form" class="row" style="display: none;">
+                                    <div id="media-preview" class="col-xs-8">
+                                        <div class="inner"></div>
+                                    </div>
+                                    <div id="media-fields" class="col-xs-4">
+                                        <form role="form" id="media-fields-form">
+                                            <div class="form-group">
+                                                <div class="input-icon">
+                                                    <i class="fa fa-file-text"></i>
+                                                    <input type="text" name="Title" id="media-title" class="form-control" placeholder="Title">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-icon">
+                                                    <i class="fa fa-tags"></i>
+                                                    <input type="text" name="tags" id="media-tag-suggest" class="form-control" placeholder="Tags">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="Description" rows="3" placeholder="Description (required)"></textarea>
+                                            </div>
+                                            <input type="hidden" name="X" value="" />
+                                            <input type="hidden" name="Y" value="" />
+                                            <input type="hidden" name="WidthCrop" value="" />
+                                            <input type="hidden" name="HeightCrop" value="" />
+                                            <input type="hidden" name="Type" value="image" />
+                                            <input type="hidden" name="FullFileName" value="" />
+                                            <div class="form-group">
+                                                <a class="btn purple" data-task="submit" data-action="save-media" data-forms="#media-temp-form" data-method="post" href="#"><i class="fa fa-save"></i> Save</a>
+                                                <a class="btn purple-seance" data-task="submit" data-action="save-add-media" data-forms="#media-temp-form" data-method="post" href="#"><i class="fa fa-plus"></i> Save and add</a>
+												<a class="btn grey margin-top pull-right" data-task="cancel-upload" data-type="image" style="margin-top: 30px;">Cancel</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="file-upload"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn default pull-left" data-dismiss="modal">Close</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- /.modal -->
+    <div class="modal bs-modal-lg fade" id="video-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="tabbable tabbable-custom tabbable-full-width">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#search-videos" role="tab" data-toggle="tab">Videos</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="search-videos">
+                                <form id="videos-form" class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search Videos..." name="query" style="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-daterange input-group">
+                                            <input type="text" class="form-control" name="start" value="{{#date2 0}}{{/date2}}" />
+                                            <span class="input-group-addon">to</span>
+                                            <input type="text" class="form-control" name="end" value="{{#date2 0}}{{/date2}}" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="#" data-task="submit" data-forms="#videos-form" data-identifier="do-search" data-method="get" data-action="videos" data-results="#video-results" class="btn btn-default">Search</a>
+                                    </div>
+                                </form>
+                                <div id="video-results"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn default pull-left" data-dismiss="modal">Close</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</script>
+<script type="text/template" id="qq-template">
+    <div class="qq-uploader-selector qq-uploader">
+        <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+            <span>Drop files here to upload</span>
+        </div>
+        <div class="qq-upload-button-selector qq-upload-button">
+            <div>Upload a file</div>
+        </div>
+        <span class="qq-drop-processing-selector qq-drop-processing">
+            <span>Processing dropped files...</span>
+            <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+        </span>
+        <ul class="qq-upload-list-selector qq-upload-list">
+            <li>
+                <div class="qq-progress-bar-container-selector">
+                    <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                </div>
+                <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
+                <span class="qq-upload-file-selector qq-upload-file"></span>
+                <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                <span class="qq-upload-size-selector qq-upload-size"></span>
+                <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+                <a class="qq-upload-retry-selector qq-upload-retry" href="#">Retry</a>
+                <a class="qq-upload-delete-selector qq-upload-delete" href="#">Delete</a>
+                <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+            </li>
+        </ul>
+    </div>
+</script>

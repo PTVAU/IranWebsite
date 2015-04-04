@@ -1,0 +1,256 @@
+<div id="item" class="item">
+    <div class="page-header">
+        <h3>
+            {{#if Data.categoryTitleParent}}
+            <a href="{{Data.categoryUrlParent}}">{{Data.categoryTitleParent}}</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            {{/if}}
+            <a href="{{Data.categoryUrl}}">{{Data.categoryTitle}}</a>
+        </h3>
+        <h2 class="item-title">{{Data.Title}}</h2>
+    </div>
+    <div class="item-media">
+        <div class="row" id="slideshow">
+            <div class="col-xs-12">
+                <div class="panel slideshow">
+                    <div class="panel-body">
+                        {{#if Data.hasVideo}}
+                        <ul class="list-unstyled">
+                            {{#each Data.Videos}}
+                            <li class="item player">
+                                <div class="inner">
+                                    <div class="img">
+                                        <div id="mediaplayer">
+                                            <img id="imgPlayback" src="{{Data.image}}" alt="{{Data.Title}}" />
+                                        </div>
+                                        <input type="hidden" id="inpPlayback" value="{{videoPath}}">
+                                    </div>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        {{#else}}
+                        <div class="carousel-control">
+                            <a class="prev" href="#"><i class="icon-left"></i></a>
+                            <a class="next" href="#"><i class="icon-right"></i></a>
+                        </div>
+                        <ul class="list-unstyled">
+                            {{#each Data.Images}}
+                            <li class="item">
+                                <div class="inner">
+                                    <div class="img">
+                                        <img alt="{{description}}" src="{{imagePath}}">
+                                    </div>
+                                    <div class="title">
+                                        <h2>{{description}}</h2>
+                                    </div>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="item-text">
+                    <p class="introtext">{{Data.Introtext}}</p>
+                    {{Data.Fulltext}}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 item-sidebar">
+                <!--
+                <div class="item-author">By <a href="#">Harry Potter</a></div>
+                -->
+                <div class="item-date" title="{{Data.Viewcount}}">{{Data.Published}}</div>
+                <div class="item-tools">
+                    <div class="row font-resizer">
+                        <div class="hidden-xs hidden-sm col-md-12">
+                            <div class="items-filter">
+                                <ul class="list-unstyled list-inline">
+                                    <li><a href="#" class="smaller">a</a></li>
+                                    <li class="active"><a href="#" class="reset">•</a></li>
+                                    <li><a href="#" class="larger">A</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="row download-media">
+                        <div class="hidden-xs hidden-sm col-md-12">
+                            <a href="#" class="btn btn-default">Download</a>
+                        </div>
+                    </div>
+                    -->
+                    {{#if Data.Youtube}}
+                    <div class="row download-media">
+                        <div class="col-xs-12">
+                            <a href="{{Data.Youtube}}" class="btn btn-default" target="_blank">Ver en <i class="icon-youtube"></i></a>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{#if Data.hasVideo}}
+                        {{#each Data.Videos}}
+                            <div class="row download-media">
+                                <div class="col-xs-12">
+                                    <a href="http://85.17.24.134:82/hispantv/{{videoPath}}" class="btn btn-default" target="_blank">Descargar<i class="icon-download"></i></a>
+                                </div>
+                            </div>
+                        {{/each}}
+                    {{/if}}
+                    <div class="row print">
+                        <div class="col-xs-12">
+                            <ul class="list-inline list-unstyled">
+                                <li><a href="#"><i class="icon-print"></i> Print</a></li>
+                                <li><a href="#"><i class="icon-envelope"></i> Email</a></li>
+                                <!--<li><a href="#"><i class="icon-code"></i> Embed</a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row shares">
+                        <div class="col-xs-12">
+                            <div class="panel share">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled list-inline">
+                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://hispantv.com{{Data.url}}" target="_blank"><i class="icon-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/home?status=http://hispantv.com{{Data.url}}" target="_blank"><i class="icon-twitter"></i></a></li>
+                                        <li><a href="https://plus.google.com/share?url=http://hispantv.com{{Data.url}}" target="_blank"><i class="icon-gplus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                {{#if Data.Tags}}
+                <h3>Tags</h3>
+                <div class="items-tags">
+                    <ul class="list-unstyled list-inline">
+                        {{#each Data.Tags}}
+                        <li><a href="{{url}}">{{name}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+                <!--
+        <div class="item-about-author">
+            <p><strong>Mr. Harry Potter</strong> is a Algo parecido tuvo lugar en EE.UU. en 1929, cuando a pesar del crecimiento económico, el incremento de la riqueza entre las capas sociales más ricas y el aumento de la oferta de productos en el mercado, la mayoría de la población era incapaz de ganarse la vida, y eso se debía a los sueldos fijos, mientras que los precios habían subido, explicó Emspak. </p>
+        </div>
+        -->
+                <!--<div class="item-sharings">
+            <div class="panel list sharings">
+                <div class="panel-body">
+                    <ul class="list-unstyled list-inline">
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-gplus"></i></a></li>
+                        <li><a href="#"><i class="icon-digg"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                        <li><a href="#"><i class="icon-delicious"></i></a></li>
+                        <li><a href="#"><i class="icon-pinterest"></i></a></li>
+                        <li><a href="#"><i class="icon-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+                {{#if Data.relatedByTag}}
+                <div class="item-related">
+                    <div class="panel title-border tiles">
+                        <div class="panel-title">
+                            <span>relacionadas</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <ul class="list-unstyled">
+                                    {{#each Data.relatedByTag}}
+                                    <li class="tile col-xs-12 col-sm-4">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="{{url}}">
+                                                    <img src="{{image}}" alt="{{Title}}" />
+                                                </a>
+                                            </div>
+                                            <div class="desc">
+                                                <h4><a href="{{url}}">{{Title}}</a></h4>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                {{#if Data.relatedByCategory}}
+                <div class="item-related">
+                    <div class="panel title-border tiles">
+                        <div class="panel-title">
+                            <span>{{Data.categoryTitle}}</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <ul class="list-unstyled">
+                                    {{#each Data.relatedByCategory}}
+                                    <li class="tile col-xs-12 col-sm-4">
+                                        <div class="inner">
+                                            <div class="img">
+                                                <a href="{{url}}">
+                                                    <img src="{{image}}" alt="{{Title}}" />
+                                                </a>
+                                            </div>
+                                            <div class="desc">
+                                                <h4><a href="{{url}}">{{Title}}</a></h4>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="item-comments">
+                            <div class="panel title-border comments">
+                                <div class="panel-title">
+                                    <span>Comentarios</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div role="tabpanel">
+                                        <div id="hypercomments_widget"></div>
+                                        <script type="text/javascript">
+                                            _hcwp = window._hcwp || [];
+                                            _hcwp.push({ widget: "Stream", widget_id: 26167,xid: "c" + {{Data.Id}} ,hc_disable:1,quote_disable:1,social:"google, facebook, twitter, openid",comments_level:2});
+                                            (function () {
+                                                if ("HC_LOAD_INIT" in window) return;
+                                                HC_LOAD_INIT = true;
+                                                var lang = "es";
+                                                var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+                                                hcc.src = ("https:" == document.location.protocol ? "https" : "http") + "://w.hypercomments.com/widget/hc/26167/" + lang + "/widget.js";
+                                                var s = document.getElementsByTagName("script")[0];
+                                                s.parentNode.insertBefore(hcc, s.nextSibling);
+                                            })();
+                                        </script>         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<img src="/callback.asmx/ContentsViewCount?id={{Data.Id}}" style="width:1px;height:1px;visibility:hidden" />
+{{#if Data.hasVideo}}
+<script src="/Views/Assets/player/player.js"></script>
+<script src="/Views/Assets/js/playback.js"></script>
+{{/if}}

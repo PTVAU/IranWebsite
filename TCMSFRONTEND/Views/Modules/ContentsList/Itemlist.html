@@ -1,0 +1,21 @@
+<div id="articles" class="row">
+    <div class="col-xs-12">
+        <div class="panel list itemlist thumb">
+            {{#if Config.Site_Modules_Title}}<a href="{{Config.Site_Modules_Url}}"><div class="panel-title"><span>{{Config.Site_Modules_Title}}</span></div></a>{{/if}}
+            <div class="panel-body">
+                <ul class="list-unstyled">
+                    {{#each Data}}
+                    <li>
+                        <div class="inner">
+                            <a href="{{url}}">
+                                {{#if image}}<span class="img"><img src="{{image}}" alt="{{Title}}" /></span>{{/if}}
+                                <span class="title">{{ShortTitle}}</span>
+                            </a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<script id="tag-index-template" type="text/x-handlebars-template">
+    <a data-toggle="modal" href="#tag-modal" class="btn green pull-right in-breadcrumbs"><i class="fa fa-plus"></i> Add Tag</a>
+    <div id="tags" class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-hover" id="items">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="col-xs-12">Title</th>
+                    <th class="">State</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each []}}
+                <tr data-id="{{this.id}}" data-state="{{this.Published}}">
+                    <td class="tag-id">{{this.id}}</td>
+                    <td class="tag-name"><span class="x-editable" data-type="text" data-title="Edit Tag" data-name="name">{{this.name}}</span></td>
+                    <td class="tag-state">
+                        {{#ifCond this.Published 1}}<a href="#" data-do="change-state" data-change-state-to="0" class="btn default green-stripe btn-xs"><i class="fa fa-check"></i> Published</a>{{/ifCond}}
+                        {{#ifCond this.Published 0}}<a href="#" data-do="change-state" data-change-state-to="1" class="btn default red-stripe btn-xs"><i class="fa fa-times"></i> Unpublished</a>{{/ifCond}}
+                    </td>
+                {{else}}
+                No Content
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <!-- /.modal -->
+    <div class="modal fade" id="tag-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="tag-form" class="form-inline" role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Tag Name" name="name" style="" autocomplete="off"  />
+                            <input type="hidden" name="Published" value="1" />
+                            <a href="#" data-task="submit" data-forms="#tag-form" data-method="post" data-action="tag" data-results="#tag-results" class="btn btn-default" data-identifier="do-add">Add</a>
+                        </div>
+                    </form>
+                    <div id="tag-results"><br /></div>
+					<div id="suggestions">
+						<h4 class="hide">Suggestions:</h4>
+						<ul></ul>
+					</div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</script>

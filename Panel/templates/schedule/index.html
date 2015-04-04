@@ -1,0 +1,26 @@
+<script id="schedule-index-template" type="text/x-handlebars-template">
+    <div class="pull-right in-breadcrumbs">
+        <div class="btn-group">
+            <a href="#schedule/index/-2" class="btn {{#ifActive -2}}{{/ifActive}}">2 Days ago</a>
+            <a href="#schedule/index/-1" class="btn {{#ifActive -1}}{{/ifActive}}">Yesterday</a>
+            <a href="#schedule/index/0" class="btn {{#ifActive 0}}{{/ifActive}}">Today</a>
+            <a href="#schedule/index/1" class="btn {{#ifActive 1}}{{/ifActive}}">Tomorrow</a>
+        </div>
+    </div>
+    <div id="schedule">
+        <div class="panel-group" id="accordion">
+            {{#each []}}    
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ID}}" data-id="{{ID}}">{{Type}} - {{Name}}</a></h4>
+                </div>
+                <div id="collapse-{{ID}}" class="panel-collapse collapse">
+                    <div class="panel-body"><div class="pane-loading"></div></div>
+                </div>
+            </div>
+            {{else}}
+            No Content
+            {{/each}}
+        </div>
+    </div>
+</script>

@@ -1,0 +1,34 @@
+<script id="media-images-template" type="text/x-handlebars-template">
+    <div id="images" class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-hover" id="items">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="">Thumbnail</th>
+                    <th class="col-xs-2">Title</th>
+                    <th class="col-xs-4">Description</th>
+                    <th class="col-xs-2">Created</th>
+                    <th class="col-xs-1">State</th>
+                    <th class="col-xs-2">Tags</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each []}}
+                <tr data-id="{{this.Id}}">
+                    <td class="item-id">{{this.Id}}</td>
+                    <td class="item-thumb"><img src="{{this.Image}}" alt="{{this.Description}}" /></td>
+                    <td class="item-title"><span class="x-editable" data-type="text" data-title="Edit Title" data-name="title">{{this.Title}}</span></td>
+                    <td class="item-desc"><span class="x-editable" data-type="textarea" data-title="Edit Description" data-name="description">{{this.Description}}</span></td>
+                    <td class="item-created"><span>{{this.Created}}</span></td>
+                    <td class="item-state">
+                        {{#ifCond this.IsPublished 1}}<a href="#" data-do="change-state" data-change-state-to="0" class="btn default green-stripe btn-xs"><i class="fa fa-check"></i> Published</a>{{/ifCond}}
+                        {{#ifCond this.IsPublished 0}}<a href="#" data-do="change-state" data-change-state-to="1" class="btn default red-stripe btn-xs"><i class="fa fa-times"></i> Unpublished</a>{{/ifCond}}
+                    </td>
+                    <td class="item-tag">{{{this.TagsHtml}}}</td>
+                {{else}}
+                No Content
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</script>

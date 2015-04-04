@@ -1,0 +1,44 @@
+﻿<div class="page-header">
+    <h2>{{Config.Site_Modules_Title}}</h2>
+</div>
+<!--<div class="items-filter">
+    <ul class="list-unstyled list-inline">
+        <li class="active"><a href="#">All</a></li>
+        <li><a href="#">Las Américas</a></li>
+        <li><a href="#">EE.UU. y Canadá</a></li>
+        <li><a href="#">Oriente Medio</a></li>
+        <li><a href="#">Europa</a></li>
+        <li><a href="#">Sociedad</a></li>
+        <li><a href="#">Economía</a></li>
+        <li><a href="#">Cultura</a></li>
+    </ul>
+</div>-->
+<div id="itemlist" class="load-more" data-params='{{Config.Site_Modules_Params}}' data-template="{{Config.Site_Modules_ViewPath}}" data-count="5" data-offset="0" data-tries="0">
+    <div class="panel itemlist thumb thumbs-large">
+        <div class="panel-body">
+            <ul class="list-unstyled">
+                {{#each Data}}
+                <li class="{{#if first}} featured{{#else}}{{#if hasVideo}} featured img-right{{/if}}{{/if}}">
+                    <div class="inner">
+                        <div class="img{{#if hasVideo}} video{{/if}}">
+                            <a href="{{url}}">
+                                <img src="{{image}}" alt="{{Title}}" />
+                            </a>
+                        </div>
+                        <div class="desc">
+                            <h3><a href="{{url}}">{{ShortTitle}}</a></h3>
+                            <p>{{Introtext}}</p>
+                            <div class="meta">{{Published}}</div>
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <div class="more text-center has-line">
+                <a class="btn black" href="#">Ver Mas</a>
+            </div>
+        </div>
+    </div>
+</div>

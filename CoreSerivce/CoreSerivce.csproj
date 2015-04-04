@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DEB37545-4C07-44ED-BE7F-6DFCD272D303}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreSerivce</RootNamespace>
+    <AssemblyName>CoreSerivce</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Enyim.Caching">
+      <HintPath>..\packages\EnyimMemcached.2.12\lib\net35\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cache.aspx" />
+    <Content Include="crossdomain.xml" />
+    <Content Include="Files\Users\0.png" />
+    <Content Include="Global.asax" />
+    <Content Include="PL\Categories.svc" />
+    <Content Include="PL\Comments.svc" />
+    <Content Include="PL\Contents.svc" />
+    <Content Include="PL\ContentsFlow.svc" />
+    <Content Include="PL\Frontend.svc" />
+    <Content Include="PL\Polls.svc" />
+    <Content Include="PL\Programs.svc" />
+    <Content Include="PL\Repositories.svc" />
+    <Content Include="PL\Tags.svc" />
+    <Content Include="PL\Users.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\Categories.cs" />
+    <Compile Include="BLL\Comments.cs" />
+    <Compile Include="BLL\Contents.cs" />
+    <Compile Include="BLL\Contents_Categories.cs" />
+    <Compile Include="BLL\Contents_Flow.cs" />
+    <Compile Include="BLL\Contents_Repository.cs" />
+    <Compile Include="BLL\Contents_Tags.cs" />
+    <Compile Include="BLL\Contents_Versions.cs" />
+    <Compile Include="BLL\Message.cs" />
+    <Compile Include="BLL\Polls.cs" />
+    <Compile Include="BLL\Polls_Options.cs" />
+    <Compile Include="BLL\Episodes.cs" />
+    <Compile Include="BLL\Programs.cs" />
+    <Compile Include="BLL\Repositories.cs" />
+    <Compile Include="BLL\Repository_Tags.cs" />
+    <Compile Include="BLL\Tags.cs" />
+    <Compile Include="BLL\Users.cs" />
+    <Compile Include="BLL\Users_Group.cs" />
+    <Compile Include="BO\Categories.cs" />
+    <Compile Include="BO\Comments.cs" />
+    <Compile Include="BO\Contents.cs" />
+    <Compile Include="BO\Contents_Categories.cs" />
+    <Compile Include="BO\Contents_Flow.cs" />
+    <Compile Include="BO\Contents_Repository.cs" />
+    <Compile Include="BO\Contents_Tags.cs" />
+    <Compile Include="BO\Contents_Versions.cs" />
+    <Compile Include="BO\ErrorHandling.cs" />
+    <Compile Include="BLL\FrontendConfig.cs" />
+    <Compile Include="BO\Image_Tmp.cs" />
+    <Compile Include="BO\Message.cs" />
+    <Compile Include="BO\Episodes.cs" />
+    <Compile Include="BO\Programs.cs" />
+    <Compile Include="BO\Polls_Options.cs" />
+    <Compile Include="BO\Polls.cs" />
+    <Compile Include="BO\Repositories.cs" />
+    <Compile Include="BO\Repository_Tags.cs" />
+    <Compile Include="BO\siteModules.cs" />
+    <Compile Include="BO\Tags.cs" />
+    <Compile Include="BO\urlRouting.cs" />
+    <Compile Include="BO\Users.cs" />
+    <Compile Include="BO\Users_Group.cs" />
+    <Compile Include="Cache.aspx.cs">
+      <DependentUpon>Cache.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cache.aspx.designer.cs">
+      <DependentUpon>Cache.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Categories.cs" />
+    <Compile Include="DAL\Contents.cs" />
+    <Compile Include="DAL\Comments.cs" />
+    <Compile Include="DAL\Contents_Categories.cs" />
+    <Compile Include="DAL\Contents_Flow.cs" />
+    <Compile Include="DAL\Contents_Repository.cs" />
+    <Compile Include="DAL\Contents_Tags.cs" />
+    <Compile Include="DAL\Contents_Versions.cs" />
+    <Compile Include="DAL\FrontendConfig.cs" />
+    <Compile Include="DAL\Message.cs" />
+    <Compile Include="DAL\Polls.cs" />
+    <Compile Include="DAL\Polls_Options.cs" />
+    <Compile Include="DAL\Episodes.cs" />
+    <Compile Include="DAL\Programs.cs" />
+    <Compile Include="DAL\Repositories.cs" />
+    <Compile Include="DAL\Repository_Tags.cs" />
+    <Compile Include="DAL\Tags.cs" />
+    <Compile Include="DAL\Users.cs" />
+    <Compile Include="DAL\Users_Group.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Categories.svc.cs">
+      <DependentUpon>Categories.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Comments.svc.cs">
+      <DependentUpon>Comments.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Contents.svc.cs">
+      <DependentUpon>Contents.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ContentsFlow.svc.cs">
+      <DependentUpon>ContentsFlow.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frontend.svc.cs">
+      <DependentUpon>Frontend.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ICategories.cs" />
+    <Compile Include="PL\IComments.cs" />
+    <Compile Include="PL\IContents.cs" />
+    <Compile Include="PL\IContentsFlow.cs" />
+    <Compile Include="PL\IFrontend.cs" />
+    <Compile Include="PL\IPolls.cs" />
+    <Compile Include="PL\IPrograms.cs" />
+    <Compile Include="PL\IRepositories.cs" />
+    <Compile Include="PL\ITags.cs" />
+    <Compile Include="PL\IUsers.cs" />
+    <Compile Include="PL\Polls.svc.cs">
+      <DependentUpon>Polls.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Programs.svc.cs">
+      <DependentUpon>Programs.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Repositories.svc.cs">
+      <DependentUpon>Repositories.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Tags.svc.cs">
+      <DependentUpon>Tags.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Users.svc.cs">
+      <DependentUpon>Users.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\CacheContoller.cs" />
+    <Compile Include="Utilities\MultipartParser.cs" />
+    <Compile Include="Utilities\ThumbnailGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\Srv249.pubxml" />
+    <None Include="Properties\PublishProfiles\Srv55-117.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5604</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5604/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

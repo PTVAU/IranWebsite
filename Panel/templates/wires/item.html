@@ -1,0 +1,12 @@
+<script id="wires-item-template" type="text/x-handlebars-template">
+    {{#if WireID}}
+    <div id="item">
+        <small class="item-agency">{{Agency}}</small>
+        <h3>{{Title}}</h3>
+        <div class="item-date">{{{CreateDate}}}</div>
+        <div class="item-text">{{{Body}}}</div>
+    </div>
+    {{else}}
+    No Content
+    {{/if}}
+</script>

@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>   <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>      <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>      <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{pageConfig.title}} HispanTV, Nexo Latino</title>
+    <meta content="{{pageConfig.datetime}}" itemprop="datePublished" name="pubdate" property="og:pubdate">
+    <meta content="" itemprop="contentLocation">
+    <meta content="HispanTV" itemprop="author" name="author">
+    <meta content="" itemprop="sourceOrganization" name="source">
+    <meta content="{{pageConfig.title}} - HispanTV.com" itemprop="headline" property="og:title">
+    <meta content="{{pageConfig.description}}" itemprop="description" name="description" property="og:description">
+    <meta content="{{pageConfig.description}}" itemprop="keywords" name="keywords">
+    <meta content="HISPANTV" itemprop="siteName" property="og:site_name">
+    <meta content="article" itemprop="ogType" property="og:type">
+    <meta content="{{pageConfig.image}}" itemprop="thumbnailUrl" name="thumbnailUrl" property="og:image">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Views/Assets/css/hispan.css" />
+    <link rel="shortcut icon" href="/Views/Assets/favicon.ico" />
+    <!--[if lt IE 10]>
+    <script src="/Views/Assets/js/modernizr-2.6.2.min.js"></script><![endif]-->
+</head>
+<body>
+    <header id="header">
+        <div id="navbar" class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-2">
+                        <h1 id="logo">
+                            <a href="/">HispanTV</a>
+                        </h1>
+                    </div>
+                    <div class="col-xs-8 col-sm-9 col-md-10">
+                        {{#if menu}}
+                        {{menu}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#if masthead}}
+        {{masthead}}
+        {{/if}}
+        {{#if ticker}}
+        {{ticker}}
+        {{/if}}
+    </header><!-- ./header -->
+    {{#if ads}}
+    <aside id="ads" style="display: block;">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ads}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside><!-- ./ads -->
+    {{/if}}
+    <section id="main">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    {{#if top}}
+                    <section id="top" class="col-xs-12 col-md-12">
+                        {{top}}
+                    </section>
+                    {{/if}}
+                    <section id="mainbody" class="col-xs-12 col-md-9">
+                        {{#if main}}{{main}}{{/if}}
+                        {{#if showcase}}
+                        <div id="showcase" class="row">
+                            <div class="col-xs-12">
+                                {{showcase}}
+                            </div>
+                        </div>
+                        {{/if}}
+                        {{#if programs_1}}
+                        <div id="programs" class="row hidden-sm hidden-xs">
+                            <div class="col-xs-6">
+                                {{programs_1}}
+                            </div>
+                            {{#if programs_2}}
+                            <div class="col-xs-6">
+                                {{programs_2}}
+                            </div>
+                            {{/if}}
+                        </div>
+                        {{/if}}
+                        <div id="news-digest" class="row">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    {{#if main_1_1}}
+                                    <div class="col-xs-12 col-sm-6">
+                                        {{main_1_1}}
+                                    </div>
+                                    {{/if}}
+                                    {{#if main_1_2}}
+                                    <div class="col-xs-12 col-sm-6">
+                                        {{main_1_2}}
+                                    </div>
+                                    {{/if}}
+                                </div>
+                                <div class="row">
+                                    {{#if main_2_1}}
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        {{main_2_1}}
+                                    </div>
+                                    {{/if}}
+                                    {{#if main_2_2}}
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        {{main_2_2}}
+                                    </div>
+                                    {{/if}}
+                                    {{#if main_2_3}}
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        {{main_2_3}}
+                                    </div>
+                                    {{/if}}
+                                </div>
+                                <div class="row">
+                                    {{#if main_2_4}}
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        {{main_2_4}}
+                                    </div>
+                                    {{/if}}
+                                    {{#if main_2_5}}
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        {{main_2_5}}
+                                    </div>
+                                    {{/if}}
+                                    {{#if main_2_6}}
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        {{main_2_6}}
+                                    </div>
+                                    {{/if}}
+                                </div>
+                                {{#if media}}
+                                <div id="media" class="row hidden-sm hidden-xs">
+                                    <div class="col-xs-12">
+                                        {{media}}
+                                    </div>
+                                </div>
+                                {{/if}}
+                                <div class="row">
+                                    {{#if main_3_1}}
+                                    <div class="col-xs-12 col-sm-6">
+                                        {{main_3_1}}
+                                    </div>
+                                    {{/if}}
+                                    {{#if main_3_2}}
+                                    <div class="col-xs-12 col-sm-6">
+                                        {{main_3_2}}
+                                    </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                        {{#if utility}}
+                        <div id="utility" class="row hidden-sm hidden-xs">
+                            <div class="col-xs-12">
+                                {{utility}}
+                            </div>
+                        </div>
+                        {{/if}}
+                    </section>
+                    <aside id="sidebar" class="col-xs-12 col-md-3">
+                        {{aside}}
+                    </aside>
+                    {{#if bot}}
+                    <section id="bottom" class="col-xs-12 col-md-12 hidden-xs">
+                        {{bot}}
+                    </section>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div id="mastfoot" class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <!--
+                        {{#if weather}}
+                        <div id="weather">
+                            {{weather}}
+                        </div>
+                        {{/if}}
+                        -->
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="sharings-footer">
+                            <ul class="list-unstyled list-inline pull-right">
+                                <li><a target="_blank" href="https://www.facebook.com/Hispantv"><i class="icon-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://www.youtube.com/user/hispantv"><i class="icon-youtube"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com/Hispantv"><i class="icon-twitter"></i></a></li>
+                                <li><a target="_blank" href="https://plus.google.com/+hispantv/posts"><i class="icon-gplus"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="icon-rss"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="icon-chat"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="nav-footer" class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="sitemap">
+                            <div class="row sitemap-titles">
+                                <div class="col-xs-8 col-sm-6"><span class="header">Noticias</span></div>
+                                <div class="col-xs-4 col-sm-3"><span class="header">Secciones</span></div>
+                                <div class="hidden-xs col-sm-3"><span class="header">HispanTV</span></div>
+                            </div>
+                            <div class="row sitemap-items">
+                                <div class="col-xs-4 col-sm-3">
+                                    <ul class="list-unstyled">
+                                        <li><a href="/category/Irán/1">Irán</a></li>
+                                        <li><a href="/category/Oriente-Medio/26">Oriente Medio</a></li>
+                                        <li><a href="/category/Asia-y-Oceanía/4">Asia y Oceanía</a></li>
+                                        <li><a href="/category/África/18">África</a></li>
+                                        <li><a href="/category/Europa/35">Europa</a></li>
+                                        <li><a href="/category/EE.UU.-y-Canadá/44">EE.UU. y Canadá</a></li>
+                                        <li><a href="/category/Sudamérica/51">Sudamérica</a></li>
+                                        <li><a href="/category/Centroamérica/103">Centroamérica</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-4 col-sm-3">
+                                    <ul class="list-unstyled">
+                                        <li><a href="/category/Sociedad/82">Sociedad</a></li>
+                                        <li><a href="/category/Economía/80">Economía</a></li>
+                                        <li><a href="/category/Ciencia-Tecnología/86">Ciencia/Tec</a></li>
+                                        <li><a href="/category/Deporte/90">Deporte</a></li>
+                                        <li><a href="/category/Salud/88">Salud</a></li>
+                                        <li><a href="/category/Cultura/84">Cultura</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden-xs col-sm-3">
+                                    <ul class="list-unstyled">
+                                        <li><a href="/programas">Programas</a></li>
+                                        <li><a href="/series">Series</a></li>
+                                        <li><a href="/peliculas">Cine persa</a></li>
+                                        <li><a href="/reportajes">Reporteros</a></li>
+                                        <li><a href="/entervistas">Análisis del día</a></li>
+                                        <li><a href="/category/Opinión/69">Opinión</a></li>
+                                        <li><a href="/documentales">Documentales</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-4 col-sm-3">
+                                    <ul class="list-unstyled">
+                                        <li><a href="/distribución">Frecuencias</a></li>
+                                        <li><a href="/nosotros">Nosotros</a></li>
+                                        <li><a href="/contacto">Contacto</a></li>
+                                        <li><a href="http://93.190.24.12/Conductor_Calendar.aspx" target="_blank">Programación</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-xs-push-1 hidden-xs">
+                        {{#if newsletter}}
+                        <div id="newsletter">
+                            {{newsletter}}
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#if copyright}}
+        <div id="copyright" class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{copyright}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        <div class="totop hidden-xs hidden-sm" style="display: none;">
+            <a href="#"><i class="icon-up"></i></a>
+        </div>
+    </footer>
+    <script src="/Views/Assets/js/jquery-1.11.1.min.js"></script>
+    <script src="/Views/Assets/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script src="/Views/Assets/js/bootstrap.min.js"></script>
+    <script src="/Views/Assets/js/main.js"></script>
+    <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["setCookieDomain", "*.hispantv.ir"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = "//93.190.24.114/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+    })();
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-60610166-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <noscript><p><img src="//93.190.24.114/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+</body>
+</html>

@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80995195-D74C-4C2F-8A01-F89DCDF50B9D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TCMSFRONTEND</RootNamespace>
+    <AssemblyName>TCMSFRONTEND</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Handlebars">
+      <HintPath>..\packages\Handlebars.Net.1.0.2\lib\Handlebars.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="mustache-sharp">
+      <HintPath>..\mustache-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cache.aspx" />
+    <Content Include="callBack.asmx" />
+    <Content Include="crossdomain.xml" />
+    <Content Include="google2210041244fd615a.html" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\101-231.pubxml" />
+    <None Include="Properties\PublishProfiles\Frontend.pubxml" />
+    <Content Include="Views\Assets\css\config.json" />
+    <Content Include="Views\Assets\data\about.jpg" />
+    <Content Include="Views\Assets\font\hispan-bold.eot" />
+    <Content Include="Views\Assets\font\hispan-bold.ttf" />
+    <Content Include="Views\Assets\font\hispan-bold.woff" />
+    <Content Include="Views\Assets\font\hispan-bold.woff2" />
+    <Content Include="Views\Assets\font\hispan-condensed.eot" />
+    <Content Include="Views\Assets\font\hispan-condensed.ttf" />
+    <Content Include="Views\Assets\font\hispan-condensed.woff" />
+    <Content Include="Views\Assets\font\hispan-condensed.woff2" />
+    <Content Include="Views\Assets\font\hispan-icons.eot" />
+    <Content Include="Views\Assets\font\hispan-icons.ttf" />
+    <Content Include="Views\Assets\font\hispan-icons.woff" />
+    <Content Include="Views\Assets\font\hispan-light.eot" />
+    <Content Include="Views\Assets\font\hispan-light.ttf" />
+    <Content Include="Views\Assets\font\hispan-light.woff" />
+    <Content Include="Views\Assets\font\hispan-light.woff2" />
+    <Content Include="Views\Assets\img\blank.jpg" />
+    <Content Include="Views\Assets\img\hispan_oldwebsite_banner.jpg" />
+    <Content Include="Views\Assets\img\map.jpg" />
+    <Content Include="Views\Assets\img\map_small.jpg" />
+    <Content Include="Views\Assets\img\Nuclear.jpg" />
+    <Content Include="Views\Assets\img\placeholder1.jpg" />
+    <Content Include="Views\Assets\img\placeholder2.jpg" />
+    <Content Include="Views\Assets\img\satellites\arabsat.png" />
+    <Content Include="Views\Assets\img\satellites\galaxy.png" />
+    <Content Include="Views\Assets\img\satellites\hispansat1e.png" />
+    <Content Include="Views\Assets\img\satellites\hispansat1e_america.png" />
+    <Content Include="Views\Assets\img\satellites\hotbird.png" />
+    <Content Include="Views\Assets\img\satellites\intelsat.png" />
+    <Content Include="Views\Assets\img\satellites\map.jpg" />
+    <Content Include="Views\Assets\img\satellites\telstar12.png" />
+    <Content Include="Views\Assets\img\user_placeholder.png" />
+    <Content Include="Views\Assets\js\jquery-1.11.1.min.map" />
+    <Content Include="Views\Assets\js\jquery.carouFredSel-6.2.1-packed.js" />
+    <Content Include="Views\Assets\js\playback_live.js" />
+    <Content Include="Views\Assets\js\playback.js" />
+    <Content Include="Views\Assets\less\bootstrap\.csscomb.json" />
+    <Content Include="Views\Assets\less\bootstrap\.csslintrc" />
+    <Content Include="Views\Assets\less\bootstrap\alerts.less" />
+    <Content Include="Views\Assets\less\bootstrap\badges.less" />
+    <Content Include="Views\Assets\less\bootstrap\bootstrap.less" />
+    <Content Include="Views\Assets\less\bootstrap\breadcrumbs.less" />
+    <Content Include="Views\Assets\less\bootstrap\button-groups.less" />
+    <Content Include="Views\Assets\less\bootstrap\buttons.less" />
+    <Content Include="Views\Assets\less\bootstrap\carousel.less" />
+    <Content Include="Views\Assets\less\bootstrap\close.less" />
+    <Content Include="Views\Assets\less\bootstrap\code.less" />
+    <Content Include="Views\Assets\less\bootstrap\component-animations.less" />
+    <Content Include="Views\Assets\less\bootstrap\dropdowns.less" />
+    <Content Include="Views\Assets\less\bootstrap\forms.less" />
+    <Content Include="Views\Assets\less\bootstrap\glyphicons.less" />
+    <Content Include="Views\Assets\less\bootstrap\grid.less" />
+    <Content Include="Views\Assets\less\bootstrap\input-groups.less" />
+    <Content Include="Views\Assets\less\bootstrap\jumbotron.less" />
+    <Content Include="Views\Assets\less\bootstrap\labels.less" />
+    <Content Include="Views\Assets\less\bootstrap\list-group.less" />
+    <Content Include="Views\Assets\less\bootstrap\media.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\alerts.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\background-variant.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\border-radius.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\buttons.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\center-block.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\clearfix.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\forms.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\gradients.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\grid.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\hide-text.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\image.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\labels.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\list-group.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\opacity.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\pagination.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\panels.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\resize.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\size.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\table-row.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Views\Assets\less\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Views\Assets\less\bootstrap\modals.less" />
+    <Content Include="Views\Assets\less\bootstrap\navbar.less" />
+    <Content Include="Views\Assets\less\bootstrap\navs.less" />
+    <Content Include="Views\Assets\less\bootstrap\normalize.less" />
+    <Content Include="Views\Assets\less\bootstrap\pager.less" />
+    <Content Include="Views\Assets\less\bootstrap\pagination.less" />
+    <Content Include="Views\Assets\less\bootstrap\panels.less" />
+    <Content Include="Views\Assets\less\bootstrap\popovers.less" />
+    <Content Include="Views\Assets\less\bootstrap\print.less" />
+    <Content Include="Views\Assets\less\bootstrap\progress-bars.less" />
+    <Content Include="Views\Assets\less\bootstrap\responsive-embed.less" />
+    <Content Include="Views\Assets\less\bootstrap\responsive-utilities.less" />
+    <Content Include="Views\Assets\less\bootstrap\scaffolding.less" />
+    <Content Include="Views\Assets\less\bootstrap\tables.less" />
+    <Content Include="Views\Assets\less\bootstrap\theme.less" />
+    <Content Include="Views\Assets\less\bootstrap\thumbnails.less" />
+    <Content Include="Views\Assets\less\bootstrap\tooltip.less" />
+    <Content Include="Views\Assets\less\bootstrap\type.less" />
+    <Content Include="Views\Assets\less\bootstrap\utilities.less" />
+    <Content Include="Views\Assets\less\bootstrap\variables.less" />
+    <Content Include="Views\Assets\less\bootstrap\wells.less" />
+    <Content Include="Views\Assets\less\hispan.less" />
+    <Content Include="Views\Assets\less\hispan\ads.less" />
+    <Content Include="Views\Assets\less\hispan\box.less" />
+    <Content Include="Views\Assets\less\hispan\components.less" />
+    <Content Include="Views\Assets\less\hispan\datepicker.less" />
+    <Content Include="Views\Assets\less\hispan\fonts.less" />
+    <Content Include="Views\Assets\less\hispan\footer.less" />
+    <Content Include="Views\Assets\less\hispan\header.less" />
+    <Content Include="Views\Assets\less\hispan\icons.less" />
+    <Content Include="Views\Assets\less\hispan\item.less" />
+    <Content Include="Views\Assets\less\hispan\player.less" />
+    <Content Include="Views\Assets\less\hispan\style.less" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Views\Assets\player\live.smil" />
+    <Content Include="Views\Assets\img\satellites\satellites.psd" />
+    <Content Include="Views\Assets\less\hispan\responsive.less" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Default.aspx" />
+    <Content Include="Views\Assets\css\components.css" />
+    <Content Include="Views\Assets\css\hispan-icons.css" />
+    <Content Include="Views\Assets\css\hispan.css" />
+    <Content Include="Views\Assets\data\map.jpg" />
+    <Content Include="Views\Assets\data\map2.jpg" />
+    <Content Include="Views\Assets\data\sat.jpg" />
+    <Content Include="Views\Assets\data\smpl1.jpg" />
+    <Content Include="Views\Assets\data\smpl10.jpg" />
+    <Content Include="Views\Assets\data\smpl11.jpg" />
+    <Content Include="Views\Assets\data\smpl12.jpg" />
+    <Content Include="Views\Assets\data\smpl13.jpg" />
+    <Content Include="Views\Assets\data\smpl14.jpg" />
+    <Content Include="Views\Assets\data\smpl2.jpg" />
+    <Content Include="Views\Assets\data\smpl3.jpg" />
+    <Content Include="Views\Assets\data\smpl4.jpg" />
+    <Content Include="Views\Assets\data\smpl5.jpg" />
+    <Content Include="Views\Assets\data\smpl6.jpg" />
+    <Content Include="Views\Assets\data\smpl7.jpg" />
+    <Content Include="Views\Assets\data\smpl8.jpg" />
+    <Content Include="Views\Assets\data\smpl9.jpg" />
+    <Content Include="Views\Assets\favicon.ico" />
+    <Content Include="Views\Assets\font\hispan-bold.svg" />
+    <Content Include="Views\Assets\font\hispan-condensed.svg" />
+    <Content Include="Views\Assets\font\hispan-icons.svg" />
+    <Content Include="Views\Assets\font\hispan-light.svg" />
+    <Content Include="Views\Assets\img\apps.jpg" />
+    <Content Include="Views\Assets\img\appstore.png" />
+    <Content Include="Views\Assets\img\banner-panorama.jpg" />
+    <Content Include="Views\Assets\img\banner1.jpg" />
+    <Content Include="Views\Assets\img\banner2.jpg" />
+    <Content Include="Views\Assets\img\banner3.jpg" />
+    <Content Include="Views\Assets\img\banner4.jpg" />
+    <Content Include="Views\Assets\img\banner5.jpg" />
+    <Content Include="Views\Assets\img\banner6.jpg" />
+    <Content Include="Views\Assets\img\banner7.jpg" />
+    <Content Include="Views\Assets\img\facebook.jpg" />
+    <Content Include="Views\Assets\img\gplus.jpg" />
+    <Content Include="Views\Assets\img\logo.png" />
+    <Content Include="Views\Assets\img\playstore.png" />
+    <Content Include="Views\Assets\js\bootstrap.js" />
+    <Content Include="Views\Assets\js\bootstrap.min.js" />
+    <Content Include="Views\Assets\js\dev\less-1.7.4.min.js" />
+    <Content Include="Views\Assets\js\jquery-1.10.2.min.js" />
+    <Content Include="Views\Assets\js\jquery-1.11.1.min.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Views\Assets\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Views\Assets\js\main.js" />
+    <Content Include="Views\Assets\js\modernizr-2.6.2.min.js" />
+    <Content Include="Views\Assets\player\player.flash.swf" />
+    <Content Include="Views\Assets\player\player.html5.js" />
+    <Content Include="Views\Assets\player\player.js" />
+    <Content Include="Views\Assets\player\player.swf" />
+    <Content Include="Views\Assets\player\psrv.js" />
+    <Content Include="Views\Assets\player\six.xml" />
+    <Content Include="Views\Assets\player\swfobject.js" />
+    <Content Include="Views\Assets\player\_player.swf" />
+    <Content Include="Views\Modules\ContentsList\Bulletin.html" />
+    <Content Include="Views\Modules\ContentsList\BulletinTop.html" />
+    <Content Include="Views\Modules\ContentsList\CategoryItems-Callback.html" />
+    <Content Include="Views\Modules\ContentsList\CategoryItems.html" />
+    <Content Include="Views\Modules\ContentsList\ContentTabs-CallBack.html" />
+    <Content Include="Views\Modules\ContentsList\ContentTabs.html" />
+    <Content Include="Views\Modules\ContentsList\ContentOne.html" />
+    <Content Include="Views\Modules\ContentsList\ContentTabs2-Callback.html" />
+    <Content Include="Views\Modules\ContentsList\ContentTabs2.html" />
+    <Content Include="Views\Modules\ContentsList\Digest.html" />
+    <Content Include="Views\Modules\ContentsList\Galleries.html" />
+    <Content Include="Views\Modules\ContentsList\ItemlistMostViewed-CallBack.html" />
+    <Content Include="Views\Modules\ContentsList\Itemlist-CallBack.html" />
+    <Content Include="Views\Modules\ContentsList\Itemlist.html" />
+    <Content Include="Views\Modules\ContentsList\ItemTiles.html" />
+    <Content Include="Views\Modules\ContentsList\Latest.html" />
+    <Content Include="Views\Modules\ContentsList\ItemTiles.html" />
+    <Content Include="Views\Modules\ContentsList\NewsListNoMore.html" />
+    <Content Include="Views\Modules\ContentsList\NewsList-CallBack.html" />
+    <Content Include="Views\Modules\ContentsList\NewsList.html" />
+    <Content Include="Views\Modules\ContentsList\NuclearTimeline.html" />
+    <Content Include="Views\Modules\ContentsList\SearchResults.html" />
+    <Content Include="Views\Modules\ContentsList\SliderClean.html" />
+    <Content Include="Views\Modules\ContentsList\Slider.html" />
+    <Content Include="Views\Modules\Media\FeaturedProgramsEpisodes.html" />
+    <Content Include="Views\Modules\Media\MostViewedTop.html" />
+    <Content Include="Views\Modules\Media\MostViewed.html" />
+    <Content Include="Views\Modules\Media\ProgramsEpisodes.html" />
+    <Content Include="Views\Modules\Media\Programs.html" />
+    <Content Include="Views\Modules\Media\ProgramTabs-CallBack.html" />
+    <Content Include="Views\Modules\Media\SliderTabs-CallBack.html" />
+    <Content Include="Views\Modules\Media\SliderTabs.html" />
+    <Content Include="Views\Modules\ContentsList\TagItems.html" />
+    <Content Include="Views\Modules\ContentsList\Ticker.html" />
+    <Content Include="Views\Modules\ContentsList\Topnews.html" />
+    <Content Include="Views\Modules\Content\full.html" />
+    <Content Include="Views\Modules\Footer\Newsletter.html" />
+    <Content Include="Views\Modules\Media\Carousel.html" />
+    <Content Include="Views\Modules\Media\FeaturedProgram.html" />
+    <Content Include="Views\Modules\Media\FeaturedProgram2Noepisode.html" />
+    <Content Include="Views\Modules\Media\FeaturedProgram2.html" />
+    <Content Include="Views\Modules\Media\Item.html" />
+    <Content Include="Views\Modules\Media\ProgramTabs.html" />
+    <Content Include="Views\Modules\Media\ProgramTabs2.html" />
+    <Content Include="Views\Modules\Media\ShowEpisode.html" />
+    <Content Include="Views\Modules\Media\MediaTiles.html" />
+    <Content Include="Views\Modules\Media\ProgramList.html" />
+    <Content Include="Views\Modules\Menu\Categories.html" />
+    <Content Include="Views\Modules\Menu\Masthead.html" />
+    <Content Include="Views\Modules\Menu\MenuWithPrograms.html" />
+    <Content Include="Views\Modules\Menu\Menu.html" />
+    <Content Include="Views\Modules\Poll\Normal.html" />
+    <Content Include="Views\Modules\Static\About.html" />
+    <Content Include="Views\Modules\Static\Apps.html" />
+    <Content Include="Views\Modules\Static\Banners.html" />
+    <Content Include="Views\Modules\Static\Contact.html" />
+    <Content Include="Views\Modules\Static\Copyright.html" />
+    <Content Include="Views\Modules\Static\Frequencies.html" />
+    <Content Include="Views\Modules\Static\Live.html" />
+    <Content Include="Views\Modules\Static\Sharing.html" />
+    <Content Include="Views\Modules\Static\SocialBannersPrograms.html" />
+    <Content Include="Views\Modules\Static\SocialBannersDoc.html" />
+    <Content Include="Views\Modules\Static\SocialBanners.html" />
+    <Content Include="Views\Modules\Weather\Condensed.html" />
+    <Content Include="Views\Pages\index.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bll\SiteData.cs" />
+    <Compile Include="Bo\Data\Categories.cs" />
+    <Compile Include="Bo\Data\Comments.cs" />
+    <Compile Include="Bo\Data\Contents.cs" />
+    <Compile Include="Bo\Data\contentsVideos.cs" />
+    <Compile Include="Bo\Data\contentsImages.cs" />
+    <Compile Include="Bo\Data\Episodes.cs" />
+    <Compile Include="Bo\Data\Polls.cs" />
+    <Compile Include="Bo\Data\Polls_Options.cs" />
+    <Compile Include="Bo\Data\Programs.cs" />
+    <Compile Include="Bo\Data\Tags.cs" />
+    <Compile Include="Bo\Service\Categories.cs" />
+    <Compile Include="Bo\Service\Comments.cs" />
+    <Compile Include="Bo\Service\Contents.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Bo\Service\Episodes.cs" />
+    <Compile Include="Bo\Service\Polls.cs" />
+    <Compile Include="Bo\Service\Polls_Options.cs" />
+    <Compile Include="Bo\Service\Programs.cs" />
+    <Compile Include="Bo\Service\Repositories.cs" />
+    <Compile Include="Bo\Service\Tags.cs" />
+    <Compile Include="Bo\Site\moduleTypeContents.cs" />
+    <Compile Include="Bo\Site\moduleTypeEpisodes.cs" />
+    <Compile Include="Bo\Site\moduleTypePrograms.cs" />
+    <Compile Include="Bo\Site\moduleTypePolls.cs" />
+    <Compile Include="Bo\Site\siteModules.cs" />
+    <Compile Include="Bo\Site\sitePageConfig.cs" />
+    <Compile Include="Bo\Site\sitePositions.cs" />
+    <Compile Include="Bo\Site\urlRouting.cs" />
+    <Compile Include="Bo\Wrapper.cs" />
+    <Compile Include="Cache.aspx.cs">
+      <DependentUpon>Cache.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cache.aspx.designer.cs">
+      <DependentUpon>Cache.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="callBack.asmx.cs">
+      <DependentUpon>callBack.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\Builder.cs" />
+    <Compile Include="Core\ModuleBuilder.cs" />
+    <Compile Include="Core\Utility.cs" />
+    <Compile Include="Dal\SiteConfig.cs" />
+    <Compile Include="Dal\SiteData.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>47901</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:47901/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,29 @@
+<div id="itemlist" class="load-more" data-params='{{Config.Site_Modules_Params}}' data-template="{{Config.Site_Modules_ViewPath}}" data-count="5" data-offset="0" data-tries="0">
+    <div class="panel itemlist thumb thumbs-large">
+        <div class="panel-body">
+            <ul class="list-unstyled">
+                {{#each Data}}
+                <li class="{{#if first}} featured{{#else}}{{#if hasVideo}} featured img-right{{/if}}{{/if}}" data-id="{{Id}}">
+                    <div class="inner">
+                        <div class="img{{#if hasVideo}} video{{/if}}">
+                            <a href="{{url}}">
+                                <img src="{{image}}" alt="{{Title}}" />
+                            </a>
+                        </div>
+                        <div class="desc">
+                            <h3><a href="{{url}}">{{ShortTitle}}</a></h3>
+                            <p>{{Introtext}}</p>
+                            <div class="meta">{{Published}}</div>
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <div class="more text-center has-line">
+                <a class="btn black" href="#">Ver Mas</a>
+            </div>
+        </div>
+    </div>
+</div>

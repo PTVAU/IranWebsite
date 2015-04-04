@@ -1,0 +1,131 @@
+<script id="dashboard-item-template" type="text/x-handlebars-template">
+    {{#if Id}}
+    <div class="pull-right in-breadcrumbs has-space-between">
+        <div class="btn-group">
+            <!-- <a data-toggle="modal" href="#send-modal" class="btn green-haze"><i class="fa fa-mail-forward"></i> Send item</a>-->
+            <a href="#dashboard/edit/{{Id}}" class="btn yellow-gold"><i class="fa fa-pencil"></i> Edit item</a>
+        </div>
+    </div>
+    <div id="item">
+        <h3>{{Title}}</h3>
+        <h4>{{ShortTitle}}</h4>
+        <div class="row">
+            <div class="col-xs-12 col-md-7">
+                <dl class="dl-horizontal">
+                    <dt>Creation Date</dt>
+                    <dd>{{{Created}}}</dd>
+                    <dt>Last Modified Date</dt>
+                    <dd>{{#if Modified}}{{{Modified}}}{{else}}-{{/if}}</dd>
+                    <dt>Priority</dt>
+                    <dd>{{#if PriorityTitle}}{{PriorityTitle}}{{else}}-{{/if}}</dd>
+                    <dt>Publish Date</dt>
+                    <dd>{{#if Published}}{{{Published}}}{{else}}-{{/if}}</dd>
+                    <dt>Alias</dt>
+                    <dd>{{{Alias}}}</dd>
+					{{#if Youtube}}
+                    <dt>Youtube</dt>
+                    <dd><a href="{{Youtube}}" target="_blank">Link</a></dd>
+					{{/if}}
+                    <dt>State</dt>
+                    <dd>{{#if StateTitle}}{{{StateTitle}}}{{else}}-{{/if}}</dd>
+                    <dt>Summary</dt>
+                    <dd>{{#if Introtext}}{{{Introtext}}}{{else}}-{{/if}}</dd>
+                </dl>
+                <div class="item-text">{{{Fulltext}}}</div>
+            </div>
+            <div class="col-xs-12 col-md-5">
+                <dl class="dl-horizontal">
+                    <dt>Tags</dt>
+                    <dd>{{#if TagsHtml}}{{{TagsHtml}}}{{else}}-{{/if}}</dd>
+                    <dt>Categories</dt>
+                    <dd>{{#if SectionsHtml}}{{{SectionsHtml}}}{{else}}-{{/if}}</dd>
+                    <dt>Attachments</dt>
+                    <dd>
+                        <div class="row item-view-attachments">
+                            {{#each Repositories}}
+                            <div class="col-xs-6 img"><img src="{{Thumbnail}}" /></div>
+                            {{else}}-{{/each}}
+                            <div class="clearfix"></div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        {{#if Flow}}
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>Item Flow</h4>
+                <table class="table table-condensed table-border table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Send Date</th>
+                            <th>Seen Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each this.Flow}}
+                        <tr>
+                            <td>{{Version_Id}}</td>
+                            <td>{{User_From}}</td>
+                            <td>{{User_To}}</td>
+                            <td>{{SendDate}}</td>
+                            <td>{{SeenDate}}</td>
+                            <td>
+                                <!--
+                                <a href="#" data-task="submit" data-forms="null" data-method="post" data-action="send" data-results="#send-results" data-identifier="do-send" class="btn btn-xs green" data-itemid="{{Content_Id}}"><i class="fa fa-copy"></i> Draft</a>
+                                -->
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+    {{else}}
+    No Content
+    {{/if}}
+    <!-- /.modal -->
+    <div class="modal fade" id="send-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="send-form" class="form-horizontal" role="form">
+                        <h3>Send Item</h3>
+                        <br />
+                        <input type="hidden" id="send-item-id" name="Content_Id" value="" />
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Group </label>
+                            <div class="col-md-10">
+                                <div id="destination-select"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">User </label>
+                            <div class="col-md-10">
+                                <div id="user-select">
+                                    <select id="user-selector" name="User_To" class="form-control" disabled>
+                                        <option>Select group first</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="send-results"></div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" data-task="submit" data-forms="#send-form" data-method="post" data-action="send" data-results="#send-results" data-identifier="do-send" class="btn btn-success pull-right"><i class="fa fa-mail-forward"></i> Send</a>
+                    <a href="#" data-dismiss="modal" class="btn btn-default pull-left">Cancel</a>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</script>

@@ -1,0 +1,115 @@
+<script id="poll-edit-template" type="text/x-handlebars-template">
+    {{#if Id}}
+    <div class="row no-min-height">
+        <div class="col-xs-12">
+            <div id="messages" style="display: none;"></div>
+        </div>
+    </div>
+    <div id="poll-edit" class="row">
+        <div class="col-md-9">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">Edit Poll</div>
+                </div>
+                <div class="portlet-body form">
+                    <form id="poll-form" class="form-horizontal" role="form" action="#">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Title </label>
+                                <div class="col-md-10">
+                                    <input type="text" name="Title" class="form-control" placeholder="Enter title" value="{{Title}}" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Description</label>
+                                <div class="col-md-10">
+                                    <textarea name="Description" class="form-control" placeholder="Enter description" rows="4">{{Description}}</textarea>
+                                </div>
+                            </div
+                            <hr />
+                            <div class="poll-items">
+                                {{#each Polls_Options}}
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label"><span>{{Priority}}</span>)</label>
+                                    <div class="col-md-9">
+                                        <input type="hidden" name="id[]" value="{{Id}}" />
+                                        <input type="text" name="item[]" class="form-control" placeholder="Enter item" value="{{Title}}" />
+                                    </div>
+                                    <div class="col-ms-1"><a href="#" class="btn yellow-casablanca" data-task="remove-item" data-action="poll"><i class="fa fa-times"></i></a></div>
+                                </div>
+                                {{/each}}
+                            </div>
+                            <div class="form-group">
+                                <div class="add-item col-md-10 col-md-push-2">
+                                    <a href="#" class="btn grey-silver" data-task="add-item" data-action="poll"><i class="fa fa-plus"></i> Add Item</a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="form-actions fluid">
+                            <div class="col-md-12">
+                                <a href="#submit" data-task="submit" data-forms="#poll-form,#poll-params" data-method="put" data-action="poll" data-next="poll/index" data-itemid="{{Id}}" class="btn green pull-right"><i class="fa fa-check"></i> Save</a>
+                                <a href="#history/back" class="btn default pull-left">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="portlet box purple">
+                <div class="portlet-title">
+                    <div class="caption">Parameters</div>
+                </div>
+                <div class="portlet-body form">
+                    <form id="poll-params" class="form-horizontal" role="form" action="#">
+                        <div class="form-body">
+                            <label class="control-label">
+                                <span>Expire Date</span>
+                            </label>
+                            <div class="form-group">
+                                <div id="datetimepicker" class="col-md-12 input-group">
+                                    <input type="text" name="Expired" value="{{Expired}}" data-picker="datepicker" class="form-control" required />
+                                    <span class="input-group-addon"><i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                                <hr />
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="IsPublished" value="1" {{#isChecked IsPublished}}{{/isChecked}} /> Published
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="AllowNew" value="true" {{#isChecked AllowNew}}{{/isChecked}} /> Allow new
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="ShowResult" value="true" {{#isChecked ShowResult}}{{/isChecked}} /> Show Results
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="ShowValues" value="true" {{#isChecked ShowValues}}{{/isChecked}} /> Show values
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="ShowTotal" value="true" {{#isChecked ShowTotal}}{{/isChecked}} /> Show total voters
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    No Content!
+    {{/if}}
+</script>

@@ -1,0 +1,39 @@
+<script id="comment-index-template" type="text/x-handlebars-template">
+    <div id="comments" class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-hover" id="items">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="nosort col-xs-1">Item</th>
+                    <th class="col-xs-2">Name</th>
+                    <th class="nosort col-xs-5">Comment</th>
+                    <th class="nosort col-xs-1">IP</th>
+                    <th class="col-xs-3">Date</th>
+                    <th class="nosort">Reply</th>
+                    <th class="nosort"></th>
+                    <th class="nosort"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each []}}
+                <tr data-id="{{this.Id}}">
+                    <td class="item-id">{{this.Id}}</td>
+                    <td class="item-itemid"><a href="http://217.218.67.246/newsdetail/item/{{this.Content_Id}}/alias#comment-{{this.Id}}" target="_blank">{{this.Content_Id}}</a></td>
+                    <td class="item-name"><span class="x-editable" data-type="text" data-title="Edit Name" data-name="name" title="{{this.Email}}">{{this.Name}}</span></td>
+                    <td class="item-comment"><span class="x-editable" data-type="textarea" data-title="Edit Comment" data-name="comment">{{this.Text}}</span></td>
+                    <td class="item-ip">{{this.IP}}</td>
+                    <td class="item-date">{{this.Datetime_Insert}}</td>
+                    <td class="item-reply">{{#ifCondNot this.Parent_Id 0}}<span class="show-reply" title="{{this.Parent_Id}}"><i class="fa fa-comment"></i> <i class="fa fa-circle-o-notch fa-spin font-blue-hoki hide"></i></span>{{/ifCondNot}}</td>
+                    <td class="item-state" data-state="{{this.Published}}">
+                        {{#ifCond this.Published 1}}<a href="#" data-do="change-state" data-change-state-to="0" class="btn default green-stripe btn-xs"><i class="fa fa-check"></i> Published</a>{{/ifCond}}
+                        {{#ifCond this.Published 0}}<a href="#" data-do="change-state" data-change-state-to="1" class="btn default red-stripe btn-xs"><i class="fa fa-times"></i> Unpublished</a>{{/ifCond}}
+                    </td>
+                    <td class="item-trash" data-state="{{this.Published}}"><a href="#" data-do="change-state" data-change-state-to="-1" class="btn default red-stripe btn-xs"><i class="fa fa-trash-o"></i> Trash</a></td>
+                </tr>
+                {{else}}
+                No Content
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</script>

@@ -1,0 +1,67 @@
+﻿{{#if Config.Site_Modules_Title}}
+<div class="page-header">
+    <h2>{{Config.Site_Modules_Title}}</h2>
+</div>
+{{/if}} 
+<div class="row">
+    <section class="col-xs-12 col-md-8">
+        <div class="row" id="player">
+            <div class="col-xs-12">
+                {{#each Data}}
+                {{#if first}}
+                <div class="panel top-news">
+                    <div class="panel-body">
+                        <div class="item">
+                            <div class="inner">
+                                <div class="img video">
+                                    <a href="{{Url}}"><img alt="{{Title}}" src="{{Image}}"></a>
+                                </div>
+                                <div class="program-desc">
+                                    <h2 class="has-data">
+                                        <!--<small title="" data-html="true" data-placement="top" data-toggle="tooltip" class="has-tip" data-original-title="SUN - FRI: 10:00 GMT&lt;br /&gt;REPEAT:&lt;br /&gt;09:00 GMT&lt;br /&gt;09:00 GMT&lt;br /&gt;09:00 GMT">
+                                            <strong>SUN - FRI</strong>&nbsp;&nbsp;10:00 GMT <i class="icon-attention"></i>
+                                        </small>-->
+                                        <a href="{{Url}}">{{Title}}</a>
+                                    </h2>
+                                    <p>{{Introtext}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div><!-- ./showcase -->
+    </section>
+    <aside class="col-xs-12 col-md-4">
+        <div class="row hidden-sm hidden-xs" id="articles">
+            <div class="col-xs-12">
+                <div class="panel list itemlist thumb episodes footer-btn">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                            {{#each Data}}
+                            {{#if first}}{{#else}}
+                            <li title="EPISODIO {{Number}}">
+                                <div class="inner">
+                                    <a href="{{Url}}">
+                                        <span class="img"><img alt="{{Title}}" src="{{Image}}" title="{{Title}}"></span>
+                                        <span class="title">{{Title}}</span>
+                                        <span class="subtitle">{{ProducedShort}}</span>
+                                    </a>
+                                </div>
+                            </li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <!--<div class="panel-footer">
+                        <div class="more text-center has-line">
+                            <a href="#" class="btn black">See More Episodes <i class="icon-plus-circle"></i></a>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div><!-- ./schedules -->
+    </aside>
+</div>

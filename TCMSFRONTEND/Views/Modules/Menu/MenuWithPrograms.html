@@ -1,0 +1,80 @@
+﻿<nav id="menu" class="pull-right">
+    <a id="menu-toggle" class="btn btn-default pull-right hidden-md hidden-lg">
+        <i class="icon-menu"></i>
+    </a>
+    <ul class="list-unstyled list-inline">
+        <li><a href="/">Inicio</a></li>
+        <li class="haschild">
+            <a href="/noticias">Noticias</a>
+            <div class="child">
+                <div class="row">
+                    <div class="col-md-5">
+                        <ul class="list-unstyled">
+                            <li class="hidden-md hidden-lg"><a href="/noticias">Noticias</a></li>
+                            <li><a href="/category/Irán/1">Irán</a></li>
+                            <li><a href="/category/Oriente-Medio/26">Oriente Medio</a></li>
+                            <li><a href="/category/Asia-y-Oceanía/4">Asia y Oceanía</a></li>
+                            <li><a href="/category/África/18">África</a></li>
+                            <li><a href="/category/Europa/35">Europa</a></li>
+                            <li><a href="/category/EE.UU.-y-Canadá/44">EE.UU. y Canadá</a></li>
+                            <li><a href="/category/Sudamérica/51">Sudamérica</a></li>
+                            <li><a href="/category/Centroamérica/103">Centroamérica</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 col-md-offset-2">
+                        <ul class="list-unstyled">
+                            <li><a href="/category/Sociedad/82">Sociedad</a></li>
+                            <li><a href="/category/Economía/80">Economía</a></li>
+                            <li><a href="/category/Ciencia-Tecnología/86">Ciencia/Tec</a></li>
+                            <li><a href="/category/Deporte/90">Deporte</a></li>
+                            <li><a href="/category/Salud/88">Salud</a></li>
+                            <li><a href="/category/Cultura/84">Cultura</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="haschild">
+            <a href="/programas">Programas</a>
+            <div class="child">
+                <div class="row">
+                    <div class="col-md-5">
+                        <ul class="list-unstyled">
+                            <li class="hidden-md hidden-lg"><a href="/programas">Programas</a></li>
+                            {{#each Data}}
+                            {{#if MenuFirstColumn}}
+                            <li><a href="{{Url}}">{{Title}}</a></li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="col-md-5 col-md-offset-2">
+                        <ul class="list-unstyled">
+                            {{#each Data}}
+                            {{#if MenuFirstColumn}}{{#else}}
+                            <li><a href="{{Url}}">{{Title}}</a></li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li><a href="/documentales">Documentales</a></li>
+        <li><a href="/reportajes">Reporteros</a></li>
+        <li><a href="/peliculas">Cine persa</a></li>
+        <li><a href="/series">Series</a></li>
+        <li><a href="/fotos">Fotos</a></li>
+        <li class="search">
+            <a href="#"><i class="icon-search"></i></a>
+            <div class="search-form" style="width: 0;">
+                <form action="/search" method="get">
+                    <div class="form-group">
+                        <input type="text" name="q" class="form-control bg_grey" placeholder="Search..." />
+                        <button type="submit"><i class="icon-search"></i></button>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</nav>

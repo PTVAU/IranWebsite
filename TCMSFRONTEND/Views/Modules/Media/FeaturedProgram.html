@@ -1,0 +1,59 @@
+﻿{{#if Config.Site_Modules_Title}}
+<div class="page-header">
+    <h2>{{Config.Site_Modules_Title}}</h2>
+</div>
+{{/if}}
+{{#each Data}}
+<div class="row" id="player">
+    <div class="col-xs-12">
+        <div class="panel top-news">
+            <div class="panel-body">
+                {{#each EpisodesList}}
+                {{#if first}}
+                <div class="item">
+                    <div class="inner">
+                        <div class="img video">
+                            <a href="{{Url}}"><img alt="{{Title}}" src="{{Image}}"></a>
+                        </div>
+                        <div class="program-desc">
+                            <h2>
+                                <a href="{{Url}}">{{Title}} (ep. {{Number}})</a>
+                            </h2>
+                            <p>{{Introtext}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel episodes condensed cols _border-bottom">
+    <div class="panel-body">
+        <ul class="list-unstyled row">
+            {{#each EpisodesList}}
+            {{#if first}}{{#else}}
+            <li class="col-xs-12 col-sm-6">
+                <div class="inner">
+                    <div class="img pull-left video">
+                        <a href="{{Url}}">
+                            <img alt="{{Title}}" src="{{Image}}">
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <div class="episode"><span>Ep. {{Number}}</span></div>
+                        <h3>
+                            <a href="{{Url}}">{{Title}}</a>
+                        </h3>
+                        <p>{{Introtext}}</p>
+                        <div class="meta">{{Produced}}</div>
+                    </div>
+                </div>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{/each}}
