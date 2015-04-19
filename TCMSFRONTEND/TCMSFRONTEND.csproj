@@ -234,70 +234,16 @@
     <Content Include="Views\Assets\player\six.xml" />
     <Content Include="Views\Assets\player\swfobject.js" />
     <Content Include="Views\Assets\player\_player.swf" />
-    <Content Include="Views\Modules\ContentsList\Bulletin.html" />
-    <Content Include="Views\Modules\ContentsList\BulletinTop.html" />
-    <Content Include="Views\Modules\ContentsList\CategoryItems-Callback.html" />
-    <Content Include="Views\Modules\ContentsList\CategoryItems.html" />
-    <Content Include="Views\Modules\ContentsList\ContentTabs-CallBack.html" />
-    <Content Include="Views\Modules\ContentsList\ContentTabs.html" />
-    <Content Include="Views\Modules\ContentsList\ContentOne.html" />
-    <Content Include="Views\Modules\ContentsList\ContentTabs2-Callback.html" />
-    <Content Include="Views\Modules\ContentsList\ContentTabs2.html" />
-    <Content Include="Views\Modules\ContentsList\Digest.html" />
-    <Content Include="Views\Modules\ContentsList\Galleries.html" />
-    <Content Include="Views\Modules\ContentsList\ItemlistMostViewed-CallBack.html" />
-    <Content Include="Views\Modules\ContentsList\Itemlist-CallBack.html" />
-    <Content Include="Views\Modules\ContentsList\Itemlist.html" />
-    <Content Include="Views\Modules\ContentsList\ItemTiles.html" />
-    <Content Include="Views\Modules\ContentsList\Latest.html" />
-    <Content Include="Views\Modules\ContentsList\ItemTiles.html" />
-    <Content Include="Views\Modules\ContentsList\NewsListNoMore.html" />
-    <Content Include="Views\Modules\ContentsList\NewsList-CallBack.html" />
-    <Content Include="Views\Modules\ContentsList\NewsList.html" />
-    <Content Include="Views\Modules\ContentsList\NuclearTimeline.html" />
-    <Content Include="Views\Modules\ContentsList\SearchResults.html" />
-    <Content Include="Views\Modules\ContentsList\SliderClean.html" />
-    <Content Include="Views\Modules\ContentsList\Slider.html" />
-    <Content Include="Views\Modules\Media\FeaturedProgramsEpisodes.html" />
-    <Content Include="Views\Modules\Media\MostViewedTop.html" />
-    <Content Include="Views\Modules\Media\MostViewed.html" />
-    <Content Include="Views\Modules\Media\ProgramsEpisodes.html" />
-    <Content Include="Views\Modules\Media\Programs.html" />
-    <Content Include="Views\Modules\Media\ProgramTabs-CallBack.html" />
-    <Content Include="Views\Modules\Media\SliderTabs-CallBack.html" />
-    <Content Include="Views\Modules\Media\SliderTabs.html" />
-    <Content Include="Views\Modules\ContentsList\TagItems.html" />
-    <Content Include="Views\Modules\ContentsList\Ticker.html" />
+    <Content Include="Views\Modules\ContentsList\Tiles.html" />
     <Content Include="Views\Modules\ContentsList\Topnews.html" />
     <Content Include="Views\Modules\Content\full.html" />
-    <Content Include="Views\Modules\Footer\Newsletter.html" />
-    <Content Include="Views\Modules\Media\Carousel.html" />
-    <Content Include="Views\Modules\Media\FeaturedProgram.html" />
-    <Content Include="Views\Modules\Media\FeaturedProgram2Noepisode.html" />
-    <Content Include="Views\Modules\Media\FeaturedProgram2.html" />
-    <Content Include="Views\Modules\Media\Item.html" />
-    <Content Include="Views\Modules\Media\ProgramTabs.html" />
-    <Content Include="Views\Modules\Media\ProgramTabs2.html" />
-    <Content Include="Views\Modules\Media\ShowEpisode.html" />
-    <Content Include="Views\Modules\Media\MediaTiles.html" />
-    <Content Include="Views\Modules\Media\ProgramList.html" />
-    <Content Include="Views\Modules\Menu\Categories.html" />
-    <Content Include="Views\Modules\Menu\Masthead.html" />
-    <Content Include="Views\Modules\Menu\MenuWithPrograms.html" />
     <Content Include="Views\Modules\Menu\Menu.html" />
-    <Content Include="Views\Modules\Poll\Normal.html" />
     <Content Include="Views\Modules\Static\About.html" />
     <Content Include="Views\Modules\Static\Apps.html" />
     <Content Include="Views\Modules\Static\Banners.html" />
     <Content Include="Views\Modules\Static\Contact.html" />
     <Content Include="Views\Modules\Static\Copyright.html" />
-    <Content Include="Views\Modules\Static\Frequencies.html" />
-    <Content Include="Views\Modules\Static\Live.html" />
     <Content Include="Views\Modules\Static\Sharing.html" />
-    <Content Include="Views\Modules\Static\SocialBannersPrograms.html" />
-    <Content Include="Views\Modules\Static\SocialBannersDoc.html" />
-    <Content Include="Views\Modules\Static\SocialBanners.html" />
-    <Content Include="Views\Modules\Weather\Condensed.html" />
     <Content Include="Views\Pages\index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -363,7 +309,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Modules\Footer\" />
+    <Folder Include="Views\Modules\Media\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
