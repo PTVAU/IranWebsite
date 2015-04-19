@@ -235,6 +235,7 @@
     <Content Include="Views\Assets\player\swfobject.js" />
     <Content Include="Views\Assets\player\_player.swf" />
     <Content Include="Views\Modules\ContentsList\Tiles.html" />
+    <Content Include="Views\Modules\ContentsList\TilesGalleries.html" />
     <Content Include="Views\Modules\ContentsList\Topnews.html" />
     <Content Include="Views\Modules\Content\full.html" />
     <Content Include="Views\Modules\Menu\Menu.html" />

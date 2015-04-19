@@ -77,13 +77,13 @@ namespace TCMSFRONTEND
                             Pos.bot += newMd.Site_Modules_Generated_Html;
                             break;
                         case "green":
-                            Pos.bot += newMd.Site_Modules_Generated_Html;
+                            Pos.green += newMd.Site_Modules_Generated_Html;
                             break;
                         case "gray":
-                            Pos.bot += newMd.Site_Modules_Generated_Html;
+                            Pos.gray += newMd.Site_Modules_Generated_Html;
                             break;
                         case "lightgray":
-                            Pos.bot += newMd.Site_Modules_Generated_Html;
+                            Pos.lightgray += newMd.Site_Modules_Generated_Html;
                             break;
                         default:
                             break;
