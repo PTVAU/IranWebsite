@@ -72,6 +72,9 @@ namespace CoreSerivce.BLL
         {
             return DAL.Contents.frontendSearch(Category, count, ordering, SearchKey);
         }
-       
+        public static List<BO.Contents> frontendSelectByTag(string count, string tags)
+        {
+            return DAL.Contents.frontendSelectByTag(count,tags);
+        }
     }
 }

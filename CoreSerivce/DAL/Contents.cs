@@ -771,5 +771,61 @@ namespace CoreSerivce.DAL
             //}            
             return ContentList;
         }
+        public static List<BO.Contents> frontendSelectByTag(string count,string tags)
+        {
+            var ContentList = new List<BO.Contents>();
+
+            var sqlCommand = new SqlCommand();
+            sqlCommand.CommandText = @"select top " + count + @" *  from Contents where id in (
+		                                select Content_Id from Contents_Tags where Tag_Id in(" + tags + @"))
+                                        and IsPublished=1 and State=0
+                                        order by Published desc";
+
+
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.Connection = new SqlConnection(WebConfigurationManager.AppSettings["MainConnectionString"].ToString());
+
+            //try
+            //{
+            sqlCommand.Connection.Open();
+            var Dr = sqlCommand.ExecuteReader();
+            while (Dr.Read())
+            {
+                var ContentObj = new BO.Contents();
+
+                ContentObj.Alias = Dr["Alias"].ToString();
+                ContentObj.Created = Dr["Created"].ToString();
+                ContentObj.Created_By = int.Parse(Dr["Created_By"].ToString());
+                ContentObj.Fulltext = Dr["Fulltext"].ToString();
+                ContentObj.Id = int.Parse(Dr["id"].ToString());
+                ContentObj.Introtext = Dr["Introtext"].ToString();
+                ContentObj.Metadesc = Dr["Metadesc"].ToString();
+                ContentObj.Modified = Dr["Modified"].ToString();
+                ContentObj.Modified_By = int.Parse(Dr["Modified_By"].ToString());
+                ContentObj.Owner = int.Parse(Dr["Owner"].ToString());
+                ContentObj.Published = Dr["Published"].ToString();
+                ContentObj.Published_By = int.Parse(Dr["Published_By"].ToString());
+                ContentObj.ShortTitle = Dr["ShortTitle"].ToString();
+                ContentObj.State = short.Parse(Dr["State"].ToString());
+                ContentObj.Title = Dr["Title"].ToString();
+                ContentObj.Viewcount = int.Parse(Dr["Viewcount"].ToString());
+                ContentObj.IsPublished = int.Parse(Dr["IsPublished"].ToString());
+                // ContentObj.Youtube = Dr["Youtube"].ToString();
+
+                ContentList.Add(ContentObj);
+            }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //}
+            //finally
+            //{
+            sqlCommand.Connection.Close();
+            sqlCommand.Dispose();
+            //}
+
+            return ContentList;
+        }
     }
 }

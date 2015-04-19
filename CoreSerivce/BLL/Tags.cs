@@ -8,7 +8,16 @@ namespace CoreSerivce.BLL
     {
         public static BO.Tags Insert(BO.Tags  TagObj)
         {
-            return DAL.Tags.Insert(TagObj);
+            List<BO.Tags> tagList = DAL.Tags.SelectByTitle(TagObj.name);        
+            if(tagList.Count==0)
+            {
+               TagObj= DAL.Tags.Insert(TagObj);
+            }
+            else
+            {
+                TagObj.id = -1;
+            }
+            return TagObj;
         }
         public static List<BO.Tags> SelectAll()
         {
@@ -21,6 +30,10 @@ namespace CoreSerivce.BLL
         public static List<BO.Tags> SelectSearch(string SearchText)
         {
             return DAL.Tags.SelectSearch(SearchText);
+        }
+        public static List<BO.Tags> SelectMostUsed(string count)
+        {
+            return DAL.Tags.SelectMostUsed(count);
         }
     }
 }

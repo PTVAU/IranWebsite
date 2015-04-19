@@ -48,9 +48,9 @@ namespace CoreSerivce.BLL
         {
             return DAL.Episodes.UpdateViewCount(Id);
         }
-        public static List<BO.Episodes> FrontendListEpisodes(string kinds, string count, string order)
+        public static List<BO.Episodes> FrontendListEpisodes(string kinds, string count, string order,string hours)
         {
-            return DAL.Episodes.FrontendListEpisodes(kinds, count, order);
+            return DAL.Episodes.FrontendListEpisodes(kinds, count, order,hours);
         }
     }
 }

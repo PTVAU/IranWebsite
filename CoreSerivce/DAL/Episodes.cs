@@ -173,12 +173,12 @@ namespace CoreSerivce.DAL
             //}
             return Eps;
         }
-        public static List<BO.Episodes> listEpisodesByPid(string programId,string count,string ordering)
+        public static List<BO.Episodes> listEpisodesByPid(string programId, string count, string ordering)
         {
             var episodesList = new List<BO.Episodes>();
 
             var sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = @"Select top(" + count + ") * from episodes where pid=" + programId + " and ispublished=1 order by " + ordering;
+            sqlCommand.CommandText = @"Select top(" + count + ") * from episodes where pid=" + programId + " and ispublished=1  order by " + ordering;
 
             sqlCommand.CommandType = CommandType.Text;
             sqlCommand.Connection = new SqlConnection(WebConfigurationManager.AppSettings["MainConnectionString"].ToString());
@@ -293,16 +293,17 @@ namespace CoreSerivce.DAL
 
             return Success;
         }
-        public static List<BO.Episodes> FrontendListEpisodes(string  kinds,string count,string order)
+        public static List<BO.Episodes> FrontendListEpisodes(string  kinds,string count,string order,string hours)
         {
             var episodesList = new List<BO.Episodes>();
+            if (string.IsNullOrEmpty(hours))
+                hours = "10000";
 
             var sqlCommand = new SqlCommand();
             sqlCommand.CommandText = @"SELECT     top("+count+@") *
                                         FROM  Episodes INNER JOIN
                                         Programs ON Episodes.Pid = Programs.Id
-						                where Programs.Kind in (" + kinds + @") and Episodes.IsPublished=1 and Programs.IsPublished=1
-						                order by " +order;
+						                where Programs.Kind in (" + kinds + @") and Episodes.IsPublished=1 and Programs.IsPublished=1 and ( Episodes.Published between DATEADD(HOUR,-" + hours + @", GETDATE()) and GETDATE()) order by " + order;
 
             sqlCommand.CommandType = CommandType.Text;
             sqlCommand.Connection = new SqlConnection(WebConfigurationManager.AppSettings["MainConnectionString"].ToString());

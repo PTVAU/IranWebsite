@@ -271,11 +271,11 @@ namespace TCMSFRONTEND.Dal
             reader.Dispose();
             return result;
         }
-        public static List<Bo.Data.Episodes> episodesList(string kind, string count, string order)
+        public static List<Bo.Data.Episodes> episodesList(string kind, string count, string order,string hours)
         {
             //"/programs/episode/list/{kinds}/{count}/{order}"
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim()
-                + "programs/episode/list/" + kind + "/" + count + "/" + order);
+                + "programs/episode/list/" + kind + "/" + count + "/" + order+"/"+hours);
 
             WebResponse response = request.GetResponse();
             Stream stream = response.GetResponseStream();
@@ -315,5 +315,64 @@ namespace TCMSFRONTEND.Dal
             List<Bo.Service.Contents> RvLst = JsonConvert.DeserializeObject<List<Bo.Service.Contents>>(result);
             return RvLst;
         }
+        public static List<Bo.Data.Weather> weatherList()
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim() + "/share/weather");
+
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            var result = reader.ReadToEnd();
+            stream.Dispose();
+            reader.Dispose();
+            List<Bo.Data.Weather> RvLst = JsonConvert.DeserializeObject<List<Bo.Data.Weather>>(result);
+            return RvLst;
+        }
+        public static List<Bo.Service.Contents> frontendContentsSelectByTag(string count, string tags)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim() + "/contents/list/bytag/?" + "count=" + count + "&tags=" + tags);
+
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            var result = reader.ReadToEnd();
+            stream.Dispose();
+            reader.Dispose();
+            List<Bo.Service.Contents> RvLst = JsonConvert.DeserializeObject<List<Bo.Service.Contents>>(result);
+            return RvLst;
+        }
+        public static List<Bo.Service.Categories> categoriesSelectAll()
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim() + "/categories/list");
+
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            var result = reader.ReadToEnd();
+            stream.Dispose();
+            reader.Dispose();
+            List<Bo.Service.Categories> RvLst = JsonConvert.DeserializeObject<List<Bo.Service.Categories>>(result);
+            return RvLst;
+        }
+
+        public static List<Bo.Service.Tags> tagsSelectMostUsed(string count)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim() + "/tags/mostused/"+count);
+
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            var result = reader.ReadToEnd();
+            stream.Dispose();
+            reader.Dispose();
+            List<Bo.Service.Tags> RvLst = JsonConvert.DeserializeObject<List<Bo.Service.Tags>>(result);
+            return RvLst;
+        }
+
+        
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -99,7 +100,7 @@ namespace TCMSFRONTEND
                 aCookie.Expires = DateTime.Now.AddMinutes(10);
                 HttpContext.Current.Response.Cookies.Add(aCookie);
             }
-               
+
         }
         [ScriptMethod(UseHttpGet = true)]
         [WebMethod]
@@ -149,14 +150,40 @@ namespace TCMSFRONTEND
             Wr.Config = md;
 
             Wr.Config.Site_Modules_Body = Core.Utility.ReadFile(@"\Views\Modules\ContentsList\ItemlistMostViewed-CallBack.html");
-            List<Bo.Data.Contents> CntListData = Bll.SiteData.contentsList("", null, "7","-1", "0", "s", null,CntList);
-           
+            List<Bo.Data.Contents> CntListData = Bll.SiteData.contentsList("", null, "7", "-1", "0", "s", null, CntList);
+
             Wr.Data = CntListData;
-            string result=Core.Utility.templateDataMerger(Wr.Config.Site_Modules_Body, Wr);
+            string result = Core.Utility.templateDataMerger(Wr.Config.Site_Modules_Body, Wr);
 
             result = Regex.Replace(result, @"\s*(<[^>]+>)\s*", "$1", RegexOptions.Singleline);
 
             HttpContext.Current.Response.Write(result);
+        }
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        [WebMethod]
+        public void SendEmail(string name, string from, string to, string newsId)
+        {
+            try
+            {
+                SmtpClient smtpClient = new SmtpClient();
+                NetworkCredential basicCredential = new NetworkCredential("noreply@hispantv.com", "%123456%");
+                MailMessage message = new MailMessage();
+                MailAddress fromAddress = new MailAddress("noreply@hispantv.com");
+
+                smtpClient.Host = "mail.hispantv.com";
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = basicCredential;
+                // smtpClient.Timeout = (60 * 5 * 1000);
+
+                message.From = fromAddress;
+                message.Subject = "Hispantv Title";
+                message.IsBodyHtml = false;
+                string url = "http://hispantv.ir/newsdetail/email/" + newsId + "/emailnews";
+                message.Body = "Test text email from:" + from + " and name: "+name+"\r\nPlease click on link :" + "\r\n" + url;
+                message.To.Add(to);
+                smtpClient.Send(message);
+            }
+            catch { }
         }
     }
 }

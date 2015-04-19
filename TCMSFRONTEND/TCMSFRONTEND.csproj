@@ -73,10 +73,7 @@
     <Content Include="Cache.aspx" />
     <Content Include="callBack.asmx" />
     <Content Include="crossdomain.xml" />
-    <Content Include="google2210041244fd615a.html" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\101-231.pubxml" />
-    <None Include="Properties\PublishProfiles\Frontend.pubxml" />
     <Content Include="Views\Assets\css\config.json" />
     <Content Include="Views\Assets\data\about.jpg" />
     <Content Include="Views\Assets\font\hispan-bold.eot" />
@@ -198,10 +195,10 @@
     <Content Include="Views\Assets\less\hispan\item.less" />
     <Content Include="Views\Assets\less\hispan\player.less" />
     <Content Include="Views\Assets\less\hispan\style.less" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Assets\player\live.smil" />
     <Content Include="Views\Assets\img\satellites\satellites.psd" />
     <Content Include="Views\Assets\less\hispan\responsive.less" />
+    <None Include="Properties\PublishProfiles\100.249.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -396,6 +393,7 @@
     <Compile Include="Bo\Data\Polls_Options.cs" />
     <Compile Include="Bo\Data\Programs.cs" />
     <Compile Include="Bo\Data\Tags.cs" />
+    <Compile Include="Bo\Data\Weather.cs" />
     <Compile Include="Bo\Service\Categories.cs" />
     <Compile Include="Bo\Service\Comments.cs" />
     <Compile Include="Bo\Service\Contents.cs">

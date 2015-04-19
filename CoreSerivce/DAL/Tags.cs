@@ -148,5 +148,92 @@ namespace CoreSerivce.DAL
 
             return TagList;
         }
+        public static List<BO.Tags> SelectByTitle(string Text)
+        {
+            var TagList = new List<BO.Tags>();
+
+            var sqlCommand = new SqlCommand();
+            sqlCommand.CommandText = @"Select * from tags where title=N'" + Text + "'";
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.Connection = new SqlConnection(WebConfigurationManager.AppSettings["MainConnectionString"].ToString());
+
+            try
+            {
+                sqlCommand.Connection.Open();
+                var Dr = sqlCommand.ExecuteReader();
+                while (Dr.Read())
+                {
+                    var Tg = new BO.Tags();
+                    Tg.Created = Dr["Created"].ToString();
+                    Tg.Modified = Dr["Modified"].ToString();
+
+                    Tg.Created_By = int.Parse(Dr["Created_By"].ToString());
+                    Tg.Modified_By = int.Parse(Dr["Modified_By"].ToString());
+
+                    Tg.Parent_Id = int.Parse(Dr["Parent_Id"].ToString());
+                    Tg.id = int.Parse(Dr["id"].ToString());
+                    Tg.name = Dr["Title"].ToString();
+
+                    Tg.Published = short.Parse(Dr["Published"].ToString());
+
+                    TagList.Add(Tg);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                sqlCommand.Connection.Close();
+                sqlCommand.Dispose();
+            }
+            return TagList;
+        }
+        public static List<BO.Tags> SelectMostUsed(string count)
+        {
+            var TagList = new List<BO.Tags>();
+
+            var sqlCommand = new SqlCommand();
+            sqlCommand.CommandText = @"select * from tags where id in (
+                                        Select top " + count + @" Tag_Id from Contents_Tags
+                                            group by Tag_Id
+                                            order by count(Tag_Id) desc)";
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.Connection = new SqlConnection(WebConfigurationManager.AppSettings["MainConnectionString"].ToString());
+
+            try
+            {
+                sqlCommand.Connection.Open();
+                var Dr = sqlCommand.ExecuteReader();
+                while (Dr.Read())
+                {
+                    var Tg = new BO.Tags();
+                    Tg.Created = Dr["Created"].ToString();
+                    Tg.Modified = Dr["Modified"].ToString();
+
+                    Tg.Created_By = int.Parse(Dr["Created_By"].ToString());
+                    Tg.Modified_By = int.Parse(Dr["Modified_By"].ToString());
+
+                    Tg.Parent_Id = int.Parse(Dr["Parent_Id"].ToString());
+                    Tg.id = int.Parse(Dr["id"].ToString());
+                    Tg.name = Dr["Title"].ToString();
+
+                    Tg.Published = short.Parse(Dr["Published"].ToString());
+
+                    TagList.Add(Tg);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                sqlCommand.Connection.Close();
+                sqlCommand.Dispose();
+            }
+
+
+            return TagList;
+        }
     }
 }

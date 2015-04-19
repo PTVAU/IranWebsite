@@ -1,12 +1,16 @@
-<div class="inner">
-    <div class="type-image"><i class="icon-cloud-moon"></i></div>
-    <div class="temperature">16 C</div>
-    <div class="location">Madrid, Spain</div>
+﻿<div class="inner">
+    {{#each Data}}
+    <div{{#if first}} {{#else}} class="hide" style="display: none;"{{/if}}>
+        <div class="type-image"><i class="icon-{{cssClass}}"></i></div>
+        <div class="temperature">{{temp}}&nbsp;C</div>
+        <div class="location">{{name}}</div>
+    </div>
+    {{/each}}
     <div class="choose-location">
-        <a class="select-handler" data-bind="region">Choose your region</a>
-        <select name="region">
-            <option value="0">Tehran, Iran</option>
-            <option value="1">Madrid, Spain</option>
+        <select name="region" id="region-select" data-type="select" data-placeholder="Elija su región">
+            {{#each Data}}
+            <option value="{{id}}" {{#if first}} selected="selected" {{/if}}>{{name}}</option>
+            {{/each}}
         </select>
     </div>
 </div>

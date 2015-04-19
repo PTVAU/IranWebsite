@@ -15,5 +15,6 @@ namespace TCMSFRONTEND.Bo.Site
         public string imagesSuffix { get; set; }
         public string visibleCount { get; set; }
         public string htmlClass { get; set; }
+        public string hours { get; set; }
     }
 }

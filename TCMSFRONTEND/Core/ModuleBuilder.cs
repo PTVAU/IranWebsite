@@ -43,11 +43,28 @@ namespace TCMSFRONTEND.Core
                     return episodesList(Wr);
                 case "contentSearch":
                     return contentSearch(Wr);
+                case "weather":
+                    return weather(Wr);
                 default:
                     md.Site_Modules_Generated_Html = "No builder found.";
                     return md;
             }       
 
+        }
+        private static Bo.Site.siteModules weather(Bo.Wrapper Wr)
+        {
+            //Get module params:
+            Bo.Site.moduleTypeContents Params = new Bo.Site.moduleTypeContents();
+            Params = JsonConvert.DeserializeObject<Bo.Site.moduleTypeContents>(Wr.Config.Site_Modules_Params);
+
+            ////get data from DAL layer:
+            List<Bo.Data.Weather> contentsList = new List<Bo.Data.Weather>();
+            contentsList = Bll.SiteData.weatherList();
+            Wr.Data = contentsList;
+
+            //Call merger method to fill template with data and config:
+            Wr.Config.Site_Modules_Generated_Html = Core.Utility.templateDataMerger(Wr.Config.Site_Modules_Body, Wr);
+            return Wr.Config;
         }
         public static Bo.Site.siteModules ContentsList(Bo.Wrapper Wr)
         {
@@ -180,7 +197,7 @@ namespace TCMSFRONTEND.Core
 
             //Page Config:
             Bo.Site.sitePageConfig cnfg = new Bo.Site.sitePageConfig();
-            cnfg.title = cnt.Title;
+            cnfg.title = cnt.Title+" - ";
             cnfg.description = cnt.Introtext;
             cnfg.image = cnt.image;
             cnfg.datetime = cnt.Published;
@@ -251,6 +268,7 @@ namespace TCMSFRONTEND.Core
 
             //Call merger method to fill template with data and config:
             Wr.Config.Site_Modules_Generated_Html = Core.Utility.templateDataMerger(Wr.Config.Site_Modules_Body, Wr);
+            Wr.Config.Site_Modules_Generated_Html = Regex.Replace(Wr.Config.Site_Modules_Generated_Html, @"\s*(<[^>]+>)\s*", "$1", RegexOptions.Singleline);
             return Wr.Config;
         }
         private static Bo.Site.siteModules episodeShow(Bo.Wrapper Wr)
@@ -327,14 +345,13 @@ namespace TCMSFRONTEND.Core
             Wr.Config.visibleCount = Params.visibleCount;
             Wr.Config.htmlClass = Params.htmlClass;
 
-            episodesList = Bll.SiteData.episodesList(Params.kind, Params.count,Params.ordering,"episode", Params.imagesSuffix);
+            episodesList = Bll.SiteData.episodesList(Params.kind, Params.count,Params.ordering,"episode", Params.imagesSuffix,Params.hours);
             Wr.Data = episodesList;
 
             //Call merger method to fill template with data and config:
             Wr.Config.Site_Modules_Generated_Html = Core.Utility.templateDataMerger(Wr.Config.Site_Modules_Body, Wr);
             return Wr.Config;
         }
-
         public static Bo.Site.siteModules contentSearch(Bo.Wrapper Wr)
         {
             string searchkey = "";

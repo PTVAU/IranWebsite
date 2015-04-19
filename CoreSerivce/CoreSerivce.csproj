@@ -107,6 +107,7 @@
     <Compile Include="BLL\Programs.cs" />
     <Compile Include="BLL\Repositories.cs" />
     <Compile Include="BLL\Repository_Tags.cs" />
+    <Compile Include="BLL\Share.cs" />
     <Compile Include="BLL\Tags.cs" />
     <Compile Include="BLL\Users.cs" />
     <Compile Include="BLL\Users_Group.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="BO\Image_Tmp.cs" />
     <Compile Include="BO\Message.cs" />
     <Compile Include="BO\Episodes.cs" />
+    <Compile Include="BO\Newsletter.cs" />
     <Compile Include="BO\Programs.cs" />
     <Compile Include="BO\Polls_Options.cs" />
     <Compile Include="BO\Polls.cs" />
@@ -133,6 +135,7 @@
     <Compile Include="BO\urlRouting.cs" />
     <Compile Include="BO\Users.cs" />
     <Compile Include="BO\Users_Group.cs" />
+    <Compile Include="BO\Weather.cs" />
     <Compile Include="Cache.aspx.cs">
       <DependentUpon>Cache.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,6 +159,7 @@
     <Compile Include="DAL\Programs.cs" />
     <Compile Include="DAL\Repositories.cs" />
     <Compile Include="DAL\Repository_Tags.cs" />
+    <Compile Include="DAL\Share.cs" />
     <Compile Include="DAL\Tags.cs" />
     <Compile Include="DAL\Users.cs" />
     <Compile Include="DAL\Users_Group.cs" />
@@ -209,12 +213,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\Images\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
-    <None Include="Properties\PublishProfiles\Srv249.pubxml" />
-    <None Include="Properties\PublishProfiles\Srv55-117.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

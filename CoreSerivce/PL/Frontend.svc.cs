@@ -173,9 +173,9 @@ namespace CoreSerivce.PL
             BO.Comments cmnt= BLL.Comments.SelectById(commentId);
             return cmnt.Vote_Up - cmnt.Vote_Down;
         }
-        public List<BO.Episodes> FrontendListEpisodes(string kinds, string count, string order)
+        public List<BO.Episodes> FrontendListEpisodes(string kinds, string count, string order,string hours)
         {
-            return DAL.Episodes.FrontendListEpisodes(kinds, count, order);
+            return DAL.Episodes.FrontendListEpisodes(kinds, count, order,hours);
         }
         public List<BO.Contents> frontendSelectMostViewed(string count, string hours)
         {
@@ -204,5 +204,29 @@ namespace CoreSerivce.PL
 
             return bLLContentsSelectByState;
         }
+        public List<BO.Weather> FrontendWeatherList()
+        {
+            return BLL.Share.FrontendWeatherList();
+        }
+        public List<BO.Tags> SelectMostUsed(string count)
+        {
+            return  BLL.Tags.SelectMostUsed(count);
+        }
+        public List<BO.Categories> categoriesSelectAll()
+        {
+            return BLL.Categories.SelectAll();
+        }
+        public List<BO.Contents> frontendContentsSelectByTag(string count, string tags)
+        {
+            var bLLContentsSelectByState = new List<BO.Contents>();
+            bLLContentsSelectByState = BLL.Contents.frontendSelectByTag(count,tags);
+            foreach (BO.Contents item in bLLContentsSelectByState)
+            {
+                item.Repositories = BLL.Contents_Repository.SelectByConetentsId(item.Id);
+                item.Categories = BLL.Contents_Categories.SelectByConetentsId(item.Id);
+            }
+            return bLLContentsSelectByState;
+        }
+
     }
 }

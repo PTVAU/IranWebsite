@@ -161,8 +161,8 @@ namespace CoreSerivce.PL
         [WebInvoke(Method = "GET",
         ResponseFormat = WebMessageFormat.Json,
         BodyStyle = WebMessageBodyStyle.Bare,
-        UriTemplate = "/programs/episode/list/{kinds}/{count}/{order}")]
-        List<BO.Episodes> FrontendListEpisodes(string kinds, string count, string order);
+        UriTemplate = "/programs/episode/list/{kinds}/{count}/{order}/{hours}")]
+        List<BO.Episodes> FrontendListEpisodes(string kinds, string count, string order,string hours);
 
         [OperationContract]
         [WebInvoke(Method = "GET",
@@ -178,7 +178,33 @@ namespace CoreSerivce.PL
         BodyStyle = WebMessageBodyStyle.Bare,
         UriTemplate = "/contents/search/?Category={Category}&count={count}&ordering={ordering}&SearchKey={SearchKey}")]
         List<BO.Contents> frontendSearch(string Category, string count, string ordering, string SearchKey);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+        ResponseFormat = WebMessageFormat.Json,
+        BodyStyle = WebMessageBodyStyle.Bare,
+        UriTemplate = "/share/weather")]
+        List<BO.Weather> FrontendWeatherList();
+
+
+        [WebInvoke(Method = "GET",
+        ResponseFormat = WebMessageFormat.Json,
+        BodyStyle = WebMessageBodyStyle.Bare,
+        UriTemplate = "/tags/mostused/{count}")]
+        List<BO.Tags> SelectMostUsed(string count);
+
+
+        [WebInvoke(Method = "GET",
+        ResponseFormat = WebMessageFormat.Json,
+        BodyStyle = WebMessageBodyStyle.Bare,
+        UriTemplate = "/categories/list")]        
+        List<BO.Categories> categoriesSelectAll();
+
+        [WebInvoke(Method = "GET",
+        ResponseFormat = WebMessageFormat.Json,
+        BodyStyle = WebMessageBodyStyle.Bare,
+        UriTemplate = "/contents/list/bytag/?count={count}&tags={tags}")]
+        List<BO.Contents> frontendContentsSelectByTag(string count, string tags);
         
-       
     }
 }

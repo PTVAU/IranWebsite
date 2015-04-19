@@ -274,13 +274,19 @@ namespace TCMSFRONTEND.Bll
 
                 //Find same category news:
                 List<Bo.Data.Contents> rtContents = new List<Bo.Data.Contents>();
-                ////Show Related News if it is not Bulletin:
-                //if (servContent.Categories[0].Id != 129)
-                //{
-                    rtContents = Bll.SiteData.contentsList(servContent.Categories[0].Id.ToString(), "id desc", "3", "-1", "0", "m", null, null);
-                    cnt.relatedByCategory = rtContents;
-                //}
+                rtContents = Bll.SiteData.contentsList(servContent.Categories[0].Id.ToString(), "id desc", "4", "-1", "0", "m", null, null);
+                
+                //Remove current item if exist in related list    
+                for (int i = 0; i < rtContents.Count; i++)
+                {
+                    if (rtContents[i].Id.ToString() == contentId)
+                        rtContents.RemoveAt(i);
+                }
+                if (rtContents.Count > 3)
+                    rtContents.RemoveAt(3);
 
+                cnt.relatedByCategory = rtContents;
+               
                 //Find same category news:
                 List<Bo.Data.Contents> rtContentsByTag = new List<Bo.Data.Contents>();
                 rtContentsByTag = Bll.SiteData.contentsListRelatedByTag(cnt.Id.ToString(), "3");
@@ -599,9 +605,9 @@ namespace TCMSFRONTEND.Bll
         {
             Dal.SiteData.EpisodesUpdateViewCount(Id,Pid);
         }
-        public static List<Bo.Data.Episodes> episodesList(string kind, string count, string order, string programTile, string imageSuffix)
+        public static List<Bo.Data.Episodes> episodesList(string kind, string count, string order, string programTile, string imageSuffix,string hours)
         {
-            List<Bo.Data.Episodes> Lst = Dal.SiteData.episodesList(kind, count, order);
+            List<Bo.Data.Episodes> Lst = Dal.SiteData.episodesList(kind, count, order,hours);
 
             int indx = 0;
             foreach (Bo.Data.Episodes item in Lst)
@@ -613,6 +619,22 @@ namespace TCMSFRONTEND.Bll
                 indx++;
             }
 
+            return Lst;
+        }
+        public static List<Bo.Data.Weather> weatherList()
+        {
+            List<Bo.Data.Weather> Lst=Dal.SiteData.weatherList();
+            for (int i = 0; i < Lst.Count; i++)
+            {
+               if(i==0)
+               {
+                   Lst[i].first = true;
+               }
+                else
+               {
+                   Lst[i].first = false;
+               }
+            }
             return Lst;
         }
     }

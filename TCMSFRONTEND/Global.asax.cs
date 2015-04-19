@@ -40,7 +40,11 @@ namespace TCMSFRONTEND
         }
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            //Ensure SessionID in order to prevent the folloing exception
+            //when the Application Pool Recycles
+            //[HttpException]: Session state has created a session id, but cannot
+            //    save it because the response was already flushed by 
+            string sessionId = Session.SessionID;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

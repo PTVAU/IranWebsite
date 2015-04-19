@@ -43,7 +43,7 @@ namespace TCMSFRONTEND
                 //Get new item of site positions class:
                 Bo.Site.sitePositions Pos = new Bo.Site.sitePositions();
                 Bo.Site.sitePageConfig cnfg = new Bo.Site.sitePageConfig();
-                cnfg.title = "";
+                cnfg.title = string.Empty;
                 foreach (Bo.Site.siteModules Md in modulesList)
                 {
                     //Call Method to generate html:

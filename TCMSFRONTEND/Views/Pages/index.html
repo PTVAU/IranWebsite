@@ -8,12 +8,12 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{pageConfig.title}} HispanTV, Nexo Latino</title>
+    <title>{{pageConfig.title}}HispanTV, Nexo Latino</title>
     <meta content="{{pageConfig.datetime}}" itemprop="datePublished" name="pubdate" property="og:pubdate">
     <meta content="" itemprop="contentLocation">
     <meta content="HispanTV" itemprop="author" name="author">
     <meta content="" itemprop="sourceOrganization" name="source">
-    <meta content="{{pageConfig.title}} - HispanTV.com" itemprop="headline" property="og:title">
+    <meta content="{{#if pageConfig.title}}{{pageConfig.title}} - {{/if}}HispanTV.com" itemprop="headline" property="og:title">
     <meta content="{{pageConfig.description}}" itemprop="description" name="description" property="og:description">
     <meta content="{{pageConfig.description}}" itemprop="keywords" name="keywords">
     <meta content="HISPANTV" itemprop="siteName" property="og:site_name">
@@ -186,14 +186,12 @@
         <div id="mastfoot" class="wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <!--
+                    <div class="col-xs-12 col-sm-6">
                         {{#if weather}}
                         <div id="weather">
                             {{weather}}
                         </div>
                         {{/if}}
-                        -->
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div id="sharings-footer">
@@ -228,7 +226,7 @@
                                         <li><a href="/category/Asia-y-Oceanía/4">Asia y Oceanía</a></li>
                                         <li><a href="/category/África/18">África</a></li>
                                         <li><a href="/category/Europa/35">Europa</a></li>
-                                        <li><a href="/category/EE.UU.-y-Canadá/44">EE.UU. y Canadá</a></li>
+                                        <li><a href="/category/América-del-Norte/44">América del Norte</a></li>
                                         <li><a href="/category/Sudamérica/51">Sudamérica</a></li>
                                         <li><a href="/category/Centroamérica/103">Centroamérica</a></li>
                                     </ul>
