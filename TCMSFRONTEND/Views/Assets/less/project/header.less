@@ -1,0 +1,57 @@
+#header {
+    position: relative; box-shadow: 0 0 3px #989898; z-index: 80;
+    a {
+	transition: all 0.2s; text-decoration: none;
+	&:link, &:active, &:visited { color: @green; }
+	&:focus { outline: 0 none; }
+    }
+    .brand {
+	.logo {
+	    margin: 5px 0;
+	    a {
+		display: block; height: 70px; width: 74px; background: url('../img/logo.png') no-repeat center center transparent; overflow: hidden; text-indent: 999px;
+	    }
+	}
+    }
+    .header-tools {
+	ul {
+	    li {
+		font-size: 16px; padding: 0;
+		a {
+		    display: block; line-height: @headerHeight; padding: 0 15px;
+		    &:hover { color: darken(@green, 10%); }
+		}
+		& ~ li { margin-left: 20px; }
+	    }
+	}
+	form {
+	    position: relative;
+	    .form-group {
+		margin-bottom: 0;
+		input { width: 200px; border-radius: 0; }
+	    }
+	    button {
+		&._transparent { border: 0 none; color: #999; font-size: 16px; position: absolute; top: 0; right: 0; height: 34px; }
+	    }
+	}
+    }
+}
+#menu {
+    margin-left: 60px;
+    ul {
+	li {
+	    padding: 0 10px; font-size: 18px;
+	    a {
+		display: block; line-height: @headerHeight; padding: 0 5px;
+		&:link, &:active, &:visited { color: @gray; }
+		&:hover { color: @green; }
+	    }
+	    &.active {
+		a {
+		    color: @green;
+		    &:hover { color: darken(@green, 10%); }
+		}
+	    }
+	}
+    }
+}

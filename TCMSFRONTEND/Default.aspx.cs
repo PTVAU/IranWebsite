@@ -61,53 +61,14 @@ namespace TCMSFRONTEND
                         case "main":
                             Pos.main += newMd.Site_Modules_Generated_Html;
                             break;
-                        case "main_1_1":
-                            Pos.main_1_1 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_1_2":
-                            Pos.main_1_2 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_2_1":
-                            Pos.main_2_1 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_2_2":
-                            Pos.main_2_2 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_2_3":
-                            Pos.main_2_3 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_2_4":
-                            Pos.main_2_4 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_2_5":
-                            Pos.main_2_5 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_2_6":
-                            Pos.main_2_6 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "aside":
-                            Pos.aside += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "ticker":
-                            Pos.ticker += newMd.Site_Modules_Generated_Html;
-                            break;
                         case "masthead":
                             Pos.masthead += newMd.Site_Modules_Generated_Html;
                             break;
                         case "menu":
                             Pos.menu += newMd.Site_Modules_Generated_Html;
                             break;
-                        case "newsletter":
-                            Pos.newsletter += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "weather":
-                            Pos.weather += newMd.Site_Modules_Generated_Html;
-                            break;
                         case "copyright":
                             Pos.copyright += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "ads":
-                            Pos.ads += newMd.Site_Modules_Generated_Html;
                             break;
                         case "top":
                             Pos.top += newMd.Site_Modules_Generated_Html;
@@ -115,23 +76,14 @@ namespace TCMSFRONTEND
                         case "bot":
                             Pos.bot += newMd.Site_Modules_Generated_Html;
                             break;
-                        case "programs_1":
-                            Pos.programs_1 += newMd.Site_Modules_Generated_Html;
+                        case "green":
+                            Pos.bot += newMd.Site_Modules_Generated_Html;
                             break;
-                        case "programs_2":
-                            Pos.programs_2 += newMd.Site_Modules_Generated_Html;
+                        case "gray":
+                            Pos.bot += newMd.Site_Modules_Generated_Html;
                             break;
-                        case "utility":
-                            Pos.utility += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "media":
-                            Pos.media += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_3_1":
-                            Pos.main_3_1 += newMd.Site_Modules_Generated_Html;
-                            break;
-                        case "main_3_2":
-                            Pos.main_3_2 += newMd.Site_Modules_Generated_Html;
+                        case "lightgray":
+                            Pos.bot += newMd.Site_Modules_Generated_Html;
                             break;
                         default:
                             break;

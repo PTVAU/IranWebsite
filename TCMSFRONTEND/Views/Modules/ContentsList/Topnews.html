@@ -1,22 +1,21 @@
-<div class="panel top-news">
-    <div class="panel-body">
-        {{#each Data}}
-        <div class="item">
-            <div class="inner">
-                <div class="img {{#if hasVideo}} video{{/if}}">
-                    <a href="{{url}}"> {{#if image}}<img src="{{image}}" alt="{{Title}}" /></a>{{/if}}
-                </div>
-                <div class="section green hidden-xs">
-                    <a href="{{categoryUrl}}">{{categoryTitle}}</a>
-                </div>
-                <div class="title">
-                    <h2>
-                        <a href="{{url}}">{{ShortTitle}}</a>
-                    </h2>
-                    <p class="hidden-xs">{{Introtext}}</p>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-    </div>
+<div class="panel showcase">
+    <section class="panel-body">
+        <ul class="list-clean items">
+            {{#each Data}}
+            <li>
+                <figure class="img">
+                    <a href="{{url}}"><img src="{{image}}" alt="{{Title}}" /></a>
+                    <figcaption>
+                        <h3>
+                            <a href="{{url}}">
+                                <span class="title">{{ShortTitle}}</span>
+                                <span class="desc">{{Introtext}}</span>
+                            </a>
+                        </h3>
+                    </figcaption>
+                </figure>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
 </div>

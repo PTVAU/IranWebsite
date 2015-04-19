@@ -1,0 +1,24 @@
+._transparent { background: transparent; }
+.wrapper {
+    &._default {
+	background: transparent;
+    }
+    &._white {
+	background: @white;
+    }
+    &._green {
+	background: @green;
+	.panel-title {
+	    &, a { text-decoration: none; color: @white; }
+	}
+    }
+    &._gray {
+	background: @gray;
+	.panel-title {
+	    &, a { text-decoration: none; color: @white; }
+	}
+    }
+    &._lightgray {
+	background: @grayMid;
+    }
+}
