@@ -15,6 +15,7 @@ namespace TCMSFRONTEND
             RegisterCustomRoutes(RouteTable.Routes);
             NustacheHelpers.EqualityHelpers.Register();
             NustacheHelpers.DisplayHelpers.Register();
+            NustacheHelpers.IfFirstHelpers.Register();
         }
         void RegisterCustomRoutes(RouteCollection routes)
         {
