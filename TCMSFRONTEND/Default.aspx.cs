@@ -1,12 +1,14 @@
-﻿using Mustache;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Handlebars;
+
 using System.Text.RegularExpressions;
+using Nustache.Core;
+using System.IO;
 
 namespace TCMSFRONTEND
 {
@@ -89,13 +91,27 @@ namespace TCMSFRONTEND
                             break;
                     }
                 }
-                Pos.pageConfig = cnfg;
-                //Render template with data:
-                FormatCompiler compiler = new FormatCompiler();
-                Generator generator = compiler.Compile(PageLayout);
-                string result = generator.Render(Pos);
-                //result = Regex.Replace(result, @"\s*(<[^>]+>)\s*", "$1", RegexOptions.Singleline);
-                //result = Regex.Replace(result, "<!--.*?-->", "", RegexOptions.Singleline);
+                Pos.pageConfig = cnfg;               
+
+                string result=Nustache.Core.Render.StringToString(PageLayout,Pos);
+
+
+                //var template = new Template();
+                //template.Load(new StringReader(PageLayout));
+                //string result = "";
+                //template.Render(Pos, new TextWriter(result),);
+              
+
+
+                //Template template = new Template();
+                //template.Load(new StringReader(PageLayout));
+                //string result = template.Render()
+                ////Render template with data:
+                //FormatCompiler compiler = new FormatCompiler();
+                //Template generator = compiler.Compile(PageLayout);
+                //string result = generator.Render(Pos);
+                ////result = Regex.Replace(result, @"\s*(<[^>]+>)\s*", "$1", RegexOptions.Singleline);
+                ////result = Regex.Replace(result, "<!--.*?-->", "", RegexOptions.Singleline);
                 cacheResult = Core.Utility.cacheControl(cacheKey, result, "W", 10).ToString();
             }
             //Send output html to client:

@@ -1,4 +1,4 @@
-﻿using Mustache;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -436,9 +436,11 @@ namespace TCMSFRONTEND.Core
         public static string templateDataMerger(string template, object data)
         {
             //Render template with data:
-            FormatCompiler compiler = new FormatCompiler();
-            Generator generator = compiler.Compile(template);
-            return generator.Render(data);
+            //FormatCompiler compiler = new FormatCompiler();
+            //Generator generator = compiler.Compile(template);
+            //return generator.Render(data);
+            return Nustache.Core.Render.StringToString(template, data);
+
         }
         public static string contentAliasGenerator(Bo.Service.Contents cnt)
         {

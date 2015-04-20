@@ -13,6 +13,8 @@ namespace TCMSFRONTEND
         protected void Application_Start(object sender, EventArgs e)
         {
             RegisterCustomRoutes(RouteTable.Routes);
+            NustacheHelpers.EqualityHelpers.Register();
+            NustacheHelpers.DisplayHelpers.Register();
         }
         void RegisterCustomRoutes(RouteCollection routes)
         {

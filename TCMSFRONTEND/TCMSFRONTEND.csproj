@@ -39,16 +39,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Handlebars">
-      <HintPath>..\packages\Handlebars.Net.1.0.2\lib\Handlebars.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="mustache-sharp">
-      <HintPath>..\mustache-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nustache.Core, Version=1.14.0.4, Culture=neutral, PublicKeyToken=efd6f3d8f76ecd9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\nustache-helpers\Nustache\Nustache.Core\bin\Debug\Nustache.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NustacheHelpers">
+      <HintPath>..\..\..\nustache-helpers\Blocks.NustacheHelpers\bin\Debug\NustacheHelpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
