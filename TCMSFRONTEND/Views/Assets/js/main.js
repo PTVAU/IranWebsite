@@ -13,6 +13,17 @@ $(function () {
 	$(this).popover('hide');
     });
     
+    // Menu toggler for responsive
+    var $menu = $("#menu");
+    $("#menu-toggle").click(function(e) {
+	if ($menu.hasClass("open")) {
+	    $menu.slideUp().removeClass("open");
+	} else {
+	    $menu.slideDown().addClass("open");
+	}
+	e.preventDefault();
+    });
+    
     // Carousel
     $(".panel.showcase ul.items").owlCarousel({
 	items: 1
