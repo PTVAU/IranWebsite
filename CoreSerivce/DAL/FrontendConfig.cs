@@ -72,7 +72,7 @@ namespace CoreSerivce.DAL
             List<BO.urlRouting> urlRoutingList = new List<BO.urlRouting>();
 
             var sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = @"SELECT   [Site_Menu_Alias]   FROM [HTVW].[dbo].[Site_Menu] ";
+            sqlCommand.CommandText = @"SELECT   [Site_Menu_Alias]   FROM [iran].[dbo].[Site_Menu] ";
             sqlCommand.CommandType = CommandType.Text;
             sqlCommand.Connection = new SqlConnection(WebConfigurationManager.AppSettings["MainConnectionString"].ToString());
 
