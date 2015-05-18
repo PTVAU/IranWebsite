@@ -1,0 +1,23 @@
+// MD
+@media (min-width: @screen-md-min) {
+    #menu { display: block !important; }
+}
+// SM
+@media (max-width: @screen-sm-max) { 
+    #menu {
+	margin: 0; position: absolute; width: 100%; left: 0; top: 80px; background: #f7f7f7; display: none;
+	ul {
+	    li {
+		display: block; float: none;
+		& ~ li { border-top: 1px solid #eee; }
+		a {
+		    line-height: 40px;
+		}
+	    }
+	}
+    }
+}
+// XS
+@media (max-width: @screen-xs-max) {
+    
+}

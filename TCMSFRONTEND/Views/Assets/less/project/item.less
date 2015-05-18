@@ -1,0 +1,63 @@
+.panel.item {
+    padding-top: @grid-gutter-width;
+    .panel-body {
+	& > * { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); background: @white; margin-bottom: (@grid-gutter-width / 2); }
+    }
+    .item-media {
+	figure {
+	    position: relative;
+	    img { display: block; width: 100%; height: auto; }
+	    figcaption { position: absolute; bottom: 0; left: 0; width: 100%; background: black; background: rgba(0, 0, 0, 0.7); padding: 4px 10px; color: @white; line-height: 24px; }
+	}
+    }
+    .item-sharing {
+	& > .inner { padding: 10px; }
+	h4 { margin-top: 0; }
+	ul {
+	    li {
+		padding-left: 0;
+		a {
+		    display: block; width: 36px; height: 36px; background: tomato; color: @white; text-decoration: none; line-height: 36px; text-align: center; font-size: 18px; transition: all 0.25s;
+		    i:before { line-height: 36px; }
+		}
+		&.fb {
+		    a {
+			background: #38599A;
+			&:hover { background: darken(#38599A, 5%); }
+		    }
+		}
+		&.tw {
+		    a {
+			background: #00AEEE;
+			&:hover { background: darken(#00AEEE, 5%); }
+		    }
+		}
+		&.gp {
+		    a {
+			background: #D5412E;
+			&:hover { background: darken(#D5412E, 5%); }
+		    }
+		}
+		&.em {
+		    a {
+			background: #666;
+			&:hover { background: darken(#666, 5%); }
+		    }
+		}
+	    }
+	}
+    }
+    .item-desc {
+	padding: (@grid-gutter-width / 2);
+	.item-title { margin: 0 0 (@grid-gutter-width / 2); }
+	.item-text {
+	    .introtext {
+		padding-bottom: (@grid-gutter-width / 3);
+		p {  }
+	    }
+	    .fulltext {
+		p {  }
+	    }
+	}
+    }
+}
