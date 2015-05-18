@@ -91,7 +91,6 @@
     <Content Include="Views\Assets\js\owl.carousel.js" />
     <Content Include="Views\Assets\js\owl.carousel.min.js" />
     <Content Include="Views\Assets\player\live.smil" />
-    <None Include="Properties\PublishProfiles\100.249.pubxml" />
     <Content Include="Views\Assets\font\droidarabicnaskh\v4\DroidNaskh-Bold.eot" />
     <Content Include="Views\Assets\font\droidarabicnaskh\v4\DroidNaskh-Bold.ttf" />
     <Content Include="Views\Assets\font\droidarabicnaskh\v4\DroidNaskh-Bold.woff" />
@@ -198,6 +197,7 @@
     <Content Include="Views\Assets\less\project\variables.less" />
     <Content Include="Views\Assets\less\style.less" />
     <Content Include="Views\Assets\img\empty" />
+    <None Include="Properties\PublishProfiles\101.3.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
