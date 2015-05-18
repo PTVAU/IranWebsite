@@ -20,6 +20,7 @@ namespace TCMSFRONTEND.Bo.Site
 
         // mainbody
         public string main { get; set; }
+        public string item { get; set; }
 
         // bottom
         public string bot { get; set; }
