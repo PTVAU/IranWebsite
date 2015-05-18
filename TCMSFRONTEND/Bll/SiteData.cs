@@ -274,7 +274,7 @@ namespace TCMSFRONTEND.Bll
 
                 //Find same category news:
                 List<Bo.Data.Contents> rtContents = new List<Bo.Data.Contents>();
-                rtContents = Bll.SiteData.contentsList(servContent.Categories[0].Id.ToString(), "id desc", "4", "-1", "0", "m", null, null);
+                rtContents = Bll.SiteData.contentsList(servContent.Categories[0].Id.ToString(), "id desc", "11", "-1", "0", "m", null, null);
                 
                 //Remove current item if exist in related list    
                 for (int i = 0; i < rtContents.Count; i++)
