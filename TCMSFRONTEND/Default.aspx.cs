@@ -63,6 +63,9 @@ namespace TCMSFRONTEND
                         case "main":
                             Pos.main += newMd.Site_Modules_Generated_Html;
                             break;
+                        case "item":
+                            Pos.item += newMd.Site_Modules_Generated_Html;
+                            break;
                         case "masthead":
                             Pos.masthead += newMd.Site_Modules_Generated_Html;
                             break;
