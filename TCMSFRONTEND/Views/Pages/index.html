@@ -59,7 +59,10 @@
             </div>
         </div>
     </header>
-    {{{#if showcase}}}
+    {{#if item}}
+        {{{item}}}
+    {{/if}}
+    {{#if showcase}}
     <aside id="showcase">
         <div class="wrapper _default">
             <div class="container">
@@ -71,9 +74,9 @@
             </div>
         </div>
     </aside>
-    {{{/if}}}
+    {{/if}}
     <section id="mainbody">
-        {{{#if main}}}
+        {{#if main}}
         <div class="wrapper _default">
             <div class="container">
                 <div class="row">
@@ -83,8 +86,8 @@
                 </div>
             </div>
         </div>
-        {{{/if}}}
-        {{{#if green}}}
+        {{/if}}
+        {{#if green}}
         <div class="wrapper _green">
             <div class="container">
                 <div class="row">
@@ -94,8 +97,8 @@
                 </div>
             </div>
         </div>
-        {{{/if}}}
-        {{{#if gray}}}
+        {{/if}}
+        {{#if gray}}
         <div class="wrapper _gray">
             <div class="container">
                 <div class="row">
@@ -105,8 +108,8 @@
                 </div>
             </div>
         </div>
-        {{{/if}}}
-        {{{#if lightgray}}}
+        {{/if}}
+        {{#if lightgray}}
         <div class="wrapper _lightgray">
             <div class="container">
                 <div class="row">
@@ -116,7 +119,7 @@
                 </div>
             </div>
         </div>
-        {{{/if}}}
+        {{/if}}
     </section>
     <footer id="footer">
         <div class="wrapper">
@@ -153,13 +156,13 @@
                         </ul>
                     </div>
                 </div>
-                {{{#if copyright}}}
+                {{#if copyright}}
                 <div class="row copyright">
                     <div class="col-xs-12">
                         {{{copyright}}}
                     </div>
                 </div>
-                {{{/if}}}
+                {{/if}}
             </div>
         </div>
     </footer>
