@@ -37,7 +37,7 @@ namespace CoreSerivce.PL
             }
             else
             {
-                ContentObj.State = -100;
+                ContentObj.State = 0;
                 ContentObj.IsPublished = 0;
                 ContentObj.Published_By = 0;
                 ContentObj.Published = DateTime.Now.ToString();
