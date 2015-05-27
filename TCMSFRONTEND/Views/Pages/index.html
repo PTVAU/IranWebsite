@@ -35,18 +35,11 @@
                                 <a href="/">Iran</a>
                             </h1>
                         </div>
+                        {{#if menu}}
                         <div class="menu-container pull-left">
-                            <nav id="menu">
-                                <ul class="list-unstyled list-inline">
-                                    <li class="active"><a href="/">Home</a></li>
-                                    <li><a href="#">Categories</a></li>
-                                    <li><a href="#">Travelog</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">Iran 360</a></li>
-                                    <li><a href="#">Witness</a></li>
-                                </ul>
-                            </nav>
+                            {{{menu}}}
                         </div>
+                        {{/if}}
                         <div class="header-tools pull-right">
                             <ul class="list-unstyled list-inline">
                                 <li class="user" title="Login / Register"><a href="#" tabindex="0" data-toggle="modal" data-target="#user-form"><i class="icon-user"></i> Login</a></li>

@@ -39,19 +39,35 @@
 #menu {
     margin-left: 60px;
     ul {
-	li {
-	    padding: 0 10px; font-size: 18px;
-	    a {
-		display: block; line-height: @headerHeight; padding: 0 5px;
-		&:link, &:active, &:visited { color: @gray; }
-		&:hover { color: @green; }
+	    li {
+	        padding: 0 10px; font-size: 18px; position: relative;
+            &:hover {
+                .child { display: block; opacity: 1; }
+            }
+	        a {
+		        display: block; line-height: @headerHeight; padding: 0 5px;
+		        &:link, &:active, &:visited { color: @gray; }
+		        &:hover { color: @green; }
+	        }
+	        &.active {
+		        a {
+		            color: @green;
+		            &:hover { color: darken(@green, 10%); }
+		        }
+	        }
 	    }
-	    &.active {
-		a {
-		    color: @green;
-		    &:hover { color: darken(@green, 10%); }
-		}
-	    }
-	}
+        .child {
+            display: none; opacity: 0; transition: all 0.25s; position: absolute; top: 80px; left: 0; width: 230px; background: tomato; background: #f7f7f7; padding-top: 10px;
+            ul {
+                position: relative;
+                &:after { display: block; content: ''; position: absolute; top: -10px; left: 20%; width: 0; height: 0; border-top: 10px solid @white; border-left: 10px solid transparent; border-right: 10px solid transparent; }
+                li {
+                    &:hover { background: #efefef; }
+                    a {
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
     }
 }
