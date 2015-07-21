@@ -69,6 +69,7 @@ namespace TCMSFRONTEND.Core
                 Title = Title.Replace("\"", "");
                 Title = Title.Replace(":", "");
                 Title = Title.Replace("%", "");
+                Title = Title.Replace("&", "");
                 Title = Regex.Replace(Title, @"[()<>"";+\n\r`]|^&+|&+$", "", RegexOptions.Singleline);
                 Title = Regex.Replace(Title, @"/[^a-zA-Z0-9\/_|+ -]/", "", RegexOptions.Singleline);
                 Title = Regex.Replace(Title, @"/[\/_|+ -]+/", "", RegexOptions.Singleline);
