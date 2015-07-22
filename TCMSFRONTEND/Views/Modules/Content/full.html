@@ -12,15 +12,17 @@
                                     <div id="mediaplayer">
                                         <img id="imgPlayback" src="{{image}}" alt="{{Title}}" />
                                     </div>
-                                    <input type="hidden" id="inpPlayback" value="{{videoPath}}">
+                                    <input type="hidden" id="inpPlayback" value="{{videoPath}}" />
                                     {{/each}}
                                 </figure>
                                 {{#else}}
                                 <figure>
-                                    {{#each Data.Videos}}
-                                    <img alt="{{description}}" src="{{imagePath}}">
+                                    {{#if description}}
+                                    <img alt="{{description}}" src="{{imagePath}}" />
                                     <figcaption>{{description}}</figcaption>
-                                    {{/each}}
+                                    {{#else}}
+                                    <img alt="{{Title}}" src="{{imagePath}}" />
+                                    {{/if}}
                                 </figure>
                                 {{/if}}
                             </div>
