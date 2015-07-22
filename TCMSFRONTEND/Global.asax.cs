@@ -12,7 +12,7 @@ namespace TCMSFRONTEND
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            //RegisterCustomRoutes(RouteTable.Routes);
+            RegisterCustomRoutes(RouteTable.Routes);
             //NustacheHelpers.EqualityHelpers.Register();
             //NustacheHelpers.DisplayHelpers.Register();
             //NustacheHelpers.IfFirstHelpers.Register();
