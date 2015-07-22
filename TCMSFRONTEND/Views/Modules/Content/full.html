@@ -6,12 +6,23 @@
                     <div class="panel item">
                         <section class="panel-body">
                             <div class="item-media">
-                                {{#each Data.Images}}
+                                {{#if Data.hasVideo}}
                                 <figure>
+                                    {{#each Data.Videos}}
+                                    <div id="mediaplayer">
+                                        <img id="imgPlayback" src="{{image}}" alt="{{Title}}" />
+                                    </div>
+                                    <input type="hidden" id="inpPlayback" value="{{videoPath}}">
+                                    {{/each}}
+                                </figure>
+                                {{#else}}
+                                <figure>
+                                    {{#each Data.Videos}}
                                     <img alt="{{description}}" src="{{imagePath}}">
                                     <figcaption>{{description}}</figcaption>
+                                    {{/each}}
                                 </figure>
-                                {{/each}}
+                                {{/if}}
                             </div>
                             <div class="item-desc">
                                 <h2 class="item-title">{{Data.Title}}</h2>
@@ -85,3 +96,7 @@
         </div>
     </div>
 </article>
+{{#if Data.hasVideo}}
+<script src="/Views/Assets/player/player.js"></script>
+<script src="/Views/Assets/js/playback.js?20150506"></script>
+{{/if}}

@@ -90,6 +90,7 @@
     <Content Include="Views\Assets\js\modernizr-2.6.2.min.js" />
     <Content Include="Views\Assets\js\owl.carousel.js" />
     <Content Include="Views\Assets\js\owl.carousel.min.js" />
+    <Content Include="Views\Assets\js\playback.js" />
     <Content Include="Views\Assets\player\live.smil" />
     <Content Include="Views\Assets\font\droidarabicnaskh\v4\DroidNaskh-Bold.eot" />
     <Content Include="Views\Assets\font\droidarabicnaskh\v4\DroidNaskh-Bold.ttf" />

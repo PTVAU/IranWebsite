@@ -392,7 +392,7 @@ namespace TCMSFRONTEND.Core
                 {
                     sr.Close();
                 }
-                result = cacheControl(path, result, "W", 10);
+                result = cacheControl(path, result, "W", 1);
             }
             result = Regex.Replace(result, @"\s*(<[^>]+>)\s*", "$1", RegexOptions.Singleline);
             if (!path.Contains("index"))

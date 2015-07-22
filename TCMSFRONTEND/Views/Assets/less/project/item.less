@@ -5,9 +5,10 @@
     }
     .item-media {
 	figure {
-	    position: relative;
+	    position: relative; max-height: 421px;
 	    img { display: block; width: 100%; height: auto; }
 	    figcaption { position: absolute; bottom: 0; left: 0; width: 100%; background: black; background: rgba(0, 0, 0, 0.7); padding: 4px 10px; color: @white; line-height: 24px; }
+        object { min-height: 421px; }
 	}
     }
     .item-sharing {
