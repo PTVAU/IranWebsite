@@ -7,8 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using System.Text.RegularExpressions;
-using Nustache.Core;
 using System.IO;
+using HandlebarsDotNet;
 
 namespace TCMSFRONTEND
 {
@@ -94,9 +94,17 @@ namespace TCMSFRONTEND
                             break;
                     }
                 }
-                Pos.pageConfig = cnfg;               
+                Pos.pageConfig = cnfg;
 
-                string result=Nustache.Core.Render.StringToString(PageLayout,Pos);
+                var template = Handlebars.Compile(PageLayout);
+
+              
+                var result = template(Pos);
+              
+
+
+
+                //string result=Nustache.Core.Render.StringToString(PageLayout,Pos);
 
 
                 //var template = new Template();

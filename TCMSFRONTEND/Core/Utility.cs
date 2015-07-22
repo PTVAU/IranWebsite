@@ -1,4 +1,5 @@
 ﻿
+using HandlebarsDotNet;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -436,11 +437,19 @@ namespace TCMSFRONTEND.Core
         }
         public static string templateDataMerger(string template, object data)
         {
+
+
+           var tmp = Handlebars.Compile(template);
+
+
+            var result = tmp(data);
+
+
             //Render template with data:
             //FormatCompiler compiler = new FormatCompiler();
             //Generator generator = compiler.Compile(template);
             //return generator.Render(data);
-            return Nustache.Core.Render.StringToString(template, data);
+            return result;
 
         }
         public static string contentAliasGenerator(Bo.Service.Contents cnt)

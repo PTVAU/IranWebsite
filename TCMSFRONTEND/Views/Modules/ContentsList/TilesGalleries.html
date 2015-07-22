@@ -7,8 +7,8 @@
     </header>
     {{/if}}
     <section class="panel-body">
-        <ul class="items row">     
-            {{#if_first Data}}
+        <ul class="items row">
+            {{#each Data}}
             <li class="col-xs-12 col-sm-4 col-md-3">
                 <figure class="img">
                     <a href="{{url}}"><img src="{{image}}" alt="{{Title}}" /></a>
@@ -20,19 +20,7 @@
                     </figcaption>
                 </figure>
             </li>
-            {{else}}           
-            <li class="col-xs-12 col-sm-4 col-md-3">
-                <figure class="img">
-                    <a href="{{url}}"><img src="{{image}}" alt="{{Title}}" /></a>
-                    <figcaption>
-                        <a href="{{url}}">
-                            <span class="title">{{ShortTitle}}</span>
-                            <span class="desc">{{Introtext}}</span>
-                        </a>
-                    </figcaption>
-                </figure>
-            </li>
-           {{/if_first Data}}
+            {{/each}}
         </ul>
     </section>
 </div>
