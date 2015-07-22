@@ -338,14 +338,14 @@ namespace CoreSerivce.DAL
         {
             //ContentObj.Alias
             var sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = @" update contents set Alias=N'" + ContentObj.Alias +
-                                    "',Fulltext=N'" + ContentObj.Fulltext.Replace("'", "\'") + "'," +
-                                    " Introtext=N'" + ContentObj.Introtext.Replace("'", "\'") + "'," +
-                                    " Metadesc=N'" + ContentObj.Metadesc + "'," +
+            sqlCommand.CommandText = @" update contents set Alias=N'" + ContentObj.Alias+
+                                    "',Fulltext=N'" + ContentObj.Fulltext.Replace("'", "''") + "'," +
+                                    " Introtext=N'" + ContentObj.Introtext.Replace("'", "''") + "'," +
+                                    " Metadesc=N'" + ContentObj.Metadesc.Replace("'", "''") + "'," +
                                     " Modified=getdate()," +
                                     " Modified_By=" + ContentObj.Modified_By + "," +
-                                    " ShortTitle=N'" + ContentObj.ShortTitle.Replace("'", "\'") + "'," +
-                                    " Title=N'" + ContentObj.Title.Replace("'","\'") + "'," +
+                                    " ShortTitle=N'" + ContentObj.ShortTitle.Replace("'", "''") + "'," +
+                                    " Title=N'" + ContentObj.Title.Replace("'","''") + "'," +
                                     " IsPublished=" + ContentObj.IsPublished + "," +
                                     " Published= CONVERT(DATETIME, '" + ContentObj.Published + "'),"+
                                     " youtube=N'" + ContentObj.Youtube + "' , state="+ContentObj.State +
