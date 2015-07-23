@@ -15,38 +15,53 @@ namespace TCMSFRONTEND.Dal
         //Select Pages Modules with config...
         public static List<Bo.Site.siteModules> modulesSelectByPageAlias(string Alias)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim() + "/Config/modules/List/?Alias=" + Alias);
+            List<Bo.Site.siteModules> RvLst = new List<Bo.Site.siteModules>();
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim() + "/Config/modules/List/?Alias=" + Alias);
 
-            WebResponse response = request.GetResponse();
-            Stream stream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(stream);
+                WebResponse response = request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream);
 
-            var result = reader.ReadToEnd();
-            stream.Dispose();
-            reader.Dispose();
+                var result = reader.ReadToEnd();
+                stream.Dispose();
+                reader.Dispose();
 
 
-            List<Bo.Site.siteModules> RvLst = JsonConvert.DeserializeObject<List<Bo.Site.siteModules>>(result);
+                RvLst = JsonConvert.DeserializeObject<List<Bo.Site.siteModules>>(result);
+            }
+            catch
+            {
+               
+            }
 
             return RvLst;
             
         }
         public static List<Bo.Site.urlRouting> urlRoutingSelect()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim() + "/Config/urlrouting/List");
+            List<Bo.Site.urlRouting> RvLst = new List<Bo.Site.urlRouting>();
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationSettings.AppSettings["DbService"].Trim() + "/Config/urlrouting/List");
 
 
-            WebResponse response = request.GetResponse();
-            Stream stream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(stream);
+                WebResponse response = request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream);
 
-            var result = reader.ReadToEnd();
-            stream.Dispose();
-            reader.Dispose();
+                var result = reader.ReadToEnd();
+                stream.Dispose();
+                reader.Dispose();
 
 
-            List<Bo.Site.urlRouting> RvLst = JsonConvert.DeserializeObject<List<Bo.Site.urlRouting>>(result);
+                RvLst = JsonConvert.DeserializeObject<List<Bo.Site.urlRouting>>(result);
 
+            }
+            catch 
+            {
+            }
             return RvLst;
 
         }
