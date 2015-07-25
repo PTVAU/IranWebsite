@@ -223,11 +223,16 @@ namespace TCMSFRONTEND.Bll
                         selected = true;
                     }
                 }
-                if (rp.Kind == 2)
+            }
+                foreach (Bo.Service.Repositories rp in servContent.Repositories)
+                {
+                    if (rp.Kind == 2)
                 {
                     Bo.Data.contentsVideo vdo = new Bo.Data.contentsVideo();
                     vdo.videoPath = rp.FilePath.ToLower().Replace(".mpg", ".mp4").Replace(".jpg", ".mp4");
-                    vdo.videoThumbail = vdo.videoPath.ToLower().Replace(".mp4", ".jpg").Replace(".mpg", ".jpg");
+                   
+                        vdo.videoThumbail = cnt.image; //vdo.videoPath.ToLower().Replace(".mp4", ".jpg").Replace(".mpg", ".jpg");
+                   
                     vdo.description = rp.Description;
                     videoList.Add(vdo);
                     cnt.hasVideo = true;

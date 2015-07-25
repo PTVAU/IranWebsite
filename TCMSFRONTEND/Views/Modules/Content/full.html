@@ -10,7 +10,7 @@
                                 <figure>
                                     {{#each Data.Videos}}
                                     <div id="mediaplayer">
-                                        <img id="imgPlayback" src="http://192.99.219.222:82/presstv/iran/{{videoThumbail}}" alt="{{description}}" />
+                                        <img id="imgPlayback" src="{{videoThumbail}}" alt="{{description}}" />
                                     </div>
                                     <input type="hidden" id="inpPlayback" value="{{videoPath}}" />
                                     {{/each}}
