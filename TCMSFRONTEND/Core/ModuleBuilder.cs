@@ -100,11 +100,13 @@ namespace TCMSFRONTEND.Core
                 {
                     Params.categories += ctgItm.Id + ",";
                 }
-                if (Params.categories.Length > 2)
+                if (Params.categories.Length > 1)
                 {
                     //Remove latest ","
                     Params.categories = Params.categories.Remove(Params.categories.Length - 1, 1);
                 }
+                //if url contanins CategoryTitle:
+                Wr.Config.Site_Modules_Title = routeDt.Values["CategoryTitle"].ToString().Replace("-", " ");
             }
 
             //Load Contents for tag:
