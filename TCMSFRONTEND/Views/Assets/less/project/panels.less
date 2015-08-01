@@ -154,8 +154,9 @@
     &.itemlist {
 	ul {
 	    li {
-		height: 79px; overflow: hidden; margin-bottom: (@grid-gutter-width / 2);
+		height: 79px; overflow: hidden; margin-bottom: (@grid-gutter-width / 2); position: relative;
 		figure {
+            position: absolute; top: 0; left: 0;
 		    &.video {
 			& > a, & > img {
 			    position: relative;
