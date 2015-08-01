@@ -1,0 +1,36 @@
+﻿<div class="panel itemlist page">
+    {{#if Config.Site_Modules_Title}}
+    <header class="panel-title">
+        <h2>{{Config.Site_Modules_Title}}</h2>
+    </header>
+    {{/if}}
+    <section class="panel-body">
+        <ul class="items">
+            {{#each Data}}
+            <li>
+                <figure class="img">
+                    <a href="{{url}}"><img src="{{image}}" alt="{{Title}}" /></a>
+                    <figcaption>
+                        <a href="{{url}}">
+                            <span class="title">{{ShortTitle}}</span>
+                            <span class="desc">{{Introtext}}</span>
+                        </a>
+                    </figcaption>
+                </figure>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+    <footer class="panel-footer">
+        <div class="text-center _margin-top">
+            <ul class="pagination">
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
