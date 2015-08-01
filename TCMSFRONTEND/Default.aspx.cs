@@ -123,7 +123,7 @@ namespace TCMSFRONTEND
                 //string result = generator.Render(Pos);
                 ////result = Regex.Replace(result, @"\s*(<[^>]+>)\s*", "$1", RegexOptions.Singleline);
                 ////result = Regex.Replace(result, "<!--.*?-->", "", RegexOptions.Singleline);
-                cacheResult = Core.Utility.cacheControl(cacheKey, result, "W", 1).ToString();
+                cacheResult = Core.Utility.cacheControl(cacheKey, result, "W", 60).ToString();
             }
             //Send output html to client:
             Response.Write(cacheResult);
