@@ -39,23 +39,23 @@
 #menu {
     margin-left: 60px;
     ul {
-	    li {
-	        padding: 0 10px; font-size: 18px; position: relative;
-            &:hover {
+	li {
+	    padding: 0 10px; font-size: 18px; position: relative;
+/*            &:hover {
                 .child { display: block; opacity: 1; }
-            }
-	        a {
-		        display: block; line-height: @headerHeight; padding: 0 5px;
-		        &:link, &:active, &:visited { color: @gray; }
-		        &:hover { color: @green; }
-	        }
-	        &.active {
-		        a {
-		            color: @green;
-		            &:hover { color: darken(@green, 10%); }
-		        }
-	        }
+            }*/
+	    a {
+		display: block; line-height: @headerHeight; padding: 0 5px;
+		&:link, &:active, &:visited { color: @gray; }
+		&:hover { color: @green; }
 	    }
+	    &.active {
+		a {
+		    color: @green;
+		    &:hover { color: darken(@green, 10%); }
+		}
+	    }
+	}
         .child {
             display: none; opacity: 0; transition: all 0.25s; position: absolute; top: 80px; left: 0; width: 230px; background: tomato; background: #f7f7f7; padding-top: 10px;
             ul {
@@ -68,6 +68,7 @@
                     }
                 }
             }
+	    &.open { opacity: 1; display: block; }
         }
     }
 }

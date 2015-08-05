@@ -1,23 +1,30 @@
 // MD
 @media (min-width: @screen-md-min) {
     #menu { display: block !important; }
+    .panel.showcase {
+        .owl-controls { z-index: 80; }
+         ul li figure { height: 530px; }
+    }
 }
 // SM
 @media (max-width: @screen-sm-max) { 
+    .panel.showcase ul li figure { height: auto !important; }
     #menu {
-	margin: 0; position: absolute; width: 100%; left: 0; top: 80px; background: #f7f7f7; display: none;
-	ul {
-	    li {
-		display: block; float: none;
-		& ~ li { border-top: 1px solid #eee; }
-		a {
-		    line-height: 40px;
-		}
+	    margin: 0; position: absolute; width: 100%; left: 0; top: 80px; background: #f7f7f7; display: none; z-index: 2000;
+	    ul {
+	        li {
+		        display: block; float: none;
+		        & ~ li { border-top: 1px solid #eee; }
+		        a { line-height: 40px; }
+	        }
+            .child {
+                position: static; width: 100%; border-top: 6px solid #eee;
+                a { padding-left: 20px; }
+            }
 	    }
-	}
     }
 }
 // XS
 @media (max-width: @screen-xs-max) {
-    
+    .panel.showcase ul li figure { height: auto !important; }
 }
