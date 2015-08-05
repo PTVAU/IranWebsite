@@ -13,7 +13,7 @@ $(function () {
 	    $(this).popover('hide');
     });
     
-    // Menu toggler for responsive
+    // Menu and its toggler for responsive
     var $menu = $("#menu");
     $("#menu-toggle").click(function(e) {
 	    if ($menu.hasClass("open"))
@@ -52,6 +52,14 @@ $(function () {
                 e.preventDefault();
             }
         }
+    });
+
+    // Panorama
+    $("#iran360").on('click', "a", function (e) {
+        var swf = $(this).find("img").attr('src').replace('.jpg', '.swf');
+        $("#parorama-modal").find(".modal-body").html('<object width="600" height="400" data="' + swf + '"></object>');
+        $("#parorama-modal").modal('show');
+        e.preventDefault();
     });
     
     // Carousel
