@@ -1,0 +1,24 @@
+﻿{{#if Data}}
+<div class="panel itemlist">
+    <header class="panel-title">
+        <h2>Latest Items</h2>
+    </header>
+    <div class="panel-body">
+        <ul class="items">
+            {{#each Data}}
+            <li>
+                <figure class="img">
+                    <a href="{{url}}"><img src="{{image}}" alt="{{Title}}" /></a>
+                    <figcaption>
+                        <a href="{{url}}">
+                            <span class="title">{{Title}}</span>
+                            <span class="desc">{{Introtext}}</span>
+                        </a>
+                    </figcaption>
+                </figure>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{/if}}

@@ -413,6 +413,7 @@
     <Content Include="Views\Assets\player\_player.swf" />
     <Content Include="Views\Modules\ContentsList\ItemList.html" />
     <Content Include="Views\Modules\ContentsList\ItemTiles.html" />
+    <Content Include="Views\Modules\ContentsList\RelatedItems.html" />
     <Content Include="Views\Modules\ContentsList\Tiles.html" />
     <Content Include="Views\Modules\ContentsList\TilesGalleries.html" />
     <Content Include="Views\Modules\ContentsList\Topnews.html" />
