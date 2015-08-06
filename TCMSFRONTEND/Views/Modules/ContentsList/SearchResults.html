@@ -1,0 +1,22 @@
+﻿<div class="panel itemlist page">
+    <header class="panel-title">
+        <h2>Search Results</h2>
+    </header>
+    <section class="panel-body">
+        <ul class="items">
+            {{#each Data}}
+            <li>
+                <figure class="img">
+                    <a href="{{url}}"><img src="{{image}}" alt="{{Title}}" /></a>
+                    <figcaption>
+                        <a href="{{url}}">
+                            <span class="title">{{ShortTitle}}</span>
+                            <span class="desc">{{Introtext}}</span>
+                        </a>
+                    </figcaption>
+                </figure>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+</div>
