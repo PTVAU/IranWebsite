@@ -32,6 +32,7 @@ namespace TCMSFRONTEND.Bo.Site
         public string green { get; set; }
         public string gray { get; set; }
         public string lightgray{ get; set; }
+        public string sidebar { get; set; }
 
         //Global Config:
         public sitePageConfig pageConfig { get; set; }

@@ -90,6 +90,9 @@ namespace TCMSFRONTEND
                         case "lightgray":
                             Pos.lightgray += newMd.Site_Modules_Generated_Html;
                             break;
+                        case "sidebar":
+                            Pos.sidebar += newMd.Site_Modules_Generated_Html;
+                            break;
                         default:
                             break;
                     }
