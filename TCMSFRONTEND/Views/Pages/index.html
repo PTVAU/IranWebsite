@@ -86,9 +86,18 @@
         <div class="wrapper _default">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">
-                        {{{main}}}
-                    </div>
+                {{#if sidebar}}
+                <div class="col-xs-12 col-md-8">
+                {{else}}
+                <div class="col-xs-12">
+                {{/if}}
+                    {{{main}}}
+                </div>
+                {{#if sidebar}}
+                <div id="sidebar" class="col-xs-12 col-md-4">
+                    {{{sidebar}}}
+                </div>
+                {{/if}}
                 </div>
             </div>
         </div>
