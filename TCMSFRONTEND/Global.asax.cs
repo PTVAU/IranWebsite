@@ -12,13 +12,14 @@ namespace TCMSFRONTEND
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            RegisterCustomRoutes(RouteTable.Routes);
+            //RegisterCustomRoutes(RouteTable.Routes);
             //NustacheHelpers.EqualityHelpers.Register();
             //NustacheHelpers.DisplayHelpers.Register();
             //NustacheHelpers.IfFirstHelpers.Register();
         }
         void RegisterCustomRoutes(RouteCollection routes)
         {
+            routes.Clear();
 
             List<Bo.Site.urlRouting> urlRoutingList = Dal.SiteConfig.urlRoutingSelect();
             foreach (Bo.Site.urlRouting rt in urlRoutingList)
