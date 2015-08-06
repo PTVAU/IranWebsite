@@ -52,7 +52,7 @@ namespace TCMSFRONTEND
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
+            RegisterCustomRoutes(RouteTable.Routes);
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
