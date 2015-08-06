@@ -53,7 +53,20 @@
         </div>
     </header>
     {{#if item}}
-    {{{item}}}
+    <article id="item">
+        <div class="wrapper _default">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                        {{{item}}}
+                    </div>
+                    <div id="sidebar" class="col-xs-12 col-md-4">
+                        {{{sidebar}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
     {{/if}}
     {{#if showcase}}
     <aside id="showcase">
