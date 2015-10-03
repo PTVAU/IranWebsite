@@ -14,6 +14,11 @@
 @media (max-width: @screen-sm-max) { 
     .panel.showcase ul li figure { height: auto !important; }
     .panel.panorama ul li a { max-height: 173px; }
+    .panel {
+        &.tiles {
+            ul li { height: 230px; max-height: 230px; }
+        }
+    }
     #menu {
 	    margin: 0; position: absolute; width: 100%; left: 0; top: 80px; background: #f7f7f7; display: none; z-index: 2000;
 	    ul {
@@ -33,4 +38,9 @@
 @media (max-width: @screen-xs-max) {
     .panel.showcase ul li figure { height: auto !important; }
     .panel.panorama ul li a { max-height: none !important; }
+    .panel {
+        &.tiles {
+            ul li { height: auto; max-height: none; }
+        }
+    }
 }
