@@ -18,7 +18,7 @@ function IE(v) {
 
 var rfile = '', rfile = '';
 var srcs;
-var ff22 = document.getElementById('inpPlayback').value;i
+var ff22 = document.getElementById('inpPlayback').value;
 ff22v = ff22.replace("\\", "/");
 var ff23 = document.getElementById('imgPlayback').src;
 var baseAddr = "http://192.99.219.222:82/presstv/iran/";
