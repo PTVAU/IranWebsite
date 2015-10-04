@@ -1,36 +1,34 @@
 <div class="panel item">
     <section class="panel-body">
         <div class="item-media">
-            {{#if Data.hasVideo}}
-            <figure>
-                {{#each Data.Videos}}
-                <div id="mediaplayer">
-                    <img id="imgPlayback" src="{{videoThumbail}}" alt="{{description}}" />
-                </div>
-                <input type="hidden" id="inpPlayback" value="{{videoPath}}" />
-                {{/each}}
-            </figure>
-            {{else}}
-                {{#if Data.Images}}
+            <div class="item-media-inner">
+                {{#if Data.hasVideo}}
                 <figure>
-                    {{#if description}}
-                    <img alt="{{description}}" src="{{image}}" />
-                    <figcaption>{{description}}</figcaption>
-                    {{else}}
-                    <img alt="{{Data.Title}}" src="{{Data.image}}" />
-                    {{/if}}
+                    {{#each Data.Videos}}
+                    <div id="mediaplayer">
+                        <img id="imgPlayback" src="{{videoThumbail}}" alt="{{description}}" />
+                    </div>
+                    <input type="hidden" id="inpPlayback" value="{{videoPath}}" />
+                    {{/each}}
                 </figure>
                 {{else}}
-                    {{#each Data.Images}}
-                        {{#if description}}
-                        <img alt="{{description}}" src="{{imagePath}}" />
-                        <figcaption>{{description}}</figcaption>
-                        {{else}}
-                        <img alt="{{Data.Title}}" src="{{imagePath}}" />
-                        {{/if}}
-                    {{/each}}
+                {{#each Data.Images}}
+                <figure>
+                    {{#if description}}
+                    <img alt="{{description}}" src="{{imagePath}}" />
+                    <figcaption>{{description}}</figcaption>
+                    {{else}}
+                    <img alt="{{description}}" src="{{imagePath}}" />
+                    {{/if}}
+                </figure>
+                {{/each}}
+                
                 {{/if}}
-            {{/if}}
+            </div>
+            <div class="controls">
+                <a href="#" class="prev"><i class="icon-left"></i></a>
+                <a href="#" class="next"><i class="icon-right"></i></a>
+            </div>
         </div>
         <div class="item-desc">
             <h2 class="item-title">{{Data.Title}}</h2>

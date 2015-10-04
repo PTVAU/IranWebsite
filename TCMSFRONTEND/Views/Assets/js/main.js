@@ -75,6 +75,25 @@ $(function () {
 	    , animateIn: 'flipInX'
     });
 
+    var $itemMedia = $(".item-media");
+    if ($itemMedia.find("figure").length > 1) {
+        var itemCaousel = $itemMedia.find(".item-media-inner").owlCarousel({
+            items: 1
+	        , loop: true
+	        , autoplay: false
+	        , singleItem: true
+	        , autoHeight: true
+        });
+        $itemMedia.find("a.next").click(function (e) {
+            itemCaousel.trigger('next.owl.carousel');
+            e.preventDefault();
+        });
+        $itemMedia.find("a.prev").click(function (e) {
+            itemCaousel.trigger('prev.owl.carousel');
+            e.preventDefault();
+        });
+    }
+
     var Periodicals = {
         init: function () {
             if (window.location.hostname.indexOf('localhost') === -1) {
