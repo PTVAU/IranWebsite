@@ -74,6 +74,22 @@ $(function () {
 	    , animateOut: 'slideOutDown'
 	    , animateIn: 'flipInX'
     });
+
+    var Periodicals = {
+        init: function () {
+            if (window.location.hostname.indexOf('localhost') === -1) {
+                Periodicals.reload();
+            }
+        }
+    , reload: function () {
+        // Reload homepage
+        setInterval(function () {
+            var pathname = window.location.pathname;
+            if (pathname == "/")
+                location.reload();
+        }, 30000);
+    }
+    };
 });
 
 $(document).ready(function () { // Change width value on page load
