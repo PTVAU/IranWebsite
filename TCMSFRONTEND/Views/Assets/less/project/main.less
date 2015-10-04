@@ -1,35 +1,35 @@
 #mainbody {
     & > .wrapper {
-	padding-top: (@grid-gutter-width * 2); padding-bottom: @grid-gutter-width; position: relative;
-	&:last-child {
-	    box-shadow: 0 2px 3px #989898;
-	}
+	    padding-top: (@grid-gutter-width * 2); padding-bottom: @grid-gutter-width; position: relative;
+	    &:last-child {
+	        box-shadow: 0 2px 3px #989898;
+	    }
     }
 }
 #sidebar {
     .panel {
-	margin-top: @grid-gutter-width; background: @white; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-	.panel-title {
-	    @title-padding: (@grid-gutter-width / 2) (@grid-gutter-width / 2) 0 (@grid-gutter-width / 2);
-	    padding: @title-padding;
-	    h2, h3 {
-		margin: 0; color: darken(@green, 10%); font-size: 20px;
-		a {
-		    color: darken(@green, 10%);
-		    &:hover, &:focus { color: @green; text-decoration: none; }
-		}
+	    margin-top: @grid-gutter-width; background: @white; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	    .panel-title {
+	        @title-padding: (@grid-gutter-width / 2) (@grid-gutter-width / 2) 0 (@grid-gutter-width / 2);
+	        padding: @title-padding;
+	        h2, h3 {
+		        margin: 0; color: darken(@green, 10%); font-size: 20px;
+		        a {
+		            color: darken(@green, 10%);
+		            &:hover, &:focus { color: @green; text-decoration: none; }
+		        }
+	        }
 	    }
-	}
-	.panel-body {
-	    padding: (@grid-gutter-width / 2);
-	    ul {
-		list-style: none; margin: 0; padding: 0;
-		li:last-child { margin-bottom: 0; }
+	    .panel-body {
+	        padding: (@grid-gutter-width / 2);
+	        ul {
+		        list-style: none; margin: 0; padding: 0;
+		        li:last-child { margin-bottom: 0; }
+	        }
+	        a {
+		        color: @text-color;
+		        &:hover, &:focus { color: @green; text-decoration: none; }
+	        }
 	    }
-	    a {
-		color: @text-color;
-		&:hover, &:focus { color: @green; text-decoration: none; }
-	    }
-	}
     }
 }

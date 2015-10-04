@@ -18,6 +18,12 @@
     .panel {
         &.tiles {
             ul li { height: 230px; max-height: 230px; }
+            &.galleries {
+                ul li {
+                    height: auto;
+                    figure figcaption { position: static; opacity: 1; height: 80px; }
+                }
+            }
         }
     }
     #menu {
@@ -43,6 +49,12 @@
     .panel {
         &.tiles {
             ul li { height: auto; max-height: none; }
+            &.galleries {
+                ul li {
+                    height: auto;
+                    
+                }
+            }
         }
     }
 }
