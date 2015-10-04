@@ -11,7 +11,8 @@
     .panel.panorama ul li a { max-height: 147px; }
 }
 // SM
-@media (max-width: @screen-sm-max) { 
+@media (max-width: @screen-sm-max) {
+    #showcase { position: relative; z-index: 100; }
     .panel.showcase ul li figure { height: auto !important; }
     .panel.panorama ul li a { max-height: 173px; }
     .panel {
@@ -33,6 +34,7 @@
             }
 	    }
     }
+    .owl-controls { display: none; }
 }
 // XS
 @media (max-width: @screen-xs-max) {
