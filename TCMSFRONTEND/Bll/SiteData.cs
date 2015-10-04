@@ -213,7 +213,7 @@ namespace TCMSFRONTEND.Bll
                 {
                     Bo.Data.contentsImages img = new Bo.Data.contentsImages();
                     img.imagePath = WebConfigurationManager.AppSettings["ImageBaseHost"].ToString() + rp.FilePath.Replace(".jpg", "_xl.jpg").Replace("Original", "thumbnail");
-                    img.description = rp.Description;
+                    img.description = rp.Title;
                     imgList.Add(img);
 
                     if (!selected)
