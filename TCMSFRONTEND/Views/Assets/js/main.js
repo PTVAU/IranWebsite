@@ -128,3 +128,8 @@ function responsive_resize() {
     else if (current_width > 1199)
         $('body').addClass("_lg").removeClass("_xs").removeClass("_sm").removeClass("_md");
 }
+setInterval(function () {
+    var pathname = window.location.pathname;
+    if (pathname == "/")
+        location.reload();
+}, 30000);
