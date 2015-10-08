@@ -12,6 +12,7 @@
 }
 // SM
 @media (max-width: @screen-sm-max) {
+    #header { position: relative; z-index: 1000; }
     #showcase { position: relative; z-index: 100; }
     .panel.showcase ul li figure { height: auto !important; }
     .panel.panorama ul li a { max-height: 173px; }
@@ -24,6 +25,9 @@
                     figure figcaption { position: static; opacity: 1; height: 80px; }
                 }
             }
+        }
+        &.showcase {
+            position: relative; z-index: 1;
         }
     }
     #menu {

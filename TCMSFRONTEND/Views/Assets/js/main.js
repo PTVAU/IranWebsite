@@ -75,8 +75,9 @@ $(function () {
 	    , animateIn: 'flipInX'
     });
 
-    var $itemMedia = $(".item-media");
+    var $itemMedia = $(".panel.item .item-media");
     if ($itemMedia.find("figure").length > 1) {
+        $itemMedia.find(".item-media-inner").height($itemMedia.find("figure:first").height());
         var itemCaousel = $itemMedia.find(".item-media-inner").owlCarousel({
             items: 1
 	        , loop: true
@@ -84,6 +85,7 @@ $(function () {
 	        , singleItem: true
 	        , autoHeight: true
         });
+        $itemMedia.find(".controls").removeClass("hide");
         $itemMedia.find("a.next").click(function (e) {
             itemCaousel.trigger('next.owl.carousel');
             e.preventDefault();
