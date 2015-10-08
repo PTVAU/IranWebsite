@@ -77,6 +77,7 @@ $(function () {
 
     var $itemMedia = $(".panel.item .item-media");
     if ($itemMedia.find("figure").length > 1) {
+        $itemMedia.find(".item-media-inner").height($itemMedia.find("figure:first").height());
         var itemCaousel = $itemMedia.find(".item-media-inner").owlCarousel({
             items: 1
 	        , loop: true
