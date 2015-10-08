@@ -75,7 +75,7 @@ $(function () {
 	    , animateIn: 'flipInX'
     });
 
-    var $itemMedia = $(".item-media");
+    var $itemMedia = $(".panel.item .item-media");
     if ($itemMedia.find("figure").length > 1) {
         var itemCaousel = $itemMedia.find(".item-media-inner").owlCarousel({
             items: 1
@@ -84,6 +84,7 @@ $(function () {
 	        , singleItem: true
 	        , autoHeight: true
         });
+        $itemMedia.find(".controls").removeClass("hide");
         $itemMedia.find("a.next").click(function (e) {
             itemCaousel.trigger('next.owl.carousel');
             e.preventDefault();
