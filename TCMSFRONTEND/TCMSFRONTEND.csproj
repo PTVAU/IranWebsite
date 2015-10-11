@@ -419,7 +419,7 @@
     <Content Include="Views\Modules\ContentsList\TilesGalleries.html" />
     <Content Include="Views\Modules\ContentsList\Topnews.html" />
     <Content Include="Views\Modules\ContentsList\Tourism-callback.html" />
-    <Content Include="Views\Modules\ContentsList\Tourism.html" />
+    <Content Include="Views\Modules\ContentsList\TourismSlideshow-callback.html" />
     <Content Include="Views\Modules\Content\full.html" />
     <Content Include="Views\Modules\Menu\Menu.html" />
     <Content Include="Views\Modules\Static\About.html" />
