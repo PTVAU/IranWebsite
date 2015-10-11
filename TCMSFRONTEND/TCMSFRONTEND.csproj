@@ -418,6 +418,7 @@
     <Content Include="Views\Modules\ContentsList\Tiles.html" />
     <Content Include="Views\Modules\ContentsList\TilesGalleries.html" />
     <Content Include="Views\Modules\ContentsList\Topnews.html" />
+    <Content Include="Views\Modules\ContentsList\Tourism-callback.html" />
     <Content Include="Views\Modules\ContentsList\Tourism.html" />
     <Content Include="Views\Modules\Content\full.html" />
     <Content Include="Views\Modules\Menu\Menu.html" />
@@ -494,6 +495,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Services\" />
     <Folder Include="Views\Modules\Footer\" />
     <Folder Include="Views\Modules\Media\" />
   </ItemGroup>
