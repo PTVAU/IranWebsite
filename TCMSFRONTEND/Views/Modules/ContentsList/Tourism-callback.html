@@ -1,14 +1,12 @@
 ﻿<div class="block ">
     <section class="inner">
-        {{#if Config.Site_Modules_Title}}
         <ul class="nav nav-tabs header-border">
-            <li class="active"><a href="#tab-1" data-toggle="tab">{{Config.Site_Modules_Title}}</a></li>
+            <li class="active"><a href="#tab-1" data-toggle="tab">برنامه‌ی ایران</a></li>
         </ul>
-        {{/if}}
         <div class="tab-content">
             <div class="tab-pane fade in active" id="tab-1">
                 <div class="more more-link pull-right">
-                    <a href="{{Config.Site_Modules_Url}}">بیشتر&nbsp;<i class="icon-left-small"></i></a>
+                    <a href="http://iran.presstv.com" target="_blank">بیشتر&nbsp;<i class="icon-left-small"></i></a>
                 </div>
                 <div class="more slider-pages pull-right">
                     <div class="pages"></div>
@@ -19,12 +17,12 @@
                             {{#each Data}}
                             <li class="item">
                                 <div class="img">
-                                    <a href="{{url}}">
+                                    <a href="http://iran.presstv.com{{url}}" target="_blank">
                                         <img src="{{image}}" alt="{{Title}}" />
                                     </a>
                                 </div>
                                 <h3 class="title">
-                                    <a href="{{url}}">{{Title}}</a>
+                                    <a href="http://iran.presstv.com{{url}}" target="_blank">{{Title}}</a>
                                 </h3>
                             </li>
                             {{/each}}
