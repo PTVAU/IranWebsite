@@ -1,0 +1,33 @@
+﻿<div id="slideshow" class="block block-raw slideshow">
+    <section class="inner">
+        <ul class="slideshow-items">
+            {{#each Data}}
+            <li>
+                <div class="img">
+                    <img src="{{image}}" alt="{{Title}}" />
+                </div>
+                <div class="desc">
+                    <h3 class="title">
+                        <a href="http://iran.presstv.com{{url}}">
+                            {{Title}}
+                            <span>{{Introtext}}</span>
+                        </a>
+                    </h3>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="pager">
+            <a href="#" class="prev"><i class="icon-left-open-big"></i></a>
+            <a href="#" class="next"><i class="icon-right-open-big"></i></a>
+        </div>
+        <div class="pages"></div>
+        <div class="thumbs">
+            <div class="thumbs-carousel">
+                {{#each Data}}
+                <img src="{{image}}" alt="" />
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</div>
