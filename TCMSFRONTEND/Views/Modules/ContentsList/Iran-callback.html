@@ -1,0 +1,29 @@
+﻿<div class="panel items tiles has-summary">
+    {{#if Config.Site_Modules_Title}}
+    <div class="panel-title">
+        <h2><a href="#"><i class="icon-iran-logo"></i> {{Config.Site_Modules_Title}}</a></h2>
+    </div>
+    {{/if}}
+    <div class="panel-body">
+        <ul>
+            {{#each Data}}
+            <li class="video">
+                <div class="section"><a href="{{categoryUrl}}">{{categoryTitle}}</a></div>
+                <div class="img">
+                    <a href="{{url}}">
+                        <img src="{{image}}" alt="{{Title}}" />
+                    </a>
+                </div>
+                <div class="dsc">
+                    <h3>
+                        <a href="{{url}}">{{Title}}</a>
+                    </h3>
+                    <p>
+                        <a href="{{url}}">{{Introtext}}</a>
+                    </p>
+                </div>
+            </li>
+            {{#each Data}}
+        </ul>
+    </div>
+</div>
