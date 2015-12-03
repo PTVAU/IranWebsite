@@ -1,25 +1,23 @@
 ﻿<div class="panel items tiles has-summary">
-    {{#if Config.Site_Modules_Title}}
     <div class="panel-title">
-        <h2><a href="#"><i class="icon-iran-logo"></i> {{Config.Site_Modules_Title}}</a></h2>
+        <h2><a href="http://iran.presstv.ir" target="_blank"><i class="icon-iran-logo"></i>&nbsp;Iran</a></h2>
     </div>
-    {{/if}}
     <div class="panel-body">
         <ul>
             {{#each Data}}
             <li class="video">
-                <div class="section"><a target="_blank" href="//iran.presstv.ir{{categoryUrl}}">{{categoryTitle}}</a></div>
+                <div class="section"><a target="_blank" href="http://iran.presstv.ir{{categoryUrl}}">{{categoryTitle}}</a></div>
                 <div class="img">
-                    <a target="_blank" href="http//iran.presstv.ir{{url}}">
+                    <a target="_blank" href="http://iran.presstv.ir{{url}}">
                         <img src="{{image}}" alt="{{Title}}" />
                     </a>
                 </div>
                 <div class="dsc">
                     <h3>
-                        <a target="_blank" href="http//iran.presstv.ir{{url}}">{{Title}}</a>
+                        <a target="_blank" href="http://iran.presstv.ir{{url}}">{{Title}}</a>
                     </h3>
                     <p>
-                        <a target="_blank" href="http//iran.presstv.ir{{url}}">{{Introtext}}</a>
+                        <a target="_blank" href="http://iran.presstv.ir{{url}}">{{Introtext}}</a>
                     </p>
                 </div>
             </li>
