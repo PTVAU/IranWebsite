@@ -411,6 +411,7 @@
     <Content Include="Views\Assets\player\six.xml" />
     <Content Include="Views\Assets\player\swfobject.js" />
     <Content Include="Views\Assets\player\_player.swf" />
+    <Content Include="Views\Modules\ContentsList\Iran-callback.html" />
     <Content Include="Views\Modules\ContentsList\SearchResults.html" />
     <Content Include="Views\Modules\ContentsList\ItemList.html" />
     <Content Include="Views\Modules\ContentsList\ItemTiles.html" />

@@ -117,7 +117,7 @@ namespace TCMSFRONTEND.Bll
                     {
                         cnt.categoryTitleParent = parentCat.Title;
                         cnt.categoryUrlParent = "/category/" + Core.Utility.ClearTitle(parentCat.Title) + "/" + parentCat.Id;
-                        cnt.categoryUrl = "/subcategory/" + Core.Utility.ClearTitle(parentCat.Title) + "/" + parentCat.Id + "/" + item.Categories[0].Title + "/" + item.Categories[0].Id;
+                        cnt.categoryUrl = "/category/" + Core.Utility.ClearTitle(item.Categories[0].Title) + "/" + item.Categories[0].Id;
                     }
 
                 }

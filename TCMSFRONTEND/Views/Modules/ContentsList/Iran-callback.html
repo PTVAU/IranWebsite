@@ -8,22 +8,22 @@
         <ul>
             {{#each Data}}
             <li class="video">
-                <div class="section"><a href="{{categoryUrl}}">{{categoryTitle}}</a></div>
+                <div class="section"><a target="_blank" href="//iran.presstv.ir{{categoryUrl}}">{{categoryTitle}}</a></div>
                 <div class="img">
-                    <a href="{{url}}">
+                    <a target="_blank" href="http//iran.presstv.ir{{url}}">
                         <img src="{{image}}" alt="{{Title}}" />
                     </a>
                 </div>
                 <div class="dsc">
                     <h3>
-                        <a href="{{url}}">{{Title}}</a>
+                        <a target="_blank" href="http//iran.presstv.ir{{url}}">{{Title}}</a>
                     </h3>
                     <p>
-                        <a href="{{url}}">{{Introtext}}</a>
+                        <a target="_blank" href="http//iran.presstv.ir{{url}}">{{Introtext}}</a>
                     </p>
                 </div>
             </li>
-            {{#each Data}}
+            {{/each}}
         </ul>
     </div>
 </div>
