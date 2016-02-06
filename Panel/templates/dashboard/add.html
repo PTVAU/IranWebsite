@@ -20,12 +20,15 @@
                                     <input type="text" name="Title" class="form-control" placeholder="Enter title" required>
                                 </div>
                             </div>
+							<!--
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Short Title</label>
                                 <div class="col-md-10">
-                                    <input type="text" name="ShortTitle" class="form-control" placeholder="Enter short title">
+                                    
                                 </div>
                             </div>
+							-->
+							<input type="hidden" name="ShortTitle" value="" class="form-control" placeholder="Enter short title">
                             <hr />
                             <!--<h4>Text</h4>-->
                             <div class="form-group">
@@ -106,6 +109,7 @@
                                 </div>
                             </div>
                             <hr />
+							<!--
                             <label class="control-label">Priority</label>
                             <div class="form-group">
                                 <div class="col-md-12">
@@ -116,6 +120,8 @@
                                     </select>
                                 </div>
                             </div>
+							-->
+							<input type="hidden" name="ItemPriority" value="1" />
                         </div>
                     </form>
                 </div>
@@ -197,7 +203,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" name="Description" rows="3" placeholder="Description (required)"></textarea>
+                                                <textarea class="form-control" name="Description" rows="3" placeholder="Description"></textarea>
                                             </div>
                                             <input type="hidden" name="l" value="" data-method="get" />
                                             <input type="hidden" name="t" value="" data-method="get" />

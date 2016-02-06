@@ -1159,7 +1159,7 @@ var Templates = {
     }
 };
 var Services = {
-    base: 'http://WIN-L5QSB3HRGRD:81/pl/'
+    base: 'http://192.168.101.3:81/pl/'
     , 'items': 'contents.svc/'
     , 'sections': 'categories.svc/'
     , 'sectionOrder': 'contents.svc/updatePriority'
@@ -1186,7 +1186,7 @@ var Services = {
 //    , 'afp': 'afpPic'
 //    , 'temp': 'temp'
     , 'messages': 'users.svc/messages/inbox?limit=8'
-    , 'baseMedia': 'http://217.218.67.243/Images/Original/'
+    , 'baseMedia': 'http://93.190.24.9:83/Images/Original/'
     , 'media': 'repositories.svc/'
     , 'tempUpload': 'repositories.svc/upload'
     , 'tempCrop': 'repositories.svc/crop'
@@ -1194,8 +1194,8 @@ var Services = {
 //    , 'schedule': 'conductor'
 //    , 'contributors': 'contributor'
 //    , 'staticUpload': 'staticTransfer'
-    , 'videos': 'http://192.168.55.136/mc.svc/files/Search/50/files'
-    , 'video': 'http://192.168.55.136/mc.svc/files/'
+    , 'videos': 'http://192.168.10.26/mc.svc/files/Search/50/files'
+    , 'video': 'http://192.168.10.26/mc.svc/files/'
     , programs: 'programs.svc/programs'
     , program: 'programs.svc/program/'
     , episodes: 'programs.svc/episodes/'
@@ -1301,15 +1301,12 @@ var Form = {
 		Form.sectionsHtml += "</optgroup>";
 	    } else {
                 Form.sectionsHtml += "<optgroup label='" + Form.listTree[i].Title + "'>";
-		Form.sectionsHtml += "<option value='" + Form.listTree[i].Id + "'>" + Form.listTree[i].Title + "</option>";
+//		Form.sectionsHtml += "<option value='" + Form.listTree[i].Id + "'>" + Form.listTree[i].Title + "</option>";
                 for (var j = 0; j < Form.listTree[i].childs.length; j++)
                     Form.sectionsHtml += "<option value='" + Form.listTree[i].childs[j].Id + "'>" + Form.listTree[i].childs[j].Title + "</option>";
                 Form.sectionsHtml += "</optgroup>";
             }
         }
-//        for (var i = 0; i < sections.length; i++) {
-//            Form.BuidSectionOptions(sections[i]);
-//        }
         Form.registerHelper();
     }
     , registerHelper: function() {
@@ -1338,25 +1335,6 @@ var Form = {
                 }
             }
         }
-////        console.log(tree);
-//        if (typeof item !== "undefined") {
-//            for (var i = 0; i < tree.length; i++) {
-//                if (String(tree[i].Parent_Id) === String(0)) {
-//                    item.depth = tree[i].depth + 1;
-//                    tree[i].childs.push(item);
-//                    break;
-//                }
-//                else
-//                    Form.buildSectionTree(tree[i].childs, item);
-//            }
-//        } else {
-//            var idx = 0;
-//            while (idx < tree.length)
-////                if (tree[idx].Parent_Id !== 0)
-//                    Form.buildSectionTree(tree, tree.splice(idx, 1)[0]);
-////                else
-//                    idx++;
-//        }
     }
     , indentGen: function(n) {
         var ret = '';
@@ -1818,6 +1796,7 @@ var Tag = {
 		, headers: {"Authorization": token}
 		, success: function(d) {
 		    $(results).append(Tag.msg.replace(/{tag}/g, data.name));
+		    $(form).find("input[name=name]").val('');
 		}
 	    });
 	} else {
@@ -2236,7 +2215,7 @@ var Media = {
             add = false;
         var params = $(form).find("input[data-method!=get], textarea").serializeObject();
         //var gParams = $(form).find("input[data-method=get]").serialize();
-        if ((typeof params["Description"] === "undefined" || !params["Description"]) || (typeof params["Title"] === "undefined" || !params["Title"])) {
+        if (typeof params["Title"] === "undefined" || !params["Title"]) {
             alert('Title and description fields are required.');
             return false;
         }

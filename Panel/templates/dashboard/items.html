@@ -1,5 +1,6 @@
 <script id="dashboard-items-template" type="text/x-handlebars-template">
     <div class="pull-right in-breadcrumbs has-space-between">
+		<a href="#dashboard/add" data-title="Compose" class="btn green pull-right"><i class="fa fa-edit"></i> New Item</a>
         <select class="form-control" id="change-category"></select>
         <select class="form-control" id="change-state">
             <option value="-1">All Items</option>
@@ -24,7 +25,7 @@
                 {{#each []}}
                 <tr data-id="{{this.Id}}" class="priority-{{this.ItemPriority}}">
                     <td class="item-id">{{this.Id}}</td>
-                    <td class="item-title" title="{{this.Title}}"><a href="#dashboard/item/{{this.Id}}" class="show-item">{{this.ShortTitle}}</a></td>
+                    <td class="item-title" title="{{this.Title}}"><a href="#dashboard/item/{{this.Id}}" class="show-item">{{this.Title}}</a></td>
                     <td class="item-state">
                         {{#ifCond this.IsPublished 1}}<span class="btn default green-stripe btn-xs"><i class="fa fa-check"></i> Published</span>{{/ifCond}}
                         {{#ifCond this.IsPublished 0}}<span class="btn default red-stripe btn-xs"><i class="fa fa-times"></i> Unpublished</span>{{/ifCond}}

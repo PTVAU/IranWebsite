@@ -3,298 +3,294 @@
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en" class="no-js">
-    <!--<![endif]-->
-    <head>
-        <meta charset="utf-8"/>
-        <title>HispanTV Panel</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta content="" name="description"/>
-        <meta content="" name="author"/>
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-        <link href="assets/css/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/css/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/css/vendors/calendar.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/components.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/css/vendors/select2/select2.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/css/layout/layout.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/css/farid.css" rel="stylesheet" type="text/css"/>
-        <link rel="shortcut icon" href="favicon.ico"/>
-    </head>
-    <body class="page-header-fixed">
-        <div class="page-header navbar navbar-fixed-top">
-            <div class="page-header-inner">
-                <div class="page-logo">
-                    <a href="index.html">
-                        <img src="assets/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
-                    </a>
-                    <div class="menu-toggler sidebar-toggler hide"></div><!-- Responsive sidebar toggler -->
-                </div>
-                <div class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></div>
-                <div class="top-menu">
-                    <ul class="nav navbar-nav pull-right">
-			<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-				<a href="#dashboard/inbox" class="dropdown-toggle" data-close-others="true" id="header-inbox-unread">
-					<i class="fa fa-envelope"></i>
-					<span class="badge bg-red red"></span>
-				</a>
-			</li>
-                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" id="header-messages-unread">
-                                <i class="fa fa-comment"></i>
-                                <span class="badge bg-red red"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!--<li><p> Your messages</p></li>-->
-                                <li>
-                                    <ul id="header-messages" class="dropdown-menu-list scroller" style="height: 250px;">
-                                        <li></li>
-                                    </ul>
-                                </li>
-                                <li class="external"><a data-toggle="modal" href="#message-modal" data-title="Compose">New message <i class="fa fa-plus"></i></a></li>
-                                <li class="external"><a href="#messages/inbox">Inbox <i class="fa fa-envelope"></i></a></li>
-                                <li class="external"><a href="#messages/sent">Outbox <i class="fa fa-mail-forward"></i></a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown dropdown-user">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <img alt="" class="img-circle" src="" id="my-avatar"/>
-                                <span class="username"></span>
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#user/profile"><i class="fa fa-user"></i> My Profile</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#user/logout"><i class="fa fa-key"></i> Log Out</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <!-- CONTAINER -->
-        <div class="page-container">
-            <div class="page-sidebar-wrapper">
-                <div id="sidebar">
-                    <div class="page-sidebar navbar-collapse collapse">
-                        <!-- BEGIN SIDEBAR MENU -->
-                        <ul class="page-sidebar-menu page-sidebar-menu-closed" data-auto-scroll="false" data-auto-speed="400">
-                            <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
-                            <li class="sidebar-toggler-wrapper">
-                                <div class="sidebar-toggler"></div>
-                            </li>
-                            <li class="start ">
-                                <a href="#dashboard">
-                                    <i class="fa fa-home"></i> <span class="title">Content</span>
-                                    <span class="arrow"></span>
-                                    <span class="selected"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li><a href="#dashboard/index"><i class="fa fa-clipboard"></i> Workspace</a></li>
-                                    <li><a href="#dashboard/items/0/-1"><i class="fa fa-th"></i> Items</a></li>
-                                    <li class=""><a href="#dashboard/ordering"><i class="fa fa-sort-amount-asc"></i> Change Orderings</a></li>
-                                    <!--<li><a href="#dashboard/add"><i class="fa fa-plus"></i> Add Item</a></li>-->
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#videos">
-                                    <i class="fa fa-play-circle"></i> <span class="title">Videos</span>
-                                    <span class="arrow"></span>
-                                    <span class="selected"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li><a href="#videos/index"><i class="fa fa-th"></i> Programs</a></li>
-                                    <li><a href="#videos/add"><i class="fa fa-plus"></i> Add Program</a></li>
-                                    <!--<li><a href="#videos/addEpisode"><i class="fa fa-plus"></i> Add Episode</a></li>-->
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#wires">
-                                    <i class="fa fa-globe"></i> <span class="title">Wires</span>
-                                    <span class="arrow"></span>
-                                    <span class="selected"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class=""><a href="#wires/reuters"><i class="fa fa-folder"></i> Reuters</a></li>
-                                    <li class=""><a href="#wires/aptn"><i class="fa fa-folder"></i> APTN</a></li>
-                                    <li class=""><a href="#wires/xinhua"><i class="fa fa-folder"></i> Xinhua</a></li>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#poll">
-                                    <i class="fa fa-th-list"></i> <span class="title">Polls</span>
-                                    <span class="arrow"></span>
-                                    <span class="selected"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class=""><a href="#poll/index"><i class="fa fa-list"></i> Polls List</a></li>
-                                    <li class=""><a href="#poll/add"><i class="fa fa-plus"></i> Add Poll</a></li>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#comment">
-                                    <i class="fa fa-comments"></i> <span class="title">Comments</span>
-                                    <span class="arrow"></span>
-                                    <span class="selected"></span>
-                                </a>
-                                <ul class="sub-menu">
-<!--                                    <li class=""><a href="#comment/search"><i class="fa fa-search"></i> Search</a></li>
-                                    <li class=""><a href="#comment/index"><i class="fa fa-comment"></i> Manage</a></li>-->
-                                    <li class=""><a href="https://admin.hypercomments.com/" target="_blank"><i class="fa fa-comment"></i> Manage</a></li>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#tags">
-                                    <i class="fa fa-tag"></i> <span class="title">Tags</span>
-                                    <span class="arrow"></span>
-                                    <span class="selected"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class=""><a href="#tag/index"><i class="fa fa-tags"></i> Manage</a></li>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#schedule">
-                                    <i class="fa fa-calendar"></i> <span class="title">News Conductor</span>
-                                    <span class="arrow"></span>
-                                    <span class="selected"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class=""><a href="#schedule/index"><i class="fa fa-list"></i> News Conductor</a></li>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#media">
-                                    <i class="fa fa-file-image-o"></i> <span class="title">Media</span>
-                                    <span class="arrow"></span>
-                                    <span class="selected"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class=""><a href="#media/search"><i class="fa fa-search"></i> Search</a></li>
-                                    <li class=""><a href="#media/images"><i class="fa fa-image"></i> Manage Images</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#user">
-                                    <i class="fa fa-user"></i>
-                                    <span class="title">Users</span>
-                                    <span class="arrow"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li><a href="#user/manage"><i class="fa fa-users"></i> Manage</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- END SIDEBAR MENU -->
-                    </div>
-                </div>
-            </div>
-            <!-- BEGIN CONTENT -->
-            <div class="page-content-wrapper">
-                <div class="page-content">
-                    <!-- Breadcrumbs -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="page-title"></h3>
-                            <ul class="page-breadcrumb breadcrumb"></ul>
-                            <div class="pull-right hide">
-                                <div id="dashboard-report-range" class="pull-right dashboard-date-range">
-                                    <i class="fa fa-calendar"></i>
-                                    <span></span>
-                                    <i class="fa fa-angle-down"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- // Breadcrumbs -->
-                    <div id="mainbody">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<title>Iran Panel</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1" name="viewport"/>
+		<meta content="" name="description"/>
+		<meta content="" name="author"/>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/vendors/calendar.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/components.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/vendors/select2/select2.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/layout/layout.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/farid.css" rel="stylesheet" type="text/css"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+	</head>
+	<body class="page-header-fixed">
+		<div class="page-header navbar navbar-fixed-top">
+			<div class="page-header-inner">
+				<div class="page-logo">
+					<a href="index.html">
+						<img src="assets/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+					</a>
+					<div class="menu-toggler sidebar-toggler hide"></div><!-- Responsive sidebar toggler -->
+				</div>
+				<div class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></div>
+				<div class="top-menu">
+					<ul class="nav navbar-nav pull-right">
+						<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+							<a href="#dashboard/inbox" class="dropdown-toggle" data-close-others="true" id="header-inbox-unread">
+								<i class="fa fa-envelope"></i>
+								<span class="badge bg-red red"></span>
+							</a>
+						</li>
+						<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" id="header-messages-unread">
+								<i class="fa fa-comment"></i>
+								<span class="badge bg-red red"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<!--<li><p> Your messages</p></li>-->
+								<li>
+									<ul id="header-messages" class="dropdown-menu-list scroller" style="height: 250px;">
+										<li></li>
+									</ul>
+								</li>
+								<li class="external"><a data-toggle="modal" href="#message-modal" data-title="Compose">New message <i class="fa fa-plus"></i></a></li>
+								<li class="external"><a href="#messages/inbox">Inbox <i class="fa fa-envelope"></i></a></li>
+								<li class="external"><a href="#messages/sent">Outbox <i class="fa fa-mail-forward"></i></a></li>
+							</ul>
+						</li>
+						<li class="dropdown dropdown-user">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+								<img alt="" class="img-circle" src="" id="my-avatar"/>
+								<span class="username"></span>
+								<i class="fa fa-angle-down"></i>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#user/profile"><i class="fa fa-user"></i> My Profile</a></li>
+								<li class="divider"></li>
+								<li><a href="#user/logout"><i class="fa fa-key"></i> Log Out</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<!-- CONTAINER -->
+		<div class="page-container">
+			<div class="page-sidebar-wrapper">
+				<div id="sidebar">
+					<div class="page-sidebar navbar-collapse collapse">
+						<!-- BEGIN SIDEBAR MENU -->
+						<ul class="page-sidebar-menu page-sidebar-menu-closed" data-auto-scroll="false" data-auto-speed="400">
+							<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+							<li class="sidebar-toggler-wrapper">
+								<div class="sidebar-toggler"></div>
+							</li>
+							<li class="start ">
+								<a href="#dashboard">
+									<i class="fa fa-home"></i> <span class="title">Content</span>
+									<span class="arrow"></span>
+									<span class="selected"></span>
+								</a>
+								<ul class="sub-menu">
+									<!--<li><a href="#dashboard/index"><i class="fa fa-clipboard"></i> Workspace</a></li>-->
+									<li><a href="#dashboard/items/0/-1"><i class="fa fa-th"></i> Items</a></li>
+									<li class=""><a href="#dashboard/ordering"><i class="fa fa-sort-amount-asc"></i> Change Orderings</a></li>
+								</ul>
+							</li>
+							<li class="hide">
+								<a href="#videos">
+									<i class="fa fa-play-circle"></i> <span class="title">Videos</span>
+									<span class="arrow"></span>
+									<span class="selected"></span>
+								</a>
+								<ul class="sub-menu">
+									<li><a href="#videos/index"><i class="fa fa-th"></i> Programs</a></li>
+									<li><a href="#videos/add"><i class="fa fa-plus"></i> Add Program</a></li>
+								</ul>
+							</li>
+							<li class="hide">
+								<a href="#wires">
+									<i class="fa fa-globe"></i> <span class="title">Wires</span>
+									<span class="arrow"></span>
+									<span class="selected"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class=""><a href="#wires/reuters"><i class="fa fa-folder"></i> Reuters</a></li>
+									<li class=""><a href="#wires/aptn"><i class="fa fa-folder"></i> APTN</a></li>
+									<li class=""><a href="#wires/xinhua"><i class="fa fa-folder"></i> Xinhua</a></li>
+								</ul>
+							</li>
+							<li class="hide">
+								<a href="#poll">
+									<i class="fa fa-th-list"></i> <span class="title">Polls</span>
+									<span class="arrow"></span>
+									<span class="selected"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class=""><a href="#poll/index"><i class="fa fa-list"></i> Polls List</a></li>
+									<li class=""><a href="#poll/add"><i class="fa fa-plus"></i> Add Poll</a></li>
+								</ul>
+							</li>
+							<li class="">
+								<a href="#comment">
+									<i class="fa fa-comments"></i> <span class="title">Comments</span>
+									<span class="arrow"></span>
+									<span class="selected"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class=""><a href="https://admin.hypercomments.com/" target="_blank"><i class="fa fa-comment"></i> Manage</a></li>
+								</ul>
+							</li>
+							<li class="">
+								<a href="#tags">
+									<i class="fa fa-tag"></i> <span class="title">Tags</span>
+									<span class="arrow"></span>
+									<span class="selected"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class=""><a href="#tag/index"><i class="fa fa-tags"></i> Manage</a></li>
+								</ul>
+							</li>
+							<li class="hide">
+								<a href="#schedule">
+									<i class="fa fa-calendar"></i> <span class="title">News Conductor</span>
+									<span class="arrow"></span>
+									<span class="selected"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class=""><a href="#schedule/index"><i class="fa fa-list"></i> News Conductor</a></li>
+								</ul>
+							</li>
+							<li class="">
+								<a href="#media">
+									<i class="fa fa-file-image-o"></i> <span class="title">Media</span>
+									<span class="arrow"></span>
+									<span class="selected"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class=""><a href="#media/search"><i class="fa fa-search"></i> Search</a></li>
+									<li class=""><a href="#media/images"><i class="fa fa-image"></i> Manage Images</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#user">
+									<i class="fa fa-user"></i>
+									<span class="title">Users</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li><a href="#user/manage"><i class="fa fa-users"></i> Manage</a></li>
+								</ul>
+							</li>
+						</ul>
+						<!-- END SIDEBAR MENU -->
+					</div>
+				</div>
+			</div>
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<!-- Breadcrumbs -->
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="page-title"></h3>
+							<ul class="page-breadcrumb breadcrumb"></ul>
+							<div class="pull-right hide">
+								<div id="dashboard-report-range" class="pull-right dashboard-date-range">
+									<i class="fa fa-calendar"></i>
+									<span></span>
+									<i class="fa fa-angle-down"></i>
+								</div>
+							</div>
+						</div>
+					</div><!-- // Breadcrumbs -->
+					<div id="mainbody">
 
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <!-- END CONTENT -->
-            <!-- /.modal -->
-            <div class="modal fade" id="message-modal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <form id="message-form" class="form-horizontal" role="form">
-                                <h3>New Message</h3>
-                                <br />
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label">To </label>
-                                    <div class="col-md-10">
-                                        <select multiple id="userselect" name="to[]" required="" class="form-control"></select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label">Message </label>
-                                    <div class="col-md-10">
-                                        <textarea name="Message" class="form-control" placeholder="Message" rows="5"></textarea>
-                                    </div>
-                                </div>
-                            </form>
-                            <div id="message-results"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#" data-task="submit" data-forms="#message-form" data-method="post" data-action="message" data-results="#message-results" data-identifier="do-send" class="btn btn-success pull-right"><i class="fa fa-mail-forward"></i> Send</a>
-                            <a href="#" data-dismiss="modal" class="btn btn-default pull-left">Cancel</a>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-            <!-- /.modal -->
-        </div>
-        <footer class="page-footer">
-            <div class="page-footer-inner">2014 &copy; Press TV.</div>
-            <div class="page-footer-tools">
-                <span class="go-top">
-                    <i class="fa fa-angle-up"></i>
-                </span>
-            </div>
-        </footer>
-        <aside id="templates">
-            <script id="history-back-template" type="text/x-handlebars-template"></script>
-        </aside>
-        <script src="assets/global/plugins/jquery-1.11.1.min.js" type="text/javascript"></script>
-        <script src="assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-        <!-- Components -->
-        <script src="assets/global/plugins/components.js" type="text/javascript"></script>
-        <script src="assets/global/plugins/flot/flot.all.min.js" type="text/javascript"></script>
-        <script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.full.min.js" type="text/javascript"></script>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!-- END CONTENT -->
+			<!-- /.modal -->
+			<div class="modal fade" id="message-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<form id="message-form" class="form-horizontal" role="form">
+								<h3>New Message</h3>
+								<br />
+								<div class="form-group">
+									<label class="col-md-2 control-label">To </label>
+									<div class="col-md-10">
+										<select multiple id="userselect" name="to[]" required="" class="form-control"></select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">Message </label>
+									<div class="col-md-10">
+										<textarea name="Message" class="form-control" placeholder="Message" rows="5"></textarea>
+									</div>
+								</div>
+							</form>
+							<div id="message-results"></div>
+						</div>
+						<div class="modal-footer">
+							<a href="#" data-task="submit" data-forms="#message-form" data-method="post" data-action="message" data-results="#message-results" data-identifier="do-send" class="btn btn-success pull-right"><i class="fa fa-mail-forward"></i> Send</a>
+							<a href="#" data-dismiss="modal" class="btn btn-default pull-left">Cancel</a>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+		</div>
+		<footer class="page-footer">
+			<div class="page-footer-inner">2014 &copy; Press TV.</div>
+			<div class="page-footer-tools">
+				<span class="go-top">
+					<i class="fa fa-angle-up"></i>
+				</span>
+			</div>
+		</footer>
+		<aside id="templates">
+			<script id="history-back-template" type="text/x-handlebars-template"></script>
+		</aside>
+		<script src="assets/global/plugins/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+		<!-- Components -->
+		<script src="assets/global/plugins/components.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/flot/flot.all.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.full.min.js" type="text/javascript"></script>
 
-        <!--<script src="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>-->
-        <script src="assets/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-        <script src="assets/global/plugins/select2/select2.min.js" type="text/javascript"></script>
-        <script src="assets/global/plugins/data-tables/jquery.dataTables.min.js" type="text/javascript"></script>
-        <script src="assets/global/plugins/data-tables/DT_bootstrap.js" type="text/javascript"></script>
-        <script src="assets/admin/pages/scripts/table-advanced.js" type="text/javascript"></script>
-        <script src="assets/ckeditor/ckeditor.js" type="text/javascript"></script>
-        <script src="assets/ckeditor/adapters/jquery.js" type="text/javascript"></script>
+		<!--<script src="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>-->
+		<script src="assets/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/select2/select2.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/data-tables/jquery.dataTables.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/data-tables/DT_bootstrap.js" type="text/javascript"></script>
+		<script src="assets/admin/pages/scripts/table-advanced.js" type="text/javascript"></script>
+		<script src="assets/ckeditor/ckeditor.js" type="text/javascript"></script>
+		<script src="assets/ckeditor/adapters/jquery.js" type="text/javascript"></script>
 
-        <script src="assets/global/scripts/helper.js" type="text/javascript"></script>
-        <script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
-        <script src="assets/js/magicsuggest-min.js" type="text/javascript"></script>
-        <script src="assets/js/jquery.fineuploader-5.0.2/jquery.fineuploader-5.0.2.min.js" type="text/javascript"></script>
-        <script src="assets/js/jquery.Jcrop.min.js" type="text/javascript"></script>
-        <script src="assets/js/bootstrap-editable.js" type="text/javascript"></script>
+		<script src="assets/global/scripts/helper.js" type="text/javascript"></script>
+		<script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
+		<script src="assets/js/magicsuggest-min.js" type="text/javascript"></script>
+		<script src="assets/js/jquery.fineuploader-5.0.2/jquery.fineuploader-5.0.2.min.js" type="text/javascript"></script>
+		<script src="assets/js/jquery.Jcrop.min.js" type="text/javascript"></script>
+		<script src="assets/js/bootstrap-editable.js" type="text/javascript"></script>
 
-        <script>
+		<script>
 	    function initObjects() {
-		Helper.init(); // init core componets
-		Layout.init(); // init layout
-		Index.init();
+			Helper.init(); // init core componets
+			Layout.init(); // init layout
+			Index.init();
 	    }
 	    jQuery(document).ready(function () {
-		initObjects();
+			initObjects();
 	    });
-        </script>
-        <script src="assets/js/farid.js" type="text/javascript"></script>
-    </body>
+		</script>
+		<script src="assets/js/farid.js" type="text/javascript"></script>
+	</body>
 </html>
