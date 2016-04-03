@@ -19,27 +19,31 @@ namespace TCMSFRONTEND
         }
         void RegisterCustomRoutes(RouteCollection routes)
         {
-            routes.Clear();
-
-            List<Bo.Site.urlRouting> urlRoutingList = Dal.SiteConfig.urlRoutingSelect();
-            foreach (Bo.Site.urlRouting rt in urlRoutingList)
+            try
             {
-                if(rt.pageAlias.StartsWith("/"))
-                {
-                    rt.pageAlias = rt.pageAlias.Remove(0,1);
-                }
-                routes.MapPageRoute(rt.pageAlias, rt.pageAlias, "~/Default.aspx");
-            }
+                routes.Clear();
 
-            //Static routes:
-            routes.MapPageRoute("staticnews", "newsdetail/{CategoryTitle}/{NewsID}/{NewsTitle}", "~/Default.aspx");
-            routes.MapPageRoute("staticsections", "category/{CategoryTitle}/{CategoryID}", "~/Default.aspx");
-            routes.MapPageRoute("staticsubsections", "subcategory/{CategoryTitle}/{CategoryID}/{subCategoryTitle}/{subCategoryID}", "~/Default.aspx");
-            routes.MapPageRoute("statictag", "tag/{TagTitle}/{TagID}", "~/Default.aspx");
-            routes.MapPageRoute("staticprogram", "program/{ProgramTitle}/{ProgramId}", "~/Default.aspx");
-            routes.MapPageRoute("staticepisode", "showepisode/{ProgramTitle}/{episodeTitle}/{EpisodeId}", "~/Default.aspx");
-            routes.MapPageRoute("staticshowprogram", "showprogram/{ProgramTitle}/{ProgId}", "~/Default.aspx");
-            routes.MapPageRoute("staticdetailoldwebsite", "detail/{year}/{month}/{day}/{id}/{title}", "~/Default.aspx");
+                List<Bo.Site.urlRouting> urlRoutingList = Dal.SiteConfig.urlRoutingSelect();
+                foreach (Bo.Site.urlRouting rt in urlRoutingList)
+                {
+                    if (rt.pageAlias.StartsWith("/"))
+                    {
+                        rt.pageAlias = rt.pageAlias.Remove(0, 1);
+                    }
+                    routes.MapPageRoute(rt.pageAlias, rt.pageAlias, "~/Default.aspx");
+                }
+
+                //Static routes:
+                routes.MapPageRoute("staticnews", "newsdetail/{CategoryTitle}/{NewsID}/{NewsTitle}", "~/Default.aspx");
+                routes.MapPageRoute("staticsections", "category/{CategoryTitle}/{CategoryID}", "~/Default.aspx");
+                routes.MapPageRoute("staticsubsections", "subcategory/{CategoryTitle}/{CategoryID}/{subCategoryTitle}/{subCategoryID}", "~/Default.aspx");
+                routes.MapPageRoute("statictag", "tag/{TagTitle}/{TagID}", "~/Default.aspx");
+                routes.MapPageRoute("staticprogram", "program/{ProgramTitle}/{ProgramId}", "~/Default.aspx");
+                routes.MapPageRoute("staticepisode", "showepisode/{ProgramTitle}/{episodeTitle}/{EpisodeId}", "~/Default.aspx");
+                routes.MapPageRoute("staticshowprogram", "showprogram/{ProgramTitle}/{ProgId}", "~/Default.aspx");
+                routes.MapPageRoute("staticdetailoldwebsite", "detail/{year}/{month}/{day}/{id}/{title}", "~/Default.aspx");
+            }
+            catch { }
 
         }
         protected void Session_Start(object sender, EventArgs e)
@@ -53,15 +57,19 @@ namespace TCMSFRONTEND
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
-            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+            try
             {
-                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, TRACE, OPTIONS, HEAD");
-                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Authorization, Origin, Content-Type, Accept, X-Requested-With, accept, cache-control, x-requested-with, content-type");
-                HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "1728000");
-                HttpContext.Current.Response.End();
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+                if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+                {
+                    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, TRACE, OPTIONS, HEAD");
+                    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Authorization, Origin, Content-Type, Accept, X-Requested-With, accept, cache-control, x-requested-with, content-type");
+                    HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "1728000");
+                    HttpContext.Current.Response.End();
+                }
+                RegisterCustomRoutes(RouteTable.Routes);
             }
-            RegisterCustomRoutes(RouteTable.Routes);
+            catch { }
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
