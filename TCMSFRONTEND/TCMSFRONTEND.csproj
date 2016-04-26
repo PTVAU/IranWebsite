@@ -72,6 +72,7 @@
     <Content Include="callBack.asmx" />
     <Content Include="crossdomain.xml" />
     <Content Include="packages.config" />
+    <Content Include="Services\News.asmx" />
     <Content Include="Views\Assets\css\style.css" />
     <Content Include="Views\Assets\data\about.jpg" />
     <Content Include="Views\Assets\data\panorama\Abyaneh.jpg" />
@@ -494,9 +495,12 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\News.asmx.cs">
+      <DependentUpon>News.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
     <Folder Include="Views\Modules\Footer\" />
     <Folder Include="Views\Modules\Media\" />
   </ItemGroup>
