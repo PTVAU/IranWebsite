@@ -372,7 +372,7 @@ namespace CoreSerivce.DAL
                                         Contents_Categories.Priority
                                         FROM  Contents_Categories right  JOIN 
                                         Contents ON Contents.Id = Contents_Categories.Contents_Id
-						                where Contents_Categories.Categories_Id in (" + Category + @") and  Contents.State=0 and  Contents.IsPublished=1 group by contents.Id,Contents.ShortTitle,Contents.Title,Contents.Alias,Contents.Introtext,
+						                where Contents_Categories.Categories_Id in (" + Category + @") and Contents_Categories.Categories_Id not in(162) and  Contents.State=0 and  Contents.IsPublished=1 group by contents.Id,Contents.ShortTitle,Contents.Title,Contents.Alias,Contents.Introtext,
 										Contents.Fulltext,Contents.State,Contents.Created,Contents.Created_By,
 										Contents.Modified,Contents.Modified_By,Contents.Owner,
 										Contents.Published,Contents.Published_By,Contents.IsPublished,
