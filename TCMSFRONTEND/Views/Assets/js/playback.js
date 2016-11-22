@@ -21,7 +21,7 @@ var srcs;
 var ff22 = document.getElementById('inpPlayback').value;
 ff22v = ff22.replace("\\", "/");
 var ff23 = document.getElementById('imgPlayback').src;
-var baseAddr = "http://192.99.219.222:82/presstv/iran/";
+var baseAddr = "http://178.32.255.194/ptv/iran/";
 srcs = [
         { "file": baseAddr + ff22, "label": "1080p", "default": true },
         { "file": baseAddr + ff22.replace('.mp4', '_low800.mp4'), "label": "720p" },
