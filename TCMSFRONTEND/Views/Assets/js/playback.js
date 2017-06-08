@@ -44,7 +44,7 @@ jwplayer("mediaplayer").setup({
     startparam: "start",
     width: '100%',
     //primary: (IE(9)||IE(10))?"html5":"flash",
-    primary: "flash",
+    primary: "html5",
     skin: "/views/assets/player/six.xml",
     stretching: "fill"
 });
