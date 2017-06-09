@@ -441,10 +441,11 @@ namespace CoreSerivce.DAL
 
             var sqlCommand = new SqlCommand();
           //  sqlCommand.CommandText = @"SELECT top(" + count + ") * from contents where IsPublished=1  order by published desc";
+          //20161210 Remove Time Laps From Latest News(Category Id 158)
             sqlCommand.CommandText = @"SELECT distinct  top(" + count + @")    Contents.*
                                         FROM    Contents_Categories right   JOIN
                                         Contents ON Contents.Id = Contents_Categories.Contents_Id
-						                where Contents_Categories.Categories_Id not in (113,102,129,125) 
+						                where Contents_Categories.Categories_Id not in (113,102,129,125,158) 
 										and  Contents.State=0 and  Contents.IsPublished=1 										
 										group by contents.Id,Contents.ShortTitle,Contents.Title,Contents.Alias,Contents.Introtext,
 										Contents.Fulltext,Contents.State,Contents.Created,Contents.Created_By,
