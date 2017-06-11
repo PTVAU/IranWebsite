@@ -269,6 +269,26 @@
     <Content Include="Views\Assets\js\owl.carousel.js" />
     <Content Include="Views\Assets\js\owl.carousel.min.js" />
     <Content Include="Views\Assets\js\playback.js" />
+    <Content Include="Views\Assets\jwplayer\jwplayer.flash.swf" />
+    <Content Include="Views\Assets\jwplayer\jwplayer.js" />
+    <Content Include="Views\Assets\jwplayer\jwplayer.loader.swf" />
+    <Content Include="Views\Assets\jwplayer\polyfills.base64.js" />
+    <Content Include="Views\Assets\jwplayer\polyfills.intersection-observer.js" />
+    <Content Include="Views\Assets\jwplayer\polyfills.promise.js" />
+    <Content Include="Views\Assets\jwplayer\polyfills.vttrenderer.js" />
+    <Content Include="Views\Assets\jwplayer\provider.flash.js" />
+    <Content Include="Views\Assets\jwplayer\provider.html5.js" />
+    <Content Include="Views\Assets\jwplayer\provider.youtube.js" />
+    <Content Include="Views\Assets\jwplayer\skins\beelden.css" />
+    <Content Include="Views\Assets\jwplayer\skins\bekle.css" />
+    <Content Include="Views\Assets\jwplayer\skins\five.css" />
+    <Content Include="Views\Assets\jwplayer\skins\glow.css" />
+    <Content Include="Views\Assets\jwplayer\skins\roundster.css" />
+    <Content Include="Views\Assets\jwplayer\skins\seven.css" />
+    <Content Include="Views\Assets\jwplayer\skins\six.css" />
+    <Content Include="Views\Assets\jwplayer\skins\stormtrooper.css" />
+    <Content Include="Views\Assets\jwplayer\skins\vapor.css" />
+    <Content Include="Views\Assets\jwplayer\vttparser.js" />
     <Content Include="Views\Assets\player\live.smil" />
     <Content Include="Views\Assets\font\droidarabicnaskh\v4\DroidNaskh-Bold.eot" />
     <Content Include="Views\Assets\font\droidarabicnaskh\v4\DroidNaskh-Bold.ttf" />
@@ -376,6 +396,17 @@
     <Content Include="Views\Assets\less\project\variables.less" />
     <Content Include="Views\Assets\less\style.less" />
     <None Include="Properties\PublishProfiles\101.3.pubxml" />
+    <Content Include="Views\Assets\jwplayer\jw-icons.ttf" />
+    <Content Include="Views\Assets\jwplayer\jw-icons.woff" />
+    <Content Include="Views\Assets\jwplayer\jwplayer.e86535d11f2f8dbcf3d5.map" />
+    <Content Include="Views\Assets\jwplayer\polyfills.base64.e86535d11f2f8dbcf3d5.map" />
+    <Content Include="Views\Assets\jwplayer\polyfills.intersection-observer.e86535d11f2f8dbcf3d5.map" />
+    <Content Include="Views\Assets\jwplayer\polyfills.promise.e86535d11f2f8dbcf3d5.map" />
+    <Content Include="Views\Assets\jwplayer\polyfills.vttrenderer.e86535d11f2f8dbcf3d5.map" />
+    <Content Include="Views\Assets\jwplayer\provider.flash.e86535d11f2f8dbcf3d5.map" />
+    <Content Include="Views\Assets\jwplayer\provider.html5.e86535d11f2f8dbcf3d5.map" />
+    <Content Include="Views\Assets\jwplayer\provider.youtube.e86535d11f2f8dbcf3d5.map" />
+    <Content Include="Views\Assets\jwplayer\vttparser.e86535d11f2f8dbcf3d5.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

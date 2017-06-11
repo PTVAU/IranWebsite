@@ -1,4 +1,29 @@
-﻿
+﻿var href = "http://178.32.255.194/ptv/iran/" + document.getElementById('inpPlayback').value.replace('\\', '/');
+var config = {
+    abouttext: 'ایران کالا'
+    , aboutlink: window.location.hostname
+    , width: "100%"
+    , stretching: 'uniform'
+    , controls: true
+    , aspectratio: '16:9'
+    , autostart: true
+    , analytics: { enabled: false, cookies: false }
+};
+config.playlist = [{
+    image: href.replace('mp4', 'jpg')
+    , sources: [
+        { "file": href, "label": "1080p", "default": true },
+        { "file": href.replace('.mp4', '_low800.mp4'), "label": "720p" },
+        { "file": href.replace('.mp4', '_low400.mp4'), "label": "360p" },
+        { "file": href.replace('.mp4', '_low200.mp4'), "label": "180p" }
+    ]
+}];
+
+if (typeof jwplayer !== "undefined") {
+    jwplayer("mediaplayer").setup(config);
+}
+
+/*
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
         c_start = document.cookie.indexOf(c_name + "=");
@@ -30,13 +55,13 @@ srcs = [
 ];
 jwplayer("mediaplayer").setup({
     playlist: [{
-        image: ff23.replace(" ", "%20"),
+        image: ff23.replace(" ", "%20").replace('.mp4', '.jpg').replace('\\', '/'),
         sources: srcs,
         tracks: [{
-            //file: "http://217.218.67.244:8181/vtt.aspx?address="+baseAddr+ff22+"&format=.vtt", 
-            file: baseAddr + ff22.replace('.mp4', '.mp4'),
-            // file: 'http://217.218.67.233:82/video' + ff22.replace('.mp4', '.mp4'),
+            file: baseAddr + ff22.replace('\\', '/').replace('.mp4', '.vtt'),
             kind: "thumbnails"
+            //file: "http://217.218.67.244:8181/vtt.aspx?address="+baseAddr+ff22+"&format=.vtt", 
+            // file: 'http://217.218.67.233:82/video' + ff22.replace('.mp4', '.mp4'),
         }]
     }],
     height: '100%',
@@ -49,3 +74,4 @@ jwplayer("mediaplayer").setup({
     stretching: "fill"
 });
 //}, 50);
+*/

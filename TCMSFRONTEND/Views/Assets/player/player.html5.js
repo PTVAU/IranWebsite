@@ -339,7 +339,7 @@
         k = document;
     f.captions = function (b, h) {
         function m(a) {
-            g.log("CAPTIONS(" + a + ")")
+            console.log("CAPTIONS(" + a + ")")
         }
 
         function f(a) {
@@ -3202,7 +3202,7 @@
                 g.css.unblock()
             });
         a.addEventListener(jwplayer.events.JWPLAYER_ERROR, function (a) {
-            g.log("There was a problem setting up the player: ", a);
+            console.log("There was a problem setting up the player: ", a);
             g.css.unblock()
         });
         a.start()
@@ -4010,7 +4010,7 @@
                 var a = b,
                     e = z[n(a)] ? z[n(a)].elements[n(d)] : null;
                 e ? (e.height = Math.round(c.height / s * q), e.width = Math.round(c.width /
-                    s * q), e.src = c.src, e.ready = !0, m()) : g.log("Loaded an image for a missing element: " + a + "." + d)
+                    s * q), e.src = c.src, e.ready = !0, m()) : console.log("Loaded an image for a missing element: " + a + "." + d)
             };
             c.onerror = function () {
                 I = !0;
@@ -4047,7 +4047,7 @@
         }
 
         function e(a) {
-            g.log("Thumbnails could not be loaded: " + a)
+            console.log("Thumbnails could not be loaded: " + a)
         }
 
         function f(a) {
@@ -4208,7 +4208,7 @@
                     N && L != c.IDLE && (X = -1, Y = d, f(a.JWPLAYER_MEDIA_BEFORECOMPLETE), N && (B(c.IDLE), Y = b, f(a.JWPLAYER_MEDIA_COMPLETE)))
                 },
                 error: function () {
-                    N && (g.log("Error playing media: %o", u.error), R.sendEvent(a.JWPLAYER_MEDIA_ERROR, {
+                    N && (console.log("Error playing media: %o", u.error), R.sendEvent(a.JWPLAYER_MEDIA_ERROR, {
                         message: "Error loading media: File could not be played"
                     }), B(c.IDLE))
                 },
