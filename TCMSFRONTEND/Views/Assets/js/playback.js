@@ -1,4 +1,4 @@
-﻿var href = "http://178.32.255.194/ptv/iran/" + document.getElementById('inpPlayback').value.replace('\\', '/');
+﻿var href = "http://107.189.40.50/ptv/iran/" + document.getElementById('inpPlayback').value.replace('\\', '/');
 var config = {
     abouttext: 'ایران کالا'
     , aboutlink: window.location.hostname
