@@ -229,7 +229,7 @@ namespace TCMSFRONTEND.Bll
                     if (rp.Kind == 2)
                 {
                     Bo.Data.contentsVideo vdo = new Bo.Data.contentsVideo();
-                    vdo.videoPath = rp.FilePath.ToLower().Replace(".mpg", ".mp4").Replace(".mov", ".mp4").Replace(".jpg", ".mp4");
+                    vdo.videoPath = rp.FilePath.Replace(".mpg", ".mp4").Replace(".mov", ".mp4").Replace(".jpg", ".mp4");
                    
                         vdo.videoThumbail = cnt.image; //vdo.videoPath.ToLower().Replace(".mp4", ".jpg").Replace(".mpg", ".jpg");
                    

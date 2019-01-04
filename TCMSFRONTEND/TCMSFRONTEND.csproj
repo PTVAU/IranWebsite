@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -268,6 +269,7 @@
     <Content Include="Views\Assets\js\modernizr-2.6.2.min.js" />
     <Content Include="Views\Assets\js\owl.carousel.js" />
     <Content Include="Views\Assets\js\owl.carousel.min.js" />
+    <Content Include="Views\Assets\js\playback-new.js" />
     <Content Include="Views\Assets\js\playback.js" />
     <Content Include="Views\Assets\jwplayer\jwplayer.flash.swf" />
     <Content Include="Views\Assets\jwplayer\jwplayer.js" />
@@ -463,7 +465,9 @@
     <Content Include="Views\Modules\Static\Panorama.html" />
     <Content Include="Views\Modules\Static\Sharing.html" />
     <Content Include="Views\Pages\index.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bll\SiteData.cs" />
@@ -532,6 +536,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Assets\NPlayer\" />
     <Folder Include="Views\Modules\Footer\" />
     <Folder Include="Views\Modules\Media\" />
   </ItemGroup>
